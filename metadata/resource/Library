@@ -1,0 +1,13 @@
+{
+    "type": "libraryresource",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Library",
+        "basePath": "../extjs/ext-4.1.1-gpl/"
+    },
+    "designerId": "37b02981-9a52-4cbb-9484-4a8e1490ff6c"
+}

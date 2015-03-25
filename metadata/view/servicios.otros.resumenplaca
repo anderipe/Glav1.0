@@ -1,0 +1,476 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "autoShow": true,
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "servicios.otros.resumenplaca",
+        "designer|userAlias": "ServiciosOtrosResumenPlaca",
+        "layout": "vbox",
+        "iconCls": "icon-application_view_list",
+        "title": "Resumen por Placa"
+    },
+    "designerId": "982d9392-0c07-4077-977d-5b9256f61500",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 45,
+                "id": "formParametros3",
+                "maxHeight": null,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "aff8bfb8-fb3e-403d-a2f5-0fd49c75f389",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "fieldLabel": "Placa del Auto",
+                        "name": "placa"
+                    },
+                    "designerId": "a7ae5ce2-2e83-466c-a50d-92b6d73d52ba",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTextfieldChange",
+                                "implHandler": [
+                                    "this.traerServicios();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "f606dfd1-02ad-44ce-92bc-3662c347e922"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": "gridServicios2",
+                "title": null
+            },
+            "designerId": "c327ca35-d566-4f0c-9faf-586061fa8b5f",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fecharegistro",
+                        "text": "Fecha y Hora",
+                        "flex": 6
+                    },
+                    "designerId": "6448ca3e-a57c-4f09-b006-6bd6549d7893"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nombres",
+                        "text": "Operario",
+                        "flex": 6
+                    },
+                    "designerId": "ec1d8cfe-1dfc-4003-8de1-ebcea031f36d"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "servicios",
+                        "text": "Servicios",
+                        "flex": 12
+                    },
+                    "designerId": "851b7b30-5921-40c1-9ab9-909370715b71"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "total",
+                        "text": "Costo",
+                        "flex": 4,
+                        "format": "0,000"
+                    },
+                    "designerId": "f1e24549-b09a-41e9-8194-a53c7b8ff446"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "fechaentrega",
+                        "text": "Salida",
+                        "flex": 6
+                    },
+                    "designerId": "851a1e88-6a52-4164-953d-8d10c5b52c0b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "align": "right",
+                        "dataIndex": "tiempo",
+                        "text": "Tiempo",
+                        "flex": 4
+                    },
+                    "designerId": "2d47eadd-e378-4270-a7e0-cb82ab01dd5a"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "579adc5f-64bb-4e6d-8df0-d011b758cf6f"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "3563226d-2086-4720-b083-1d87e60216de",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "title": "Impresión",
+                        "columns": 3
+                    },
+                    "designerId": "8e91baa7-a413-4596-b1e4-be39b67c8e61",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "pdf",
+                                "iconCls": "icon-pdf",
+                                "text": null
+                            },
+                            "designerId": "66cb0634-fa29-4216-bc2c-de4c0bce30c8",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick11",
+                                        "implHandler": [
+                                            "var grid=this.grid\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "\r",
+                                            "    try{                            \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=1;\r",
+                                            "grid.getStore().getProxy().extraParams.c=Ext.Number.randomInt(0, 1500000000);\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "ac429e3b-fd96-4c59-9d0f-8dfaf1dbb93d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "excel",
+                                "iconCls": "icon-excel",
+                                "text": null
+                            },
+                            "designerId": "5a890a21-094b-4b5a-b090-b5f2ef8cc176",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick21",
+                                        "implHandler": [
+                                            "var grid=this.grid\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.excel=1;\r",
+                                            "grid.getStore().getProxy().extraParams.c=Ext.Number.randomInt(0, 1500000000);\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.excel=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "448272c4-6aca-42a6-a06a-5589b3825b0b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "55f77a57-d0b0-41e8-bda1-0c5409229eb5"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "title": null,
+                        "columns": 1
+                    },
+                    "designerId": "dd031db8-c063-46fd-8d15-24588380edc0",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "bd1d7fb9-3577-43e5-91d2-402a2a8a2082",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickSalir11",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "9f06a4a7-9031-4aa4-b6d1-402909b4692d"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerServicios",
+                "implHandler": [
+                    "this.grid.getStore().getProxy().extraParams.placa=this.placa.getValue();\r",
+                    "this.grid.getStore().load();"
+                ]
+            },
+            "designerId": "f6f984f7-d111-49fa-855b-d14423dbb010"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.resumenplaca.servicios\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.resumenplaca.servicios', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                pageSize: 7,\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosResumenPlaca.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idservicio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idservicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'fecharegistro'                    \r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'fechaentrega'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'tiempo'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'servicios'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'total'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "this.placa=Ext.ComponentQuery.query('ServiciosOtrosResumenPlaca textfield')[0];\r",
+                    "this.grid=Ext.ComponentQuery.query('ServiciosOtrosResumenPlaca grid')[0];\r",
+                    "this.grid.reconfigure(Ext.create('siadno.store.resumenplaca.servicios'));\r",
+                    "\r",
+                    "//this.traerServicios();"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "e45ba980-1141-43f2-8fd1-615647eca3c8"
+        }
+    ]
+}

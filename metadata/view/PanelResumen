@@ -1,0 +1,379 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 360,
+        "designer|userClassName": "PanelResumen",
+        "designer|userAlias": "PanelResumen",
+        "layout": "vbox",
+        "collapsed": false,
+        "iconCls": "icon-layout",
+        "title": "Resumen"
+    },
+    "designerId": "904d3a9f-dfe1-493d-9e81-76bc907597d1",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 65,
+                "id": "formParametros2",
+                "maxHeight": 65,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "ac001e47-4e2e-4b87-832f-bfddd2230377",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Fecha Inicial",
+                        "labelAlign": "top",
+                        "name": "fechainicial2",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "1ee226b8-5b64-4d5c-b796-9533314c43d0",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "fdd4da8c-040e-40b0-899f-dd53f7e743e0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 15,
+                        "width": 330,
+                        "fieldLabel": "Encargado",
+                        "labelAlign": "top",
+                        "name": "idempleado",
+                        "value": [
+                            "0"
+                        ],
+                        "editable": false,
+                        "autoSelect": false,
+                        "displayField": "nombres",
+                        "queryMode": "local",
+                        "store": "dumyStore",
+                        "valueField": "idempleado"
+                    },
+                    "designerId": "b6930812-3bf8-4eec-a522-9eacf3ff9c61",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxChange",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "084c11eb-30ec-47cf-82dc-bf205ff48668"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 7,
+                        "height": null,
+                        "margin": "0 0 0 3",
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "arrowAlign": null,
+                        "autoWidth": null,
+                        "iconAlign": "top",
+                        "iconCls": "icon-page_go",
+                        "text": "Recargar"
+                    },
+                    "designerId": "312cb6f1-580c-444d-9584-9da01f28aaec",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick2",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "cbd53f42-0fec-466e-a6e9-535bd9d71d1f"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": "gridResumen",
+                "title": null
+            },
+            "designerId": "2789e25a-20b3-4d4c-9582-2677c2caa617",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "matricula",
+                        "text": "Matricula",
+                        "flex": 10
+                    },
+                    "designerId": "7a69180e-946a-45c4-b00f-808fd6bfe824"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "align": "right",
+                        "dataIndex": "total",
+                        "text": "Valor",
+                        "flex": 5,
+                        "format": "0,000"
+                    },
+                    "designerId": "c79ad91b-2ece-49c7-9f80-e79584ad74ac"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "align": "right",
+                        "dataIndex": "valor",
+                        "text": "40%",
+                        "flex": 5,
+                        "format": "0,000"
+                    },
+                    "designerId": "96eff7e5-a333-47e0-9eba-87b22013bf66"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "131de24a-4b13-48f0-8bef-fb1316d2968c"
+                },
+                {
+                    "type": "Ext.grid.feature.Summary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "b1b61ba8-e7b1-45f7-bb88-7c594734ffb3"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAdded",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.registroservicios.resumen\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.resumen', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:116},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idservicio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idservicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'matricula'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'total',\r",
+                    "                    type: 'float'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'valor',\r",
+                    "                    type: 'float'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.encargados3\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.encargados3', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:104},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idempleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.idEmpleado=Ext.ComponentQuery.query('PanelResumen field[name=idempleado]')[0];\r",
+                    "this.idEmpleado.bindStore(Ext.create('siadno.store.registroservicios.encargados3'));\r",
+                    "this.idEmpleado.getStore().load();\r",
+                    "\r",
+                    "this.gridResumen=Ext.ComponentQuery.query('PanelResumen grid[id=gridResumen]')[0];\r",
+                    "this.gridResumen.reconfigure(Ext.create('siadno.store.registroservicios.resumen'));\r",
+                    "\r",
+                    "this.fechaInicial=Ext.ComponentQuery.query('PanelResumen datefield[name=fechainicial2]')[0];\r",
+                    "\r",
+                    "this.fechaInicial.suspendEvents(false);\r",
+                    "\r",
+                    "var dt = new Date();\r",
+                    "this.fechaInicial.setValue(dt);\r",
+                    "\r",
+                    "\r",
+                    "this.fechaInicial.resumeEvents();\r",
+                    "\r",
+                    "\r",
+                    "//this.traerResumen();"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "e32163a3-ede8-474a-9568-94b4fef9843b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerResumen",
+                "implHandler": [
+                    "this.gridResumen.getStore().getProxy().extraParams.fechainicial=this.fechaInicial.getSubmitData().fechainicial2;\r",
+                    "this.gridResumen.getStore().getProxy().extraParams.idempleado=this.idEmpleado.getValue();\r",
+                    "this.gridResumen.getStore().load();"
+                ]
+            },
+            "designerId": "84e98d94-39ea-4c2d-bef3-1876466450f6"
+        }
+    ]
+}

@@ -1,0 +1,365 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "administracion.local.informeempleados",
+        "designer|userAlias": "AdministracionLocalInformeempleados",
+        "layout": "vbox",
+        "iconCls": "icon-group",
+        "title": "Listado de Empleados"
+    },
+    "designerId": "319ad3c7-ee81-4f87-a1d9-37cd74ac0c06",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "a3f9c88b-eef3-4efa-ab04-d15de808c1f7",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 135,
+                        "dataIndex": "identificacion",
+                        "text": "Identificacion",
+                        "flex": 5
+                    },
+                    "designerId": "b9202cec-1020-4ddf-8393-461d8a8d024a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 116,
+                        "dataIndex": "nombres",
+                        "text": "Nombres",
+                        "flex": 10
+                    },
+                    "designerId": "ee37a77b-022c-4659-9604-54bff041be81"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 199,
+                        "dataIndex": "direccion",
+                        "text": "Dirección",
+                        "flex": 10
+                    },
+                    "designerId": "7647b46b-db3e-4618-a6ca-6733afc1c58c"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 93,
+                        "dataIndex": "telefonos",
+                        "text": "Teléfono",
+                        "flex": 7
+                    },
+                    "designerId": "7df4fe20-f596-4012-8738-1cf0cb990b35"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 86,
+                        "dataIndex": "estado",
+                        "text": "Estado",
+                        "flex": 5
+                    },
+                    "designerId": "203a0d42-0fd8-49f0-9d86-0a330a467c3d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(value==1){\r",
+                                    "    return 'Activo';\r",
+                                    "}else{\r",
+                                    "    return 'In-Activo';\r",
+                                    "}\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "f4edfdc7-c207-4505-b1eb-dba8914353d3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "47d7b515-0363-44b0-a785-89a20b3c0109"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "dumyStore"
+                    },
+                    "designerId": "2c703926-4231-4b40-adcc-13bdf179b2cf",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "e546e4e3-a373-48dd-9b94-b92c284ec712"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "pdf",
+                                "iconCls": "icon-pdf",
+                                "text": null
+                            },
+                            "designerId": "a0049641-5d54-4dad-b162-4c71ca66dfe7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPdfClick",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLocalInformeempleados pagingtoolbar')[0];\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "21b79ac4-06d4-4e89-9721-405b178241b1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "excel",
+                                "iconCls": "icon-excel",
+                                "text": null
+                            },
+                            "designerId": "0e518496-fd3b-46f8-9253-a57b5aac28e5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onExcelClick",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLocalInformeempleados pagingtoolbar')[0];\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.excel=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.excel=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "49e87f50-acaf-4df2-a28f-170b0219ed84"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "d0dda700-ef19-4289-b0c3-c0f68e37ec9a"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "//paginador.moveFirst();\r",
+                    "//this.application.activarToolbar('AdministracionLocalAuditoriaInforme', true);\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.informeempleados\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.informeempleados', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                pageSize: 18,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/InterfazListadoEmpleados.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'nombres',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'direccion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'telefonos'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionLocalInformeempleados grid')[0];\r",
+                    "grid.informeStore=Ext.create('siadno.store.administracion.informeempleados');\r",
+                    "grid.reconfigure(grid.informeStore);\r",
+                    "\r",
+                    "var paginador=Ext.ComponentQuery.query('AdministracionLocalInformeempleados pagingtoolbar')[0];\r",
+                    "paginador.bindStore(grid.informeStore);\r",
+                    "\r",
+                    ""
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "ea90dd52-ba8e-4550-8a34-76bf7f199338"
+        }
+    ]
+}

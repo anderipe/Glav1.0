@@ -1,0 +1,1786 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "servicios.otros.resumensemanal",
+        "designer|userAlias": "ServiciosOtrosResumenSemanal",
+        "layout": "vbox",
+        "iconCls": "icon-layout",
+        "title": "Operación Semanal"
+    },
+    "designerId": "6c994e48-934e-4e68-898d-c09aa463d1ec",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 65,
+                "id": null,
+                "maxHeight": 65,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "a460da8a-89fb-4631-908d-3727934efa42",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Semana del Informe (Seleccione cualquier día de la semana)",
+                        "labelAlign": "top",
+                        "name": "fecha",
+                        "format": "Y/m/d",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "206c0fb9-3aab-4c52-a20e-20ee20ddd517",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "8debe7a2-c97c-41cd-81dd-3dbc82447c42"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": null,
+                "title": null
+            },
+            "designerId": "f37b0426-6966-4a25-b38d-4b04d16f2049",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 150,
+                        "dataIndex": "d0",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "a69290bc-73a9-483a-be61-fb30f1904df0",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return '<div><b>'+value+'</b></div>';"
+                                ]
+                            },
+                            "designerId": "17b3ff61-fc8f-48e9-bde1-ce0d45dc2f9f"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d1",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "cd14d30e-06d2-4062-ba48-4a262e6f06d0",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "319d9be5-d1f7-48de-bf6d-b5f312def986"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "e2cec0b2-447c-4804-8e96-f4e4e23d5a02"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d2",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "ad191505-a091-44b6-b939-ae9ffccc4045",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "14241ad5-c122-4b37-9527-66b1c020666a"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "b5bd45ad-0a55-425a-b156-04b581ac6000"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d3",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "7b556a1c-f094-43c8-acd4-b0524f0c4cce",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "b6ea927b-c516-456d-8473-e33a67890d96"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "1f41ac22-2a11-4f27-9c57-e38267d402a5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d4",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "289dbcb0-0763-4d1f-8fe9-c886ee7cf555",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "75ec2d28-53ec-4573-a55a-4da2584f574e"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "90fd24b9-ea40-4e8c-b644-2afe7c1e3e39"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d5",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "0e7d2f5f-f373-4f82-9c59-0703bc617530",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "2268a5c4-e9cd-4c8e-aa29-f83042ffb3e7"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "3efddbaa-0c32-48f1-9947-5f3df0de1230"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d6",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "52ba7969-822b-4a50-80e8-ded78f215c17",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "bec90a0e-4c95-4762-9b13-d2b0622513f8"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "6d454637-a336-4116-bbc6-3db34e16ee41"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d7",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "7e5e22ac-1bb4-4c8d-85b8-c6e83fef5839",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "8fa77214-f0d8-479d-a6ef-9027055db09b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "f3fb854b-e6a6-4a6b-a546-f76913fb82ad"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d8",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "997b1ced-20dd-4fb1-8876-2067bd9dc363",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "7777ec04-673c-4d44-87dc-e1cdb0188879"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "0d5ef399-1c3e-477e-91fc-535d3e92322c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d9",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "b4a03d6a-febd-48f5-8a0d-4213af704351",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "b1ed1674-e6c4-4029-962e-8500eda33b78"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "6c00e474-f56e-4801-99f1-5bafc9b79fca"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d10",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "f4bb0d84-e603-4f8c-b3f4-87f90d2a50e9",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "97705b45-6b6e-472c-bad5-002b75ba5346"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "e03ab546-9100-47c9-bd78-30feda452abf"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d11",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "b22cf64d-ad29-4e6c-a683-39bc126d0f54",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "75381cd7-d0a3-4ab3-af43-90413ef0a53b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "443c1f10-1fbe-468d-a6bb-a6064333038c"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d12",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "137da3ab-0ed2-4783-8f45-314d83d65bca",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "efef18ed-aeba-4766-88ec-b56fb6c8c5bd"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "313c6f6b-fffa-4c35-8330-cd14106a6e97"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d13",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "c6d2185b-f7ef-44d8-8255-e3c036d81768",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "652d9d07-88b9-4af5-a5cb-dd2257aca574"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "3df7b3d9-3971-42f9-ae31-2ba3809665cb"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d14",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "6190685f-3e64-447c-82ec-ab198ff9f3aa",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "597a3905-640e-45c6-9b3d-f90245232ed9"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "4e2282f6-018f-4312-92c1-9ba20042bf95"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d15",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "4eade85d-4793-4a2b-b063-10bcf1dff693",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "47af1a25-af7f-42aa-a956-f7a84cb8a63e"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "25fa5dc9-c9b0-4968-adb9-5ddea16e0889"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d16",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "a5c4beab-dd0b-4e3c-851a-d9c1cf0b8ece",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "0efb41fc-3a75-4ba3-bab9-b6d4a60d12b1"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "10a43b65-bba5-4aec-9ca6-443eb1704490"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d17",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "047f1d60-6599-433c-9be1-a4d50a8967f4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "1f921a81-a052-428d-b625-58702d6eb4a1"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 100,
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "a60d38d3-99da-4813-a6ce-8357ef7a3cc0"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d18",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "4522b50e-a062-40fb-81c8-cf2c72dcac58",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "ac6e6f56-0376-4fd2-8ffe-46047587145b"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "49b266d8-1519-4639-abdd-e1d183f20df5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d19",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "d510fff0-4f1e-4962-86c7-1df9b1e93569",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "33b9fe13-ff99-498b-b407-e631f7fc2c16"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "cd4aeeeb-2bb1-401d-b379-ca840c0efc91"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "d20",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "ed1034a4-c66e-4576-ac73-2cb9ee847f61",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "56d7f421-527d-422e-99e2-b07ac4ee111d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "5ea5f560-4757-434d-9a41-a819cb682e78"
+                },
+                {
+                    "type": "Ext.grid.plugin.CellEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.CellEditing",
+                    "designerId": "a883d48e-3825-4437-9c0f-7b7df011d2ea",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridcelleditingpluginBeforeEdit",
+                                "implHandler": [
+                                    "if(eOpts.colIdx===0 || eOpts.colIdx===(e.grid.storeEmpleados.count()+1) || eOpts.rowIdx!==8){\r",
+                                    "    return false;\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "return true;\r",
+                                    ""
+                                ],
+                                "name": "beforeedit",
+                                "scope": "me"
+                            },
+                            "designerId": "5b92bd98-8146-4f37-ac7c-c6430379891f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridcelleditingpluginEdit",
+                                "implHandler": [
+                                    "var idEmpleado=e.grid.storeEmpleados.getAt(e.colIdx-1).get('idempleado');\r",
+                                    "var fecha=this.fecha.getSubmitData().fecha;\r",
+                                    "\r",
+                                    "var valor=e.value;\r",
+                                    "var campo=e.rowIdx;\r",
+                                    "\r",
+                                    "var callback=function(){    \r",
+                                    "    this.traerResumen();\r",
+                                    "};\r",
+                                    "\r",
+                                    "siadno.ajax.call(this, 'clases/interfaces/InterfazServiciosResumenSemanal.php', {accion:103, idempleado:idEmpleado, fecha:fecha, valor:valor, campo:campo}, callback);\r",
+                                    ""
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "0aa91196-bb53-42f3-b76a-51506e9e7dc9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.CellModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.CellModel",
+                    "designerId": "efd4891d-51d6-4191-9130-10f85c1b86c9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "134ebb20-b537-46fd-bf5e-e4c578c29cf8",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "title": "Impresión",
+                        "columns": 3
+                    },
+                    "designerId": "7a42de27-6c2f-41fd-ba20-975ddd505474",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "pdf",
+                                "iconCls": "icon-pdf",
+                                "text": null
+                            },
+                            "designerId": "5af0383e-1ec0-4f15-92bb-63ef21db3266",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick11",
+                                        "implHandler": [
+                                            "var grid=this.grid\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "0921c255-f4b9-4979-8f58-66caa77e0ca3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "excel",
+                                "iconCls": "icon-excel",
+                                "text": null
+                            },
+                            "designerId": "6a0c0722-121f-4682-ba15-f48a9894db87",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick21",
+                                        "implHandler": [
+                                            "var grid=this.grid\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.excel=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.excel=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "4e145493-f1be-42a0-ba12-c075d58cc1d5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.Label",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "margin": "0 0 0 10",
+                        "width": 637,
+                        "text": "En la fila de ahorros, ingrese valores positivos para registrar ingresos de ahorros, estos se mostraran en la interfaz en rojo y negativos para representar una resta en la entrega de dinero. Para registrar entregas de ahorros registre valores negativos, estos se mostraran en la interfaz en verde y positivo para representar una suma en la entrega de dinero."
+                    },
+                    "designerId": "fd09a705-6a82-4639-80a8-f22c71e88972"
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "8557b2d1-18af-4c5e-85fa-f523a1243a81"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "title": null,
+                        "columns": 1
+                    },
+                    "designerId": "0870dbd9-1c58-48b7-a5c4-4f158ce7385b",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "c7c47fc8-26f0-45d6-b499-30d91c7f283e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickSalir1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "99218194-9737-4e48-8d7c-10a2b050a1af"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerResumen",
+                "implHandler": [
+                    "this.grid.getStore().getProxy().extraParams.fecha=this.fecha.getSubmitData().fecha;\r",
+                    "this.grid.getStore().load();"
+                ]
+            },
+            "designerId": "5fc1843e-f208-4b7a-9306-80c7d73319ef"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "this.miRender=function(rowIndex, value){\r",
+                    "    var valorNumerico=value*1.0;\r",
+                    "\r",
+                    "\r",
+                    "    if(rowIndex==8){\r",
+                    "        if(valorNumerico>=0){\r",
+                    "            var  valor=Ext.util.Format.number(value, '0,000');\r",
+                    "            return \"<div style='color:red; text-align:right'>-$\"+valor+\"</div>\";\r",
+                    "        }else{\r",
+                    "            var  valor=Ext.util.Format.number(value*-1.0, '0,000');\r",
+                    "            return \"<div style='color:green; text-align:right'>+$\"+valor+\"</div>\";\r",
+                    "        }\r",
+                    "    }else{\r",
+                    "        var  valor=Ext.util.Format.number(value*1.0, '0,000');\r",
+                    "        return \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                    "    }\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.servicios.listaempleados2\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios.listaempleados2', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosResumenSemanal.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idempleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.servicios.semanales\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios.semanales', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosResumenSemanal.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'd0'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd1'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd2'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd3'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd4'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd5'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd6'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd7'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd8'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd9'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd10'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd11'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd12'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd13'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd14'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd15'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd16'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd17'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd18'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd19'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd20'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.grid=Ext.ComponentQuery.query('ServiciosOtrosResumenSemanal grid')[0];\r",
+                    "this.fecha=Ext.ComponentQuery.query('ServiciosOtrosResumenSemanal datefield')[0];\r",
+                    "this.fecha.suspendEvents(false);\r",
+                    "\r",
+                    "var dt = new Date();\r",
+                    "this.fecha.setValue(dt);\r",
+                    "\r",
+                    "this.fecha.resumeEvents();\r",
+                    "\r",
+                    "\r",
+                    "//alert(this.grid.columns);\r",
+                    "this.storeEmpleados=Ext.create('siadno.store.servicios.listaempleados2');\r",
+                    "this.storeEmpleados.load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(records, operation, success) {\r",
+                    "        var numEmpleados=this.storeEmpleados.count();\r",
+                    "        var numColumnas=this.grid.columns.length;        \r",
+                    "\r",
+                    "        for(var i=0; i<numColumnas; i++){            \r",
+                    "            var columna=this.grid.columns[i];            \r",
+                    "\r",
+                    "            if(i==0){                                  \r",
+                    "                columna.setText('Dia');\r",
+                    "                columna.updateLayout();                \r",
+                    "            }else{\r",
+                    "                if(i==numEmpleados+1){                     \r",
+                    "                    columna.setText('Totales');\r",
+                    "                    columna.updateLayout();                \r",
+                    "                }else{\r",
+                    "                    if(i<numEmpleados+1){\r",
+                    "                        var registro=this.storeEmpleados.getAt(i-1);                        \r",
+                    "                        columna.setText(registro.get('abreviatura'));\r",
+                    "                        columna.updateLayout();  \r",
+                    "                    }\r",
+                    "                }\r",
+                    "            }\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "            columna.setVisible(true);\r",
+                    "            if(i>numEmpleados+1){\r",
+                    "                columna.setVisible(false);                                \r",
+                    "            }\r",
+                    "        };\r",
+                    "\r",
+                    "        this.grid.reconfigure(Ext.create('siadno.store.servicios.semanales'));\r",
+                    "        this.grid.getStore().miRender=this.miRender;\r",
+                    "        this.grid.storeEmpleados=this.storeEmpleados;            \r",
+                    "        this.grid.traerResumen=this.traerResumen;        \r",
+                    "        this.traerResumen();\r",
+                    "    }\r",
+                    "});\r",
+                    ""
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "5505f33a-a4f7-428a-81d4-a06af1afa801"
+        }
+    ]
+}

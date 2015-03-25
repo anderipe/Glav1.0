@@ -1,0 +1,31 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyViewport1",
+        "designer|userAlias": "MyViewport1",
+        "designer|initialView": true,
+        "layout": "fit"
+    },
+    "designerId": "8a1c4f0e-27e9-4eef-86ba-a030c338d3aa",
+    "cn": [
+        {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": 201,
+                "width": 201,
+                "src": "lavautos 3.jpg"
+            },
+            "designerId": "3170ff4f-9156-433a-9dce-bb93b74face2"
+        }
+    ]
+}

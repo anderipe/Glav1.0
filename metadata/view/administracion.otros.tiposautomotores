@@ -1,0 +1,461 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 320,
+        "width": 385,
+        "designer|userClassName": "administracion.otros.tiposautomotores",
+        "designer|userAlias": "AdministracionOtrosTiposautomotores",
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-car_start",
+        "title": "Tipos de Automotores"
+    },
+    "designerId": "77730ff3-e0f1-4514-aec5-5c45315020e2",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "0f1662d7-819a-427c-922c-8a8ded63edbd",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 285,
+                        "dataIndex": "descripcion",
+                        "text": "Descripcion"
+                    },
+                    "designerId": "53f5727c-e736-4d3d-bab0-15d15cc097ef",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nueva Tipo--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "242c491e-8cde-4dd0-97dd-ab1aa3b6a68f"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null
+                            },
+                            "designerId": "d20dd113-6dce-4f7e-b3d3-0081b994f7d5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 56,
+                        "dataIndex": "estado",
+                        "text": "Activo?",
+                        "falseText": "In Activo",
+                        "trueText": "Activo",
+                        "undefinedText": "No Definido"
+                    },
+                    "designerId": "f8414ec0-32aa-4bc4-ad0f-251153d34e14",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "estado",
+                                "boxLabel": "Activo?"
+                            },
+                            "designerId": "8e8ac13a-b7a6-4807-941d-8bc8d3d9646a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "4b0fd0ae-567e-4a8d-b17f-87cb378fb5ca"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "3a970367-3f84-40fb-80fe-de2217890d7d"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "5d0e2a63-7f9d-4eef-bc99-3a456dc07f45"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "f76941a5-78e7-45c1-b620-810b15b2e12a",
+                    "cn": [
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 2,
+                                "title": "Acciones",
+                                "columns": 5
+                            },
+                            "designerId": "e58f5de7-a431-4cb8-b778-6be32d7051b1",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "nuevo",
+                                        "iconCls": "icon-page_add",
+                                        "text": "Nuevo"
+                                    },
+                                    "designerId": "48c025b7-1f73-49c4-8426-6590fdf74d6f",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickNuevo",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosTiposautomotores grid')[0];\r",
+                                                    "siadno.nuevoRegistroGrid(grid,'idtipoautomotor');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "44c9e916-f326-4baa-b6bc-f8581976229f"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "guardar",
+                                        "iconCls": "icon-page_save",
+                                        "text": "Guardar"
+                                    },
+                                    "designerId": "1730c119-aa88-4e8d-b23d-2bf4fda75526",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickGuardar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosTiposautomotores grid')[0];         \r",
+                                                    "siadno.enviarCambiosGrid(grid, null, 'idtipoautomotor');            "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "a615c7db-4a2e-41ee-b7a3-5b46bd89e902"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-page_cancel",
+                                        "text": "Cancelar"
+                                    },
+                                    "designerId": "2b244e56-d828-4a2a-8866-09deff2c607c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickCancelar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosTiposautomotores grid')[0];\r",
+                                                    "siadno.rollbackCambiosGrid(grid);         "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "26057420-95a6-4905-b547-de56aca30ee0"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "aacion": "borrar",
+                                        "iconCls": "icon-page_delete",
+                                        "text": "Borrar"
+                                    },
+                                    "designerId": "957dc0a8-033f-4cc4-ad5b-3ef75022609a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "aacion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickBorrar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosTiposautomotores grid')[0];\r",
+                                                    "siadno.borrarRegistroGrid(grid, null, 'idtipoautomotor');    "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "2a5a96d7-46a5-4d6f-988c-fec26ada3e87"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "a387676b-0c05-4b99-8cdc-7a7cf2ae6b8f"
+                        },
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 1,
+                                "title": null,
+                                "columns": 1
+                            },
+                            "designerId": "3aa17d78-73fe-48a6-bdbc-c4c81742c8e7",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-door_out",
+                                        "text": "Salir"
+                                    },
+                                    "designerId": "ddc53347-ae1a-4286-bb1a-77462582680e",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickSalir",
+                                                "implHandler": [
+                                                    "this.close();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "f610053c-cae1-4f55-86aa-69a99e4ea0a3"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.otros.tiposautomotores\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.otros.tiposautomotores', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/otros/InterfazTiposAutomotor.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoautomotor',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoautomotor'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosTiposautomotores grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.otros.tiposautomotores'));\r",
+                    "grid.getStore().load();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "6d412903-e40a-4062-a615-3371b05b6109"
+        }
+    ]
+}

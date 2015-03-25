@@ -1,0 +1,1040 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "administracion.local.auditoria.informe",
+        "designer|userAlias": "AdministracionLocalAuditoriaInforme",
+        "layout": "vbox",
+        "iconCls": "icon-bug_magnify",
+        "title": "Informe Básico de Auditoria"
+    },
+    "designerId": "000bbb59-7147-4561-83e1-2f0f004ea9bd",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "height": 120,
+                "maxHeight": 120,
+                "minHeight": 120,
+                "padding": 0,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null
+            },
+            "designerId": "5f310933-1c8e-4819-a2dc-3e1063919f81",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": null,
+                        "maxHeight": null,
+                        "maxWidth": 200,
+                        "padding": null,
+                        "title": "Fecha de Actividad"
+                    },
+                    "designerId": "66acb825-72a8-4315-be7e-c59a194d60a9",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Desde",
+                                "labelWidth": 50,
+                                "name": "desde",
+                                "format": "d/m/Y",
+                                "submitFormat": "Y-m-d 00:00:00"
+                            },
+                            "designerId": "a8a38de3-0751-4777-86aa-599b2f742c65",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDatefieldChange",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('desde', field.getSubmitValue());"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "bba463c0-a3be-4a96-b2ec-6bfbe4d80e66"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Hasta",
+                                "labelWidth": 50,
+                                "name": "hasta",
+                                "format": "d/m/Y",
+                                "submitFormat": "Y-m-d 23:59:59"
+                            },
+                            "designerId": "7d7cb757-ae1d-4da7-b02e-15784ddf039a",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onDatefieldChange1",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('hasta', field.getSubmitValue());"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "962c6613-0c8f-4bdb-9518-e33d5a040edd"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "title": "Módulo o Clase"
+                    },
+                    "designerId": "4ae054df-0bd2-4a36-ab79-41d23ce02870",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Módulo",
+                                "labelWidth": 50,
+                                "name": "idmodulo",
+                                "value": [
+                                    "0"
+                                ],
+                                "displayField": "abreviatura",
+                                "store": "dumyStore",
+                                "valueField": "idmodulo"
+                            },
+                            "designerId": "dd503fa5-9055-4dd6-80f9-2f2e41eb589c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('idmodulo', newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "80a6f7c0-fa7f-4143-a94c-25630fc66cc5"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Clase",
+                                "labelWidth": 50,
+                                "name": "idclase",
+                                "value": [
+                                    "0"
+                                ],
+                                "displayField": "nombre",
+                                "store": "dumyStore",
+                                "valueField": "idclase"
+                            },
+                            "designerId": "052fe9c9-c7f7-4028-97a7-245cb24dd837",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange1",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('idclase', newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "0d8d4420-6920-4fd9-b7be-885a0157d663"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "title": "Otros"
+                    },
+                    "designerId": "81d2813b-9c2c-4af6-8c3c-1454b7773fc3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Usuario",
+                                "labelWidth": 50,
+                                "name": "idusuario",
+                                "value": [
+                                    "0"
+                                ],
+                                "displayField": "nombres",
+                                "store": "dumyStore",
+                                "valueField": "idusuario"
+                            },
+                            "designerId": "ce82f59a-2aae-4677-aed5-71f07f58cd35",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange2",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('idusuario', newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c843c620-a96a-4cfb-9dc0-2ffc50bbf6f9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Texto",
+                                "labelWidth": 50,
+                                "name": "descripcion"
+                            },
+                            "designerId": "77703661-7251-4ad5-abe8-c498c710ad45",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onTextfieldChange",
+                                        "implHandler": [
+                                            "this.setParametrosDeBusqueda('descripcion', newValue);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "87ba41fd-643e-4eb7-bcf2-1dc6c37005aa"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "00625ed0-315b-4b3b-bdc9-9d663cf8f271",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 116,
+                        "dataIndex": "fechaauditoria",
+                        "text": "Fecha y Hora"
+                    },
+                    "designerId": "936d69c6-680d-4c12-9704-e25647740e5e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 199,
+                        "dataIndex": "idmodulo",
+                        "text": "Modulo"
+                    },
+                    "designerId": "dc280fb7-fe7c-4de2-9f09-1a1cbf2f516d",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value) || value==0){\r",
+                                    "    return '';\r",
+                                    "}\r",
+                                    "//alert(2);\r",
+                                    "//alert(this.moduloStore);\r",
+                                    "var indice=this.moduloStore.findExact('idmodulo', value);\r",
+                                    "if(indice>=0){\r",
+                                    "    var registro=this.moduloStore.getAt(indice);\r",
+                                    "    return registro.get('abreviatura');\r",
+                                    "}\r",
+                                    "\r",
+                                    "return '';"
+                                ]
+                            },
+                            "designerId": "8dec4dd0-3021-4470-838e-dc659407a985"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 93,
+                        "dataIndex": "idclase",
+                        "text": "Clase"
+                    },
+                    "designerId": "25dbdd36-2d4d-4f9f-a71b-86b24a1104f0",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value) || value==0){\r",
+                                    "    return '';\r",
+                                    "}\r",
+                                    "\r",
+                                    "var indice=this.claseStore.findExact('idclase', value);\r",
+                                    "if(indice>=0){\r",
+                                    "    var registro=this.claseStore.getAt(indice);\r",
+                                    "    return registro.get('nombre');\r",
+                                    "}\r",
+                                    "\r",
+                                    "return '';"
+                                ]
+                            },
+                            "designerId": "3142e9b4-c65f-4d15-9f66-cf15d3e78201"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 86,
+                        "dataIndex": "idaccionauditable",
+                        "text": "Acción"
+                    },
+                    "designerId": "b26c69da-7abb-4fc8-8181-4dfb92573e5b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "var valor=value;\r",
+                                    "if(Ext.isEmpty(valor) || valor==0){    \r",
+                                    "    valor=record.get('idaccionauditableauditoria');        \r",
+                                    "}\r",
+                                    "\r",
+                                    "var indice=this.accionStore.findExact('idaccionauditable', valor);\r",
+                                    "var registro=this.accionStore.getAt(indice);\r",
+                                    "return registro.get('nombre');"
+                                ]
+                            },
+                            "designerId": "0dd23953-d9d4-4020-b815-b4432b384b4e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 190,
+                        "dataIndex": "descripcion",
+                        "text": "Descripción"
+                    },
+                    "designerId": "3ee23816-6c45-46f1-ada4-4dc312a25e09"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "idusuario",
+                        "text": "Usuario"
+                    },
+                    "designerId": "fe96b8b4-863d-4718-9f8f-2bf8d75e7daf",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value) || value==0){\r",
+                                    "    return '';\r",
+                                    "}\r",
+                                    "\r",
+                                    "var indice=this.usuarioStore.findExact('idusuario', value);\r",
+                                    "if(indice>=0){\r",
+                                    "    var registro=this.usuarioStore.getAt(indice);\r",
+                                    "    return registro.get('nombres');\r",
+                                    "}\r",
+                                    "\r",
+                                    "return '';"
+                                ]
+                            },
+                            "designerId": "634ffa03-4009-482e-b6da-fa50aafae57a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "a51fac73-5bca-4174-adee-749ad527a2f9"
+                },
+                {
+                    "type": "Ext.toolbar.Paging",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom",
+                        "width": 360,
+                        "displayInfo": true,
+                        "store": "dumyStore"
+                    },
+                    "designerId": "b62a287c-b13e-4a76-9c34-cb2131ad9aa6",
+                    "cn": [
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "eb07471b-ee85-4e57-bab7-c0a65bca2e9d"
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "imprimir",
+                                "iconCls": "icon-printer_start",
+                                "text": null
+                            },
+                            "designerId": "17863040-5aed-4b43-a0c7-e86b5fd6834f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onImprimirClick",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme pagingtoolbar')[0];\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.imprimirPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.imprimir=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.imprimir=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "25378b86-2055-49bb-9500-5812a529eb12"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "pdf",
+                                "iconCls": "icon-pdf",
+                                "text": null
+                            },
+                            "designerId": "e7d9cf45-32da-41c6-874b-df46bc9f4bb2",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onPdfClick",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme pagingtoolbar')[0];\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.pdf=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "3a9158a7-396f-4a4d-9dec-a6db1f0ae7ca"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "id": "excel",
+                                "iconCls": "icon-excel",
+                                "text": null
+                            },
+                            "designerId": "4f864c0a-4d61-4cd3-9f9f-2717fc312cc5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onExcelClick",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme pagingtoolbar')[0];\r",
+                                            "\r",
+                                            "var callback=function(records, operation, succes){\r",
+                                            "    try{                    \r",
+                                            "        var result = Ext.decode(operation.response.responseText);        \r",
+                                            "        siadno.descargarPostConsulta(result);\r",
+                                            "    }catch(e){            \r",
+                                            "        if(!Ext.isEmpty(e.message)){\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e.message);\r",
+                                            "        }else{\r",
+                                            "            Ext.MessageBox.alert('Error codificar la respuesta', e);\r",
+                                            "        }        \r",
+                                            "    }\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getStore().getProxy().extraParams.excel=1;\r",
+                                            "grid.getStore().load({scope:this, callback:callback});\r",
+                                            "grid.getStore().getProxy().extraParams.excel=0;"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "bfebd419-6108-436e-949c-261986f3bae9"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Separator",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "fe80a494-5d42-4692-8ff0-7ca521e6eb49"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "//paginador.moveFirst();\r",
+                    "//this.application.activarToolbar('AdministracionLocalAuditoriaInforme', true);\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.sistema.usuarios\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.usuarios', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/usuarios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idusuario',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idusuario'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.clases\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.clases', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/clases.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idclase',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idclase'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.modulos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.modulos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/modulos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idmodulo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idmodulo'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'clase'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.accionesauditables\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.accionesauditables', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/accionesAuditables.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idaccionauditable',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idaccionauditable'\r",
+                    "                },                \r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.local.auditoria.informeBasico\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.local.auditoria.informeBasico', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                pageSize: 18,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/auditoria/InterfazInformeBasico.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'id',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'id'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'modificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'fechaauditoria'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idauditoria'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idusuario'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idaccionauditableauditoria'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idaccionauditable'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idmodificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idclase'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idmodulo'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme grid')[0];\r",
+                    "grid.informeStore=Ext.create('siadno.store.administracion.local.auditoria.informeBasico');\r",
+                    "grid.reconfigure(grid.informeStore);\r",
+                    "\r",
+                    "var paginador=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme pagingtoolbar')[0];\r",
+                    "paginador.bindStore(grid.informeStore);\r",
+                    "\r",
+                    "grid.accionStore=Ext.create('siadno.store.sistema.accionesauditables');\r",
+                    "grid.accionStore.load();\r",
+                    "\r",
+                    "var combo=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme combobox[name=idusuario]')[0];\r",
+                    "grid.usuarioStore=Ext.create('siadno.store.sistema.usuarios');\r",
+                    "combo.bindStore(grid.usuarioStore);\r",
+                    "combo.getStore().load();\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme combobox[name=idclase]')[0];\r",
+                    "grid.claseStore=Ext.create('siadno.store.sistema.clases');\r",
+                    "combo.bindStore(grid.claseStore);\r",
+                    "combo.getStore().load();\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme combobox[name=idmodulo]')[0];\r",
+                    "grid.moduloStore=Ext.create('siadno.store.sistema.modulos');\r",
+                    "combo.bindStore(grid.moduloStore);\r",
+                    "combo.getStore().load();\r",
+                    "\r",
+                    "var date=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme datefield[name=desde]')[0];\r",
+                    "date.setValue(new Date());\r",
+                    "date=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme datefield[name=hasta]')[0];\r",
+                    "date.setValue(new Date());"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "1cb1bc8a-1158-4fb3-8202-9fea72d771d9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setParametrosDeBusqueda",
+                "designer|params": [
+                    "campo",
+                    "valor"
+                ],
+                "implHandler": [
+                    "var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme grid')[0];\r",
+                    "grid.getStore().getProxy().extraParams[campo]=valor;\r",
+                    "//grid.getStore().getProxy().extraParams.start=0;\r",
+                    "//grid.getStore().getProxy().extraParams.page=0;\r",
+                    "//grid.getStore().getProxy().extraParams.imprimir=0;\r",
+                    "//alert(grid.getStore().getProxy().baseParams);\r",
+                    "//grid.getStore().load();\r",
+                    "//alert('ok');\r",
+                    "//var paginador=Ext.ComponentQuery.query('AdministracionLocalAuditoriaInforme pagingtoolbar')[0];\r",
+                    "//pagingToolbar.loading.hide();\r",
+                    "//paginador.moveFirst();\r",
+                    "//this.application.activarToolbar('AdministracionLocalAuditoriaInforme', true);"
+                ]
+            },
+            "designerId": "4b15f755-8bf1-4786-9b3d-8e7f15a74cf6"
+        }
+    ]
+}

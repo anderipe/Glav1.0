@@ -1,0 +1,49 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "model": "mantenimiento.privado.modulo",
+        "storeId": "MyJsonTreeStore",
+        "designer|userClassName": "mantenimiento.privado.modulos",
+        "defaultRootId": "-1",
+        "nodeParam": "idmodulo",
+        "root": [
+            "{nombre:'modulos', idmodulo:-1,expanded:true}"
+        ]
+    },
+    "designerId": "4a85918c-0d07-430a-8316-507a45ab8f8e",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "clases/interfaces/mantenimiento/privado/InterfazModulos.php"
+            },
+            "designerId": "48a2d26c-5667-4327-8a13-69cbe761210b",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "idmodulo",
+                        "messageProperty": "msg",
+                        "root": "data"
+                    },
+                    "designerId": "d3dbb59c-4d92-46eb-a190-55dbe0fba8cf"
+                }
+            ]
+        }
+    ]
+}

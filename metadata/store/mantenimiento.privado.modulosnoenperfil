@@ -1,0 +1,55 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "mantenimiento.privado.modulo",
+        "storeId": "MyJsonTreeStore2",
+        "designer|userClassName": "mantenimiento.privado.modulosnoenperfil",
+        "defaultRootId": "-1",
+        "defaultRootProperty": null,
+        "nodeParam": "idmodulo",
+        "root": [
+            "{nombre:'modulos', idmodulo:-1, expanded:true}"
+        ]
+    },
+    "designerId": "9b015beb-12d5-4a2c-9524-841e47694208",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "extraParams": [
+                    "{accion:2004}"
+                ],
+                "timeout": null,
+                "url": "clases/interfaces/mantenimiento/local/permisos/InterfazPerfiles.php"
+            },
+            "designerId": "e8abeb27-0ff7-40c0-b2c5-e08ac3a09398",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "idmodulo",
+                        "messageProperty": "msg",
+                        "root": "data"
+                    },
+                    "designerId": "61c926c2-b1c7-43ec-beab-9f495eb19cca"
+                }
+            ]
+        }
+    ]
+}

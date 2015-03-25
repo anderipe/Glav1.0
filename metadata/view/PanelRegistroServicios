@@ -1,0 +1,1338 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 600,
+        "width": 360,
+        "designer|userClassName": "PanelRegistroServicios",
+        "designer|userAlias": "PanelRegistroServicios",
+        "layout": "fit",
+        "collapsed": false,
+        "iconCls": "icon-car_start",
+        "title": "Registro"
+    },
+    "designerId": "2f070aa2-3a8e-4c0a-8da5-9aec9f7723d1",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "height": 541,
+                "id": "formularioServicios",
+                "maxHeight": null,
+                "minHeight": null,
+                "width": 598,
+                "layout": "vbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "6bfc3521-4ff6-4129-bc69-99f7321d1c45",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "height": 160,
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "padding": "0 10 0 10",
+                        "title": "Datos del Servicio"
+                    },
+                    "designerId": "ca8120e7-4c5f-46c6-8ae1-d196651dd115",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "observaciones"
+                            },
+                            "designerId": "a38113c6-1ba8-4c2b-8a83-3cafb4bbb726"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "idautomotor"
+                            },
+                            "designerId": "a7649406-a850-4a6d-9b41-cfdf2ded1be4"
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "height": 28,
+                                "designer|displayName": "Servicio",
+                                "layout": "hbox",
+                                "fieldLabel": ""
+                            },
+                            "designerId": "56f1dc67-2140-45ea-a1cb-a325145a373b",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 5,
+                                        "fieldLabel": "Código",
+                                        "name": "idservicio"
+                                    },
+                                    "designerId": "ea4641e5-9a05-4b33-9081-e3634c479389"
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "id": "botonCargar",
+                                        "margin": "0 0 3 3",
+                                        "maxWidth": 60,
+                                        "minWidth": 60,
+                                        "width": 60,
+                                        "iconCls": "icon-page_go",
+                                        "text": "Cargar"
+                                    },
+                                    "designerId": "41c4f6f0-4bf0-411f-9712-ceead6df53e2",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClick3",
+                                                "implHandler": [
+                                                    "siadno.limpiarFormulario('PanelRegistroServicios form[id=formularioServicios]', null, ['idservicio']);\r",
+                                                    "\r",
+                                                    "var callback=function(){\r",
+                                                    "    this.gridServicios.getStore().un(\"clear\", callback, this);    \r",
+                                                    "\r",
+                                                    "    for(var i=0; i<5; i++){\r",
+                                                    "        this.botones[i].setDisabled(false);\r",
+                                                    "    }        \r",
+                                                    "\r",
+                                                    "    this.traerServicio(this.idServicio.getValue());\r",
+                                                    "};\r",
+                                                    "\r",
+                                                    "this.gridServicios.getStore().on(\"clear\", callback, this);\r",
+                                                    "\r",
+                                                    "for(var i=0; i<5; i++){\r",
+                                                    "    this.botones[i].setDisabled(true);\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "this.gridServicios.getStore().removeAll(false);\r",
+                                                    ""
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "34ebc6cf-9417-477b-ae25-4b65247181fc"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Tipo Automotor",
+                                "name": "idtipoautomotor",
+                                "value": [
+                                    "0"
+                                ],
+                                "editable": false,
+                                "displayField": "descripcion",
+                                "queryMode": "local",
+                                "store": "dumyStore",
+                                "valueField": "idtipoautomotor"
+                            },
+                            "designerId": "8fb5b68f-3285-4959-823f-7a8354124952",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange11",
+                                        "implHandler": [
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idcombo]')[0];\r",
+                                            "combo.setValue(0);\r",
+                                            "combo.getStore().getProxy().extraParams.idtipoautomotor=newValue;\r",
+                                            "combo.getStore().load();\r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idrubro]')[0];\r",
+                                            "combo.setValue(0);\r",
+                                            "combo.getStore().getProxy().extraParams.idtipoautomotor=newValue;\r",
+                                            "combo.getStore().load();\r",
+                                            "\r",
+                                            "this.gridServicios.getStore().removeAll(false);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c65d3020-a32b-4689-90af-3c43a2a06863"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Matricula",
+                                "name": "matricula"
+                            },
+                            "designerId": "43774fcf-e06a-42f6-bdc9-9d3ecd8a3dbb"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Combo",
+                                "name": "idcombo",
+                                "value": [
+                                    "0"
+                                ],
+                                "editable": false,
+                                "displayField": "descripcion",
+                                "queryMode": "local",
+                                "store": "dumyStore",
+                                "valueField": "idcombo"
+                            },
+                            "designerId": "427e0915-0728-4e09-95dd-31eaefbbc680",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange1",
+                                        "implHandler": [
+                                            "var callback=function(params, result, exito){\r",
+                                            "    if(exito==false){\r",
+                                            "        Ext.MessageBox.alert('El servidor parece no responder', e.message);\r",
+                                            "        return;\r",
+                                            "    }\r",
+                                            "\r",
+                                            "\r",
+                                            "    var rubros=result.data;        \r",
+                                            "    var grid=Ext.ComponentQuery.query('PanelRegistroServicios grid')[0];            \r",
+                                            "    var store=grid.getStore();\r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            "    for(var i=0; i<rubros.length; i++){\r",
+                                            "        var idRubro=rubros[i].idrubro;\r",
+                                            "        var indice=store.findExact('idrubro', idRubro);\r",
+                                            "        var model=null;\r",
+                                            "\r",
+                                            "        if(indice==-1){\r",
+                                            "            model=new store.model();            \r",
+                                            "        }else{\r",
+                                            "            model=store.getAt(indice);\r",
+                                            "        }\r",
+                                            "        /**                                                                                                \r",
+                                            "        */\r",
+                                            "\r",
+                                            "        model.setId(idRubro);        \r",
+                                            "        model.set('idrubro', idRubro);\r",
+                                            "        model.set('descripcion', rubros[i].descripcion);\r",
+                                            "        model.set('porcentajeiva', rubros[i].porcentajeiva);\r",
+                                            "        model.set('valorunitario', rubros[i].valorunitario);\r",
+                                            "        model.set('cantidad', 1);\r",
+                                            "        model.set('iva', (rubros[i].valorunitario/100)*rubros[i].porcentajeiva);        \r",
+                                            "        model.set('total', rubros[i].valorunitario*1+((rubros[i].valorunitario/100)*rubros[i].porcentajeiva));\r",
+                                            "        //model.commit();\r",
+                                            "\r",
+                                            "        if(indice==-1){\r",
+                                            "            store.add(model);\r",
+                                            "        }\r",
+                                            "    }\r",
+                                            "\r",
+                                            "\r",
+                                            "    grid.getView().refresh();    \r",
+                                            "\r",
+                                            "};\r",
+                                            "\r",
+                                            "siadno.ajax('clases/interfaces/InterfazRegistroServicios.php', {accion:107, idcombo:newValue}, callback);"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "b2f9f4fa-2d93-4835-96b5-4f02c7455633"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Agregar Servicio",
+                                "name": "idrubro",
+                                "value": [
+                                    "0"
+                                ],
+                                "editable": false,
+                                "displayField": "descripcion",
+                                "queryMode": "local",
+                                "store": "dumyStore",
+                                "valueField": "idrubro"
+                            },
+                            "designerId": "3acb91f4-6f23-4c1d-acbd-3ef765231dca",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange2",
+                                        "implHandler": [
+                                            "if(newValue<=0)\r",
+                                            "return;\r",
+                                            "var comboStore=field.getStore();\r",
+                                            "var comboIndice=comboStore.findExact('idrubro', newValue);\r",
+                                            "\r",
+                                            "if(comboIndice<0)\r",
+                                            "return;\r",
+                                            "\r",
+                                            "var rubro=comboStore.getAt(comboIndice);\r",
+                                            "var idRubro=rubro.get('idrubro');    \r",
+                                            "\r",
+                                            "if(idRubro<=0)\r",
+                                            "return;\r",
+                                            "\r",
+                                            "var grid=Ext.ComponentQuery.query('PanelRegistroServicios grid')[0];            \r",
+                                            "var store=grid.getStore();\r",
+                                            "var indice=store.findExact('idrubro', idRubro);\r",
+                                            "var model=null;\r",
+                                            "\r",
+                                            "if(indice==-1){\r",
+                                            "    model=new store.model();            \r",
+                                            "}else{\r",
+                                            "    model=store.getAt(indice);\r",
+                                            "}\r",
+                                            "\r",
+                                            "model.setId(idRubro);\r",
+                                            "model.set('idrubro', idRubro);\r",
+                                            "model.set('descripcion', rubro.get('descripcion'));\r",
+                                            "model.set('porcentajeiva', rubro.get('porcentajeiva'));\r",
+                                            "model.set('valorunitario', rubro.get('valorunitario'));\r",
+                                            "model.set('iva', (rubro.get('valorunitario')/100)*rubro.get('porcentajeiva'));\r",
+                                            "model.set('cantidad', 1);\r",
+                                            "model.set('total', rubro.get('valorunitario')*1+((rubro.get('valorunitario')/100)*rubro.get('porcentajeiva')));        \r",
+                                            "\r",
+                                            "//model.commit();\r",
+                                            "\r",
+                                            "if(indice==-1){\r",
+                                            "    store.add(model);\r",
+                                            "}\r",
+                                            "\r",
+                                            "grid.getView().refresh();\r",
+                                            ""
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "fdfdda84-e729-4192-b5e4-e77e3a9ef7a5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "layout": "fit",
+                        "title": "Servicios Incluidos"
+                    },
+                    "designerId": "125e785a-1506-4154-90e0-97217a32fbd6",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "accionBorrar": "117",
+                                "height": null,
+                                "margin": "0 0 10 0",
+                                "maxHeight": null,
+                                "minHeight": null,
+                                "title": null
+                            },
+                            "designerId": "c4a0522a-14a4-4b00-b420-fb15a2e5045c",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "accionBorrar",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.column.Column",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "descripcion",
+                                        "text": "Descripción",
+                                        "flex": 8
+                                    },
+                                    "designerId": "64a69291-e505-4977-9a6f-fdb700f3c86a"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "summaryType": "sum",
+                                        "dataIndex": "cantidad",
+                                        "groupable": true,
+                                        "text": "Unit",
+                                        "flex": 1,
+                                        "format": "0,000"
+                                    },
+                                    "designerId": "f1b0e28d-5251-4598-90b1-f1e84eaa4a30",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDecimals": false,
+                                                "decimalPrecision": 0,
+                                                "maxValue": 10000,
+                                                "minValue": 1
+                                            },
+                                            "designerId": "26130b7d-85a6-4551-8949-4598de9b1e67"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "dataIndex": "valorunitario",
+                                        "text": "V/Unit",
+                                        "flex": 4,
+                                        "format": "0,000"
+                                    },
+                                    "designerId": "e26c7df3-addc-4822-a6c4-bec2182f74ed",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Number",
+                                            "reference": {
+                                                "name": "editor",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "allowDecimals": false,
+                                                "decimalPrecision": 0,
+                                                "minValue": 0,
+                                                "step": 1000
+                                            },
+                                            "designerId": "82beb0da-ca99-41f1-a7d5-cd19402b9d67"
+                                        },
+                                        {
+                                            "type": "fixedfunction",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "summaryRenderer",
+                                                "designer|params": [
+                                                    "val",
+                                                    "params",
+                                                    "data"
+                                                ],
+                                                "implHandler": [
+                                                    ""
+                                                ]
+                                            },
+                                            "designerId": "6f103b22-c22c-40a2-a00b-0caf50d8cdb8"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "summaryType": "sum",
+                                        "dataIndex": "iva",
+                                        "groupable": true,
+                                        "text": "I.V.A",
+                                        "flex": 5
+                                    },
+                                    "designerId": "eda9cc4d-b8b9-4dbd-bc57-8ba045218edb"
+                                },
+                                {
+                                    "type": "Ext.grid.column.Number",
+                                    "reference": {
+                                        "name": "columns",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "summaryType": "sum",
+                                        "dataIndex": "total",
+                                        "groupable": true,
+                                        "text": "Total",
+                                        "flex": 5
+                                    },
+                                    "designerId": "cacda04a-4b11-4052-bbd0-bf76134a765e"
+                                },
+                                {
+                                    "type": "Ext.grid.View",
+                                    "reference": {
+                                        "name": "viewConfig",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "designerId": "8479f87e-1480-4ff6-a4b9-6d9bc9479f6f"
+                                },
+                                {
+                                    "type": "Ext.grid.feature.Summary",
+                                    "reference": {
+                                        "name": "features",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "showSummaryRow": null
+                                    },
+                                    "designerId": "81b175a9-3129-400f-82fd-4dd1688ba17d"
+                                },
+                                {
+                                    "type": "Ext.grid.plugin.CellEditing",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.CellEditing",
+                                    "userConfig": {
+                                        "clicksToEdit": 1
+                                    },
+                                    "designerId": "8525b066-0350-4a2f-a0d1-c216a7495831",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGridcelleditingpluginEdit",
+                                                "implHandler": [
+                                                    "e.record.set('iva', (e.record.get('valorunitario')/100)*e.record.get('porcentajeiva'));        \r",
+                                                    "e.record.set('total', (e.record.get('valorunitario')*e.record.get('cantidad'))*(1+(e.record.get('porcentajeiva')/100)));\r",
+                                                    "this.gridServicios.getView().refresh();   "
+                                                ],
+                                                "name": "edit",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "10a6a153-2611-467a-a038-b0160aee986d"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAdded",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.registroservicios.tiposidentificacion\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.tiposidentificacion', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoidentificacion',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.tiposautomotor\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.tiposautomotor', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoautomotor',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoautomotor'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.marcasautomotor\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.marcasautomotor', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:103},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idmarcaautomotor',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idmarcaautomotor'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.combos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.combos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:105},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idcombo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idcombo'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.rubros\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.rubros', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:106},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idrubro',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idrubro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'porcentajeiva'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'valorunitario'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.servicios\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.servicios', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),                \r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idrubro',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [                                \r",
+                    "                {\r",
+                    "                    name: 'idrubro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'porcentajeiva'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'valorunitario',\r",
+                    "                    type: 'float'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'cantidad',\r",
+                    "                    type: 'int'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'iva',\r",
+                    "                    type: 'float'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'total',\r",
+                    "                    type: 'float'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.personas\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.personas', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/personas.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpersona',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpersona'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var combo=null;\r",
+                    "\r",
+                    "/*\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idtipoidentificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.tiposidentificacion'));\r",
+                    "combo.getStore().load();\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=identificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.personas'));\r",
+                    "var listConfig={\r",
+                    "loadingText: 'Buscando...',\r",
+                    "emptyText: 'No se encontraron personas.',               \r",
+                    "getInnerTpl: function() {\r",
+                    "return '<div>{abreviatura} {identificacion}</div><div>{nombres}</div>';                    \r",
+                    "}\r",
+                    "};\r",
+                    "combo.listConfig=listConfig;\r",
+                    "*/\r",
+                    "\r",
+                    "this.textServicio=Ext.ComponentQuery.query('PanelRegistroServicios textfield[name=idservicio]')[0];\r",
+                    "this.matricula=Ext.ComponentQuery.query('PanelRegistroServicios textfield[name=matricula]')[0];\r",
+                    "this.observaciones=Ext.ComponentQuery.query('PanelRegistroServicios hidden[name=observaciones]')[0];\r",
+                    "this.tipoAutomotor=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idtipoautomotor]')[0];\r",
+                    "this.combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idcombo]')[0];\r",
+                    "this.rubro=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idrubro]')[0];\r",
+                    "\r",
+                    "this.botonNuevo=Ext.ComponentQuery.query('PanelRegistroServicios button[id=botonNuevo]')[0];\r",
+                    "this.botonObservaciones=Ext.ComponentQuery.query('PanelRegistroServicios button[id=botonObservaciones]')[0];\r",
+                    "this.botonGuardar=Ext.ComponentQuery.query('PanelRegistroServicios button[id=botonGuardar]')[0];\r",
+                    "this.botonCargar=Ext.ComponentQuery.query('PanelRegistroServicios button[id=botonCargar]')[0];\r",
+                    "this.botonBorrar=Ext.ComponentQuery.query('PanelRegistroServicios button[id=botonBorrar]')[0];\r",
+                    "\r",
+                    "//alert(1);\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idtipoautomotor]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.tiposautomotor'));\r",
+                    "combo.getStore().load();\r",
+                    "//alert(2);\r",
+                    "//combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idmarcaautomotor]')[0];\r",
+                    "//combo.bindStore(Ext.create('siadno.store.registroservicios.marcasautomotor'));\r",
+                    "//combo.getStore().load();\r",
+                    "//alert(3);\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idcombo]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.combos'));\r",
+                    "combo.getStore().load();\r",
+                    "//alert(4);\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idrubro]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.rubros'));\r",
+                    "combo.getStore().load();\r",
+                    "//alert(5);\r",
+                    "\r",
+                    "this.gridServicios=Ext.ComponentQuery.query('PanelRegistroServicios grid')[0];\r",
+                    "this.gridServicios.reconfigure(Ext.create('siadno.store.registroservicios.servicios'));\r",
+                    "\r",
+                    "this.idServicio=Ext.ComponentQuery.query('PanelRegistroServicios field[name=idservicio]')[0];\r",
+                    "\r",
+                    "this.botones=Ext.ComponentQuery.query('PanelRegistroServicios button');\r",
+                    "\r",
+                    "this.botonNuevo.setDisabled(true);\r",
+                    "this.botonObservaciones.setDisabled(false);\r",
+                    "this.botonGuardar.setDisabled(false);\r",
+                    "this.botonCargar.setDisabled(false);\r",
+                    "this.botonBorrar.setDisabled(true); \r",
+                    "\r",
+                    "//grid.getStore().load();"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "77e0e06b-82f2-4f8d-9b62-1d48a6d32d59"
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "7dca187a-266b-4e2b-b824-dadfd6f047fe",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "904d1452-42b3-4a9c-9a62-2f837f9cef42"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "title": null,
+                        "columns": 4
+                    },
+                    "designerId": "fd9de85f-a759-403c-ad81-103af7edc4e1",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "botonNuevo",
+                                "iconCls": "icon-page_green",
+                                "text": "Nuevo"
+                            },
+                            "designerId": "c769140b-3d78-45b1-9069-20d9cb4dcf1b",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick2",
+                                        "implHandler": [
+                                            "var callback=function(){\r",
+                                            "    //alert('ok');    \r",
+                                            "    this.gridServicios.getStore().un(\"clear\", callback, this);\r",
+                                            "    siadno.limpiarFormulario('PanelRegistroServicios form[id=formularioServicios]', null, null);\r",
+                                            "\r",
+                                            "    for(var i=0; i<5; i++){\r",
+                                            "        this.botones[i].setDisabled(false);\r",
+                                            "    }\r",
+                                            "};\r",
+                                            "\r",
+                                            "this.gridServicios.getStore().on(\"clear\", callback, this);\r",
+                                            "\r",
+                                            "for(var i=0; i<5; i++){\r",
+                                            "    this.botones[i].setDisabled(true);\r",
+                                            "}\r",
+                                            "this.gridServicios.getStore().removeAll(false);\r",
+                                            "\r",
+                                            "this.textServicio.setDisabled(false);\r",
+                                            "this.matricula.setDisabled(false);\r",
+                                            "//this.observaciones.setDisabled(true);\r",
+                                            "this.tipoAutomotor.setDisabled(false);\r",
+                                            "this.combo.setDisabled(false);\r",
+                                            "this.rubro.setDisabled(false);\r",
+                                            "this.gridServicios.setDisabled(false);\r",
+                                            "\r",
+                                            "this.botonNuevo.setDisabled(true);\r",
+                                            "this.botonObservaciones.setDisabled(false);\r",
+                                            "this.botonGuardar.setDisabled(false);\r",
+                                            "this.botonCargar.setDisabled(false);\r",
+                                            "this.botonBorrar.setDisabled(false);            \r",
+                                            "\r",
+                                            "\r",
+                                            "\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "76f4e644-576b-436f-9fa1-702bf515698d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "botonObservaciones",
+                                "iconCls": "icon-page",
+                                "text": "Observaciones"
+                            },
+                            "designerId": "1397e286-69f8-457d-a808-e9a7cdc9f8be",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "Ext.Msg.prompt('Observaciones', 'Digite las observaciones del servicio:', function(btn, text){\r",
+                                            "    if (btn == 'ok'){\r",
+                                            "        this.observaciones.setValue(text);\r",
+                                            "    }\r",
+                                            "}, this, true, this.observaciones.getValue());"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "7912a8f3-5630-4eb3-a620-a99256d82eef"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "id": "botonGuardar",
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar"
+                            },
+                            "designerId": "d9798e67-5331-4b4e-b308-f69c808d234d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "\r",
+                                            "var callback=function(callbackParams, result, estado){    \r",
+                                            "    if(!estado){\r",
+                                            "        for(var i=0; i<5; i++){\r",
+                                            "            this.botones[i].setDisabled(false);\r",
+                                            "        }\r",
+                                            "        return;\r",
+                                            "    }    \r",
+                                            "    if(result.success==false){\r",
+                                            "        for(var i=0; i<5; i++){\r",
+                                            "            this.botones[i].setDisabled(false);\r",
+                                            "        }\r",
+                                            "\r",
+                                            "        return;\r",
+                                            "    }\r",
+                                            "\r",
+                                            "    var otroCallback = function(){\r",
+                                            "        this.textServicio.setValue(result.idservicio);\r",
+                                            "        for(var i=0; i<5; i++){\r",
+                                            "            this.botones[i].setDisabled(false);\r",
+                                            "        }\r",
+                                            "        \r",
+                                            "        this.botonNuevo.setDisabled(false);\r",
+                                            "\t\tthis.botonObservaciones.setDisabled(true);\r",
+                                            "\t\tthis.botonGuardar.setDisabled(true);\r",
+                                            "\t\tthis.botonCargar.setDisabled(false);        \r",
+                                            "\t\tthis.botonBorrar.setDisabled(true);            \r",
+                                            "\r",
+                                            "\r",
+                                            "        this.textServicio.setDisabled(true);\r",
+                                            "        this.matricula.setDisabled(true);\r",
+                                            "        //this.observaciones.setDisabled(true);\r",
+                                            "        this.tipoAutomotor.setDisabled(true);\r",
+                                            "        this.combo.setDisabled(true);\r",
+                                            "        this.rubro.setDisabled(true);\r",
+                                            "        this.gridServicios.setDisabled(true);                \r",
+                                            "    };\r",
+                                            "\r",
+                                            "    //for(var i=0; i<5; i++){\r",
+                                            "    //    this.botones[i].setDisabled(true);\r",
+                                            "    //}\r",
+                                            "\r",
+                                            "    this.gridServicios.getStore().getProxy().extraParams.accion=110;\r",
+                                            "    this.gridServicios.getStore().getProxy().extraParams.idservicio=result.idservicio;\r",
+                                            "    this.gridServicios.getStore().sync({callback:otroCallback, scope:this});           \r",
+                                            "\r",
+                                            "};\r",
+                                            "if(this.gridServicios.getStore().count()==0){\r",
+                                            "    Ext.MessageBox.alert('Error', 'Debe agregar almenos un servicio en la lista');\r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "for(var i=0; i<5; i++){\r",
+                                            "    this.botones[i].setDisabled(true);\r",
+                                            "}\r",
+                                            "siadno.enviarFormulario.call(this, false, 'PanelRegistroServicios form[id=formularioServicios]', {accion:108}, callback, null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "2ad1b785-64a2-4a33-91ac-c922cefb12d6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "aacion": "borrar",
+                                "id": "botonBorrar",
+                                "iconCls": "icon-page_delete",
+                                "text": "Borrar"
+                            },
+                            "designerId": "60bf1209-f04a-4a3d-a677-adcba9cd875e",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "aacion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickBorrar1",
+                                        "implHandler": [
+                                            "siadno.borrarRegistroGrid(this.gridServicios, null, 'idrubro');    "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "048141ee-cbbf-4218-89a5-d7833c607fd5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerPersona",
+                "designer|params": [
+                    "idtipoidentificacion",
+                    "identificacion"
+                ],
+                "implHandler": [
+                    "siadno.enviarFormulario.call(this, true, 'PanelRegistroServicios form',{idtipoidentificacion:idtipoidentificacion, identificacion:identificacion}, null, null);"
+                ]
+            },
+            "designerId": "57aaff41-971e-4f5b-864d-87dc59c53e18"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerServicio",
+                "designer|params": [
+                    "idServicio"
+                ],
+                "implHandler": [
+                    "var callback=function(){        \r",
+                    "    var matricula=this.matricula.getValue();\r",
+                    "    if(!Ext.isEmpty(matricula)){ \r",
+                    "\r",
+                    "        var otroCallback = function(){            \r",
+                    "            this.botonNuevo.setDisabled(false);\r",
+                    "\t\t\tthis.botonObservaciones.setDisabled(true);\r",
+                    "\t\t\tthis.botonGuardar.setDisabled(true);\r",
+                    "\t\t\tthis.botonCargar.setDisabled(false);\r",
+                    "            this.botonBorrar.setDisabled(true);            \r",
+                    "        };\r",
+                    "\r",
+                    "        for(var i=0; i<5; i++){\r",
+                    "            this.botones[i].setDisabled(true);\r",
+                    "        }\r",
+                    "\r",
+                    "        this.gridServicios.getStore().getProxy().extraParams.accion=111;\r",
+                    "        this.gridServicios.getStore().getProxy().extraParams.idservicio=idServicio;\r",
+                    "        this.gridServicios.getStore().load({callback:otroCallback, scope:this});\r",
+                    "    }\r",
+                    "};\r",
+                    "\r",
+                    "\r",
+                    "siadno.enviarFormulario.call(this, true, 'PanelRegistroServicios form[id=formularioServicios]',{accion:109, idservicio:idServicio}, callback, null);"
+                ]
+            },
+            "designerId": "fb79a74d-5c82-4c4f-b2ea-6ef111df610f"
+        }
+    ]
+}

@@ -1,0 +1,1379 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "idPerfil": "0",
+        "cargado": "0",
+        "AGREGAR_PERFIL": "101",
+        "QUITAR_PERFIL": "102",
+        "CAMBIAR_PASSWORD": "103",
+        "cambiandoIdentificacion": "0",
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "mantenimiento.local.permisos.usuarios",
+        "designer|userAlias": "MantenimientoLocalPermisosUsuarios",
+        "resizable": [
+            "false"
+        ],
+        "layout": "vbox",
+        "closable": false,
+        "iconCls": "icon-group",
+        "title": "Usuarios"
+    },
+    "designerId": "e6ddec9e-3e80-4d3d-bb7b-e5947503a5fa",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "idPerfil",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cargado",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "AGREGAR_PERFIL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "QUITAR_PERFIL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "CAMBIAR_PASSWORD",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cambiandoIdentificacion",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "height": 250,
+                "maxHeight": 250,
+                "minHeight": 250,
+                "layout": "fit",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/mantenimiento/local/permisos/InterfazUsuarios.php"
+            },
+            "designerId": "1bcaf21b-4ce8-42f5-84e0-5d37d900db58",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 245,
+                        "padding": "0 10 0 10",
+                        "layout": "hbox",
+                        "title": "Datos Personales"
+                    },
+                    "designerId": "1358a88b-f2c8-4564-8f4d-7d722e6c3865",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "name": "idpersona"
+                            },
+                            "designerId": "50f7139e-7348-43e4-88d2-7321f70c037c"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": "Label",
+                                "name": "idusuario"
+                            },
+                            "designerId": "553fd4e1-0373-424a-a293-ad9c3460b428"
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "",
+                                "margin": 2,
+                                "layout": "anchor"
+                            },
+                            "designerId": "f363501d-6ef1-412e-97f4-4b89963eee46",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.FieldContainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "height": 27,
+                                        "margin": 0,
+                                        "padding": 0,
+                                        "designer|displayName": "datos de identificaicon",
+                                        "layout": "hbox",
+                                        "fieldLabel": "Identificación",
+                                        "labelPad": null
+                                    },
+                                    "designerId": "c7a266bf-3183-4611-932b-93bd31ec536f",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "layout|margins": "0",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": null,
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "name": "idtipoidentificacion",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "editable": false,
+                                                "displayField": "abreviatura",
+                                                "store": "dumyStore",
+                                                "valueField": "idtipoidentificacion"
+                                            },
+                                            "designerId": "771da732-9eb3-47a9-af6e-1dc310275d86",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onComboboxSelect1",
+                                                        "implHandler": [
+                                                            "if(this.cambiandoIdentificacion==1){\r",
+                                                            "    return;\r",
+                                                            "}\r",
+                                                            "var combo=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];\r",
+                                                            "this.traerPersona(records[0].get('idtipoidentificacion'), combo.getValue());\r",
+                                                            ""
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "9eb4cbb8-4e6c-4526-be45-daa643c494bf"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.form.field.ComboBox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 3,
+                                                "layout|margins": "0",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": null,
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "name": "identificacion",
+                                                "enableKeyEvents": true,
+                                                "hideTrigger": true,
+                                                "autoSelect": false,
+                                                "displayField": "identificacion",
+                                                "minChars": 5,
+                                                "queryParam": "identificacion",
+                                                "store": "dumyStore",
+                                                "valueField": "identificacion"
+                                            },
+                                            "designerId": "c086d3ed-0ffc-43ba-94cb-b5613e56c3f0",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onComboboxKeyup",
+                                                        "implHandler": [
+                                                            "if(this.cambiandoIdentificacion==1){\r",
+                                                            "    return;\r",
+                                                            "}\r",
+                                                            "\r",
+                                                            "siadno.limpiarFormulario('MantenimientoLocalPermisosUsuarios', null, ['idtipoidentificacion', 'identificacion']);\r",
+                                                            "var key=e.getKey();\r",
+                                                            "if(key==13){        \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];        \r",
+                                                            "    this.traerPersona(comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "keyup",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "be8db391-e654-4174-aea8-2ab39cb94b7b"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onComboboxBlur",
+                                                        "implHandler": [
+                                                            "if(this.cambiandoIdentificacion==1){\r",
+                                                            "    return;\r",
+                                                            "}\r",
+                                                            "var hidden=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios hidden[name=idpersona]')[0];\r",
+                                                            "var idPersona=hidden.getValue();\r",
+                                                            "if(Ext.isEmpty(idPersona)){    \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];    \r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];            \r",
+                                                            "    this.traerPersona(comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());    \r",
+                                                            "}"
+                                                        ],
+                                                        "name": "blur",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "63b2852c-7848-4aee-97ae-e1901454a4ed"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "fn": "onComboboxSelect",
+                                                        "implHandler": [
+                                                            "combo=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "combo.setValue(records[0].get('idtipoidentificacion')); \r",
+                                                            "var comboIdTipoIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];    \r",
+                                                            "var comboIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];            \r",
+                                                            "this.traerPersona(comboIdTipoIdentificacion.getValue(), records[0].get('identificacion'));"
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "ac434a92-964c-4f67-bc04-14089ee18eaf"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Usuario Activo",
+                                        "name": "estado",
+                                        "boxLabel": "Señalar para activar",
+                                        "inputValue": "1",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "designerId": "c1b9d152-29ee-4b0f-9280-9762f182dcea"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Nombres",
+                                        "name": "nombres"
+                                    },
+                                    "designerId": "7062d0a1-32ab-4b9a-b882-d771fef71cfe"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Apellidos",
+                                        "name": "apellidos"
+                                    },
+                                    "designerId": "2555a4ec-6b27-4531-9c8c-6f98b1ced35b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Usuario",
+                                        "name": "login"
+                                    },
+                                    "designerId": "3dfccc26-851b-4551-89b8-0b6dc73ff07d"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Contraseña",
+                                        "name": "password",
+                                        "inputType": "password"
+                                    },
+                                    "designerId": "6f9636ce-987e-4bb8-8979-6818263f6d62"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.container.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "margin": 2,
+                                "layout": "anchor"
+                            },
+                            "designerId": "eb9cc518-e48d-411f-a8e6-20c4de4034b9",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Nacionalidad",
+                                        "name": "idpais",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "editable": false,
+                                        "displayField": "nacionalidad",
+                                        "forceSelection": true,
+                                        "store": "dumyStore",
+                                        "valueField": "idpais"
+                                    },
+                                    "designerId": "c9f65bf7-ef14-4bdd-9e13-7dba1c5766c8"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Dirección",
+                                        "name": "direccion"
+                                    },
+                                    "designerId": "6f65be45-6c97-405e-b8ae-9dabc7d2f0d6"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "Teléfonos",
+                                        "name": "telefonos"
+                                    },
+                                    "designerId": "03d15910-0405-4d7a-a787-2b037ec8928f"
+                                },
+                                {
+                                    "type": "Ext.form.field.Text",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "fieldLabel": "E-Mail",
+                                        "name": "email"
+                                    },
+                                    "designerId": "6df6505f-4892-428d-8af6-0bed324160ef"
+                                },
+                                {
+                                    "type": "Ext.form.field.Date",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "autoShow": true,
+                                        "fieldLabel": "Nacimiento",
+                                        "name": "fechanacimiento",
+                                        "format": "d/m/Y",
+                                        "submitFormat": "Y-m-d"
+                                    },
+                                    "designerId": "80631e49-a30a-4ebe-913b-50d4ef763a97"
+                                },
+                                {
+                                    "type": "Ext.form.RadioGroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "width": null,
+                                        "fieldLabel": "Sexo"
+                                    },
+                                    "designerId": "ebcbea4f-98d5-47dd-9bd7-26fdc3b6f574",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "name": "sexo",
+                                                "boxLabel": "Masculino",
+                                                "checked": true,
+                                                "inputValue": "1"
+                                            },
+                                            "designerId": "e3143013-b0a3-47fd-aaf6-097481bd81e2"
+                                        },
+                                        {
+                                            "type": "Ext.form.field.Radio",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fieldLabel": null,
+                                                "name": "sexo",
+                                                "boxLabel": "Femenino",
+                                                "inputValue": "2"
+                                            },
+                                            "designerId": "27df8078-3679-477e-8e0b-bae0bb752884"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
+            "designerId": "cdc52e58-7800-4ad5-9739-57f7457c7cb5",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "id": "noAsignados",
+                        "title": "Perfiles NO Asignados",
+                        "store": "dumyStore"
+                    },
+                    "designerId": "2dd00360-9789-4754-bbaf-624996d74569",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 221,
+                                "dataIndex": "nombre",
+                                "text": "Perfil"
+                            },
+                            "designerId": "a6eaa391-dea5-44b2-b4d1-870c94e6ddec"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "67f5099d-9189-41a9-a8f2-59fbf774a556",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.plugin.DragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "designerId": "74386e58-c957-462c-baba-9dfad2dc3f9c",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGriddragdroppluginBeforeDrop1",
+                                                "implHandler": [
+                                                    "var hidden=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios hidden[name=idusuario]')[0];\r",
+                                                    "var idUsuario=hidden.getValue();\r",
+                                                    "if(idUsuario==0){\r",
+                                                    "    return false;\r",
+                                                    "}\r",
+                                                    "var idPerfil=data.records[0].get('idperfil');\r",
+                                                    "\r",
+                                                    "var grid1=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=noAsignados]')[0];\r",
+                                                    "var grid2=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=asignados]')[0];\r",
+                                                    "var tree=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios treepanel[id=menu]')[0]; \r",
+                                                    "\r",
+                                                    "//grid1.el.mask('Quitando perfil, espere...', 'x-mask-loading');          \r",
+                                                    "//grid2.el.mask('Quitando perfil, espere...', 'x-mask-loading');         \r",
+                                                    "//tree.el.mask('Quitando perfil, espere...', 'x-mask-loading');   \r",
+                                                    "\r",
+                                                    "var callback=function(params, result){\r",
+                                                    "    params.grid1.el.unmask();            \r",
+                                                    "    params.grid2.el.unmask();\r",
+                                                    "    params.tree.el.unmask();\r",
+                                                    "\r",
+                                                    "    params.grid2.getStore().getProxy().extraParams={idusuario:params.idUsuario};\r",
+                                                    "    params.grid2.getStore().load(); \r",
+                                                    "\r",
+                                                    "    params.grid1.getStore().getProxy().extraParams={idusuario:params.idUsuario};\r",
+                                                    "    params.grid1.getStore().load(); \r",
+                                                    "};\r",
+                                                    "\r",
+                                                    "siadno.ajax('clases/interfaces/mantenimiento/local/permisos/InterfazUsuarios.php', {accion:this.QUITAR_PERFIL, idusuario:idUsuario, idperfil:idPerfil}, callback, {grid1:grid1, grid2:grid2, tree:tree, idUsuario:idUsuario});"
+                                                ],
+                                                "name": "beforedrop",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "7639581e-8ba4-41ea-b00c-de8a116cd5ab"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "designerId": "39e34244-4bcc-48e6-a03f-b854acf6cb92"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "id": "asignados",
+                        "title": "Perfiles Asignados",
+                        "store": "dumyStore"
+                    },
+                    "designerId": "3e3ba0f2-3706-4b2a-9f75-3d6e2d82728b",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "width": 221,
+                                "dataIndex": "nombre",
+                                "text": "Perfil"
+                            },
+                            "designerId": "7e5505c5-906b-4418-b59d-cd0bd3f0b0df"
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "d06a6f7f-00a8-4ec1-8311-6794c8ebb98b",
+                            "cn": [
+                                {
+                                    "type": "Ext.grid.plugin.DragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.grid.plugin.DragDrop",
+                                    "designerId": "db534954-44e6-4b28-8f7f-7d8acc114976",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onGriddragdroppluginBeforeDrop",
+                                                "implHandler": [
+                                                    "var hidden=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios hidden[name=idusuario]')[0];\r",
+                                                    "var idUsuario=hidden.getValue();\r",
+                                                    "if(idUsuario==0){\r",
+                                                    "    return false;\r",
+                                                    "}\r",
+                                                    "var idPerfil=data.records[0].get('idperfil');\r",
+                                                    "\r",
+                                                    "var grid1=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=noAsignados]')[0];\r",
+                                                    "var grid2=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=asignados]')[0];\r",
+                                                    "var tree=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios treepanel[id=menu]')[0]; \r",
+                                                    "\r",
+                                                    "//grid1.el.mask('Asignando perfil, espere...', 'x-mask-loading');          \r",
+                                                    "//grid2.el.mask('Asignando perfil, espere...', 'x-mask-loading');         \r",
+                                                    "//tree.el.mask('Asignando perfil, espere...', 'x-mask-loading');   \r",
+                                                    "\r",
+                                                    "var callback=function(params, result){\r",
+                                                    "    params.grid1.el.unmask();            \r",
+                                                    "    params.grid2.el.unmask();\r",
+                                                    "    params.tree.el.unmask();\r",
+                                                    "\r",
+                                                    "    params.grid2.getStore().getProxy().extraParams={idusuario:params.idUsuario};\r",
+                                                    "    params.grid2.getStore().load(); \r",
+                                                    "\r",
+                                                    "    params.grid1.getStore().getProxy().extraParams={idusuario:params.idUsuario};\r",
+                                                    "    params.grid1.getStore().load(); \r",
+                                                    "};\r",
+                                                    "\r",
+                                                    "siadno.ajax('clases/interfaces/mantenimiento/local/permisos/InterfazUsuarios.php', {accion:this.AGREGAR_PERFIL, idusuario:idUsuario, idperfil:idPerfil}, callback, {grid1:grid1, grid2:grid2, tree:tree, idUsuario:idUsuario});"
+                                                ],
+                                                "name": "beforedrop",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "4cdb4f6e-c715-405b-ac6b-5289f465b6fa"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.selection.RowModel",
+                            "reference": {
+                                "name": "selModel",
+                                "type": "object"
+                            },
+                            "codeClass": "Ext.selection.RowModel",
+                            "designerId": "8bde2f4f-34e3-4c03-979d-78b193af00a7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "id": "menu",
+                        "title": "Menú del Usuario",
+                        "store": "mantenimiento.local.permisos.menuusuario",
+                        "displayField": "nombre",
+                        "rootVisible": false
+                    },
+                    "designerId": "1891702b-b656-48a5-99bc-ce6fbf4bb517",
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "93389b2e-4ca7-4d57-9fc0-c6ec73d5085f"
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onMenuItemAppend",
+                                "implHandler": [
+                                    "siadno.cambiarIconoNodo(node);"
+                                ],
+                                "name": "itemappend",
+                                "scope": "me"
+                            },
+                            "designerId": "bdd49c7b-79e9-4ed4-9c6c-cdb8148a7136"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "364f7c0e-5585-4858-ad7f-2bf287cf175b",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 4,
+                        "title": "Acciones",
+                        "columns": 4
+                    },
+                    "designerId": "1e28017d-e566-4c5a-8204-6eb9d2a0a50d",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "iconCls": "icon-page_add",
+                                "text": "Nuevo"
+                            },
+                            "designerId": "3a4be96c-afa4-4d4c-92e4-b8453d1b380c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickNuevo",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "41fedd0c-1ea9-4a64-988a-21f179c7e30f"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar",
+                                "tooltip": null
+                            },
+                            "designerId": "583a190a-9cf3-4f0b-a575-5a78d93d61a9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickGuardar",
+                                        "implHandler": [
+                                            "var callback=function(callbackParams, result, estado){            \r",
+                                            "    var button=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios button[name=cambiarIdentificacion]')[0];\r",
+                                            "    button.toggle(false);        \r",
+                                            "    this.cambiandoIdentificacion=0;    \r",
+                                            "    \r",
+                                            "    \r",
+                                            "    if(result.success){\r",
+                                            "    \tvar identificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];\r",
+                                            "    \tvar tipoIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];    \r",
+                                            "    \tthis.traerPersona(tipoIdentificacion.getValue(),identificacion.getValue());\r",
+                                            "    }\r",
+                                            "};\r",
+                                            "\r",
+                                            "siadno.enviarFormulario.call(this, false, 'MantenimientoLocalPermisosUsuarios form', {accion:siadno.GUARDAR_DATOS}, callback, null);\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "94ba66d1-75a9-4312-8d76-24590fe36172"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_delete",
+                                "text": "Borrar",
+                                "tooltip": null
+                            },
+                            "designerId": "14b721a9-4223-46ca-8041-3e3b9b06a2b9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickBorrar",
+                                        "implHandler": [
+                                            "if(this.cambiandoIdentificacion==1){\r",
+                                            "    Ext.MessageBox.alert('Informacion', 'Desactive el cambio de identificacion antes de intentar borrar el usuario'); \r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "var callback=function(){        \r",
+                                            "    var identificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];\r",
+                                            "    var tipoIdentificacion=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];    \r",
+                                            "    this.traerPersona(tipoIdentificacion.getValue(),identificacion.getValue());\r",
+                                            "};\r",
+                                            "\r",
+                                            "siadno.enviarFormulario.call(this, false, 'MantenimientoLocalPermisosUsuarios form', {accion:siadno.BORRAR_DATOS}, callback, null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "94f6ab28-cf97-4dc5-98ab-ab2d132bf92c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "name": "cambiarIdentificacion",
+                                "id": null,
+                                "enableToggle": true,
+                                "iconCls": "icon-user_edit",
+                                "text": "Cambiar Identificación",
+                                "tooltip": [
+                                    "Habilita el cambio de identificacion para el usuario en la interfaz. Una vez activado puede cambiar la identificacion y luego guardar los datos."
+                                ]
+                            },
+                            "designerId": "53fd506c-2619-4611-a9a2-3df0d1e94ce4",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "name",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickCambiarIdentificacion",
+                                        "implHandler": [
+                                            "var hidden=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios hidden[name=idpersona]')[0];\r",
+                                            "var idPersona=hidden.getValue();\r",
+                                            "\r",
+                                            "if(Ext.isEmpty(idPersona) || idPersona==0){\r",
+                                            "    button.toggle(false);\r",
+                                            "    Ext.MessageBox.alert('Informacion', 'Traiga una persona a la interfaz antes de intentar hacer cambio de identificacion'); \r",
+                                            "    return;\r",
+                                            "}\r",
+                                            "\r",
+                                            "if(this.cambiandoIdentificacion==0){\r",
+                                            "    this.cambiandoIdentificacion=1;\r",
+                                            "    button.toggle(true);\r",
+                                            "    Ext.MessageBox.alert('Informacion', 'Se ha activado el cambio de identificacion. Modifique la identificacion y haga click en guardar.'); \r",
+                                            "}else{\r",
+                                            "    this.cambiandoIdentificacion=0;\r",
+                                            "    button.toggle(false);\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "297e4128-ea00-4889-8abf-1a25c818b8f8"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "fab88c3e-f750-424d-8129-28a5734dab9c"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "7f8162be-7ca6-4720-83de-8f538af2dc40",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "ad71d13e-8023-4daa-b8b5-8339c1fb8287",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "897802fe-6004-4439-97de-aa8bc9050ad9"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.sistema.tiposIdentificacionPersonaNatural\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.tiposIdentificacionPersonaNatural', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/tiposIdentificacion.php',\r",
+                    "                    extraParams:{esPersonaNatural:1},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoidentificacion',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.paises\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.paises', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/paises.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpais',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpais'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nacionalidad'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.personas\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.personas', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/personas.php',\r",
+                    "                    extraParams:{esPersonaNatural:1},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpersona',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpersona'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.mantenimiento.local.permisos.perfilesAsignados\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.mantenimiento.local.permisos.perfilesAsignados', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    extraParams:{accion:104},\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/permisos/InterfazUsuarios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idperfil',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idperfil'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.mantenimiento.local.permisos.perfilesNoAsignados\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.mantenimiento.local.permisos.perfilesNoAsignados', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    extraParams:{accion:105},\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/permisos/InterfazUsuarios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idperfil',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idperfil'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.mantenimiento.local.permisos.perfilesNoAsignados'));\r",
+                    "\r",
+                    "grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid')[1];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.mantenimiento.local.permisos.perfilesAsignados'));\r",
+                    "\r",
+                    "var combo=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=identificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.personas'));\r",
+                    "var listConfig={\r",
+                    "    loadingText: 'Buscando...',\r",
+                    "    emptyText: 'No se encontraron personas.',               \r",
+                    "    getInnerTpl: function() {\r",
+                    "        return '<div>{abreviatura} {identificacion}</div><div>{nombres}</div>';                    \r",
+                    "    }\r",
+                    "};\r",
+                    "combo.listConfig=listConfig;\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idtipoidentificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.tiposIdentificacionPersonaNatural'));\r",
+                    "combo.getStore().load(); \r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios combobox[name=idpais]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.paises'));\r",
+                    "combo.getStore().load(); "
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "9938df68-f61a-460a-9b7d-c5ed83a9850c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerPersona",
+                "designer|params": [
+                    "idtipoidentificacion",
+                    "identificacion"
+                ],
+                "implHandler": [
+                    "var callback=function(){    \r",
+                    "    var hidden=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios hidden[name=idusuario]')[0];    \r",
+                    "    var idUsuario=hidden.getValue();        \r",
+                    "    var grid1=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=noAsignados]')[0];\r",
+                    "    var grid2=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios grid[id=asignados]')[0];\r",
+                    "    var tree=Ext.ComponentQuery.query('MantenimientoLocalPermisosUsuarios treepanel[id=menu]')[0];        \r",
+                    "\r",
+                    "    var nodoRaiz=null;\r",
+                    "\r",
+                    "    nodoRaiz=tree.getRootNode();                       \r",
+                    "    nodoRaiz.removeAll();                \r",
+                    "\r",
+                    "    if(idUsuario==0){                \r",
+                    "        //grid1.el.mask('La persona no es un usuario', 'x-mask-loading');          \r",
+                    "        //grid2.el.mask('La persona no es un usuario', 'x-mask-loading');         \r",
+                    "        //tree.el.mask('La persona no es un usuario', 'x-mask-loading');         \r",
+                    "\r",
+                    "        grid2.getStore().getProxy().extraParams.idusuario=0;\r",
+                    "        grid2.getStore().load(); \r",
+                    "\r",
+                    "        grid1.getStore().getProxy().extraParams.idusuario=0;\r",
+                    "        grid1.getStore().load(); \r",
+                    "    }else{\r",
+                    "        grid1.el.unmask();            \r",
+                    "        grid2.el.unmask();        \r",
+                    "\r",
+                    "        grid2.getStore().getProxy().extraParams.idusuario=idUsuario;\r",
+                    "        grid2.getStore().load(); \r",
+                    "\r",
+                    "        grid1.getStore().getProxy().extraParams.idusuario=idUsuario;\r",
+                    "        grid1.getStore().load();                 \r",
+                    "\r",
+                    "        tree.getStore().getProxy().extraParams.idusuario=idUsuario;                \r",
+                    "        tree.getStore().load({\r",
+                    "            scope: this,\r",
+                    "            callback: function(records, operation, success){                        \r",
+                    "                if(records.length>0){                   \r",
+                    "                    var micallback=function(){                                                                            \r",
+                    "                        tree.el.unmask();                \r",
+                    "                    };  \r",
+                    "                    records[0].expand(false, micallback);\r",
+                    "                }        \r",
+                    "            }\r",
+                    "        });\r",
+                    "    }\r",
+                    "};\r",
+                    "\r",
+                    "siadno.enviarFormulario.call(this, true, 'MantenimientoLocalPermisosUsuarios form',{idtipoidentificacion:idtipoidentificacion, identificacion:identificacion}, callback, null);"
+                ]
+            },
+            "designerId": "b6d746b9-ae24-4688-a4e8-e590976206bb"
+        }
+    ]
+}

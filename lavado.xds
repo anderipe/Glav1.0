@@ -1,0 +1,359 @@
+{
+    "name": "siadno",
+    "settings": {
+        "urlPrefix": "http://www.siadno.com/",
+        "spacesToIndent": 4,
+        "exportPath": "C:/Program Files (x86)/EasyPHP-12.0/www/siadno/deploy",
+        "lineEnding": "CRLF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "codeGenFormat": "Class",
+        "senchaIoKey": "",
+        "senchaIoPath": "http://extjs.cachefly.net/designer/IO/",
+        "instantiateStore": true,
+        "saveOnDeploy": false,
+        "appName": "MyApp"
+    },
+    "xdsVersion": "2.1.0",
+    "xdsBuild": 588,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000495,
+    "framework": "ext40",
+    "topInstanceFileMap": {
+        "b2ebbe0a-4289-4ef6-bb9b-34734b22fcfd": {
+            "paths": [
+                "metadata/controller/MyController",
+                "app/controller/override/MyController.js",
+                "app/controller/MyController.js"
+            ],
+            "className": "MyController"
+        },
+        "42b3862a-d611-43d7-b16d-10a04ba0ed4f": {
+            "paths": [
+                "metadata/view/mantenimiento.privado.modulos",
+                "app/view/override/mantenimiento/privado/modulos.js",
+                "app/view/mantenimiento/privado/modulos.js"
+            ],
+            "className": "mantenimiento.privado.modulos"
+        },
+        "52d216e5-f350-4a2c-aaec-63f3cb34f27a": {
+            "paths": [
+                "metadata/model/mantenimiento.privado.modulo",
+                "app/model/override/mantenimiento/privado/modulo.js",
+                "app/model/mantenimiento/privado/modulo.js"
+            ],
+            "className": "mantenimiento.privado.modulo"
+        },
+        "f99ea4c0-df09-4440-a3e4-23b5d34368c0": {
+            "paths": [
+                "metadata/view/sistema.autenticacion",
+                "app/view/override/sistema/autenticacion.js",
+                "app/view/sistema/autenticacion.js"
+            ],
+            "className": "sistema.autenticacion"
+        },
+        "5dc854bd-08f2-4bf6-9ffa-43888a8a388e": {
+            "paths": [
+                "metadata/view/sistema.cierre",
+                "app/view/override/sistema/cierre.js",
+                "app/view/sistema/cierre.js"
+            ],
+            "className": "sistema.cierre"
+        },
+        "e158d15d-d822-4f95-b81b-3d8d46954403": {
+            "paths": [
+                "metadata/resource/css"
+            ],
+            "className": "css"
+        },
+        "101e7fc2-c3d4-4101-bae4-6952ca255b49": {
+            "paths": [
+                "metadata/view/mantenimiento.local.permisos.perfiles",
+                "app/view/override/mantenimiento/local/permisos/perfiles.js",
+                "app/view/mantenimiento/local/permisos/perfiles.js"
+            ],
+            "className": "mantenimiento.local.permisos.perfiles"
+        },
+        "a8b5e9cc-a315-4297-9db9-b9af86cc77b4": {
+            "paths": [
+                "metadata/store/mantenimiento.privado.modulosenperfil",
+                "app/store/override/mantenimiento/privado/modulosenperfil.js",
+                "app/store/mantenimiento/privado/modulosenperfil.js"
+            ],
+            "className": "mantenimiento.privado.modulosenperfil"
+        },
+        "9b015beb-12d5-4a2c-9524-841e47694208": {
+            "paths": [
+                "metadata/store/mantenimiento.privado.modulosnoenperfil",
+                "app/store/override/mantenimiento/privado/modulosnoenperfil.js",
+                "app/store/mantenimiento/privado/modulosnoenperfil.js"
+            ],
+            "className": "mantenimiento.privado.modulosnoenperfil"
+        },
+        "e6ddec9e-3e80-4d3d-bb7b-e5947503a5fa": {
+            "paths": [
+                "metadata/view/mantenimiento.local.permisos.usuarios",
+                "app/view/override/mantenimiento/local/permisos/usuarios.js",
+                "app/view/mantenimiento/local/permisos/usuarios.js"
+            ],
+            "className": "mantenimiento.local.permisos.usuarios"
+        },
+        "dc9f50ec-8381-4003-b5ce-68dfaa8a7927": {
+            "paths": [
+                "metadata/store/mantenimiento.local.permisos.menuusuario",
+                "app/store/override/mantenimiento/local/permisos/menuusuario.js",
+                "app/store/mantenimiento/local/permisos/menuusuario.js"
+            ],
+            "className": "mantenimiento.local.permisos.menuusuario"
+        },
+        "32c90dec-b5c5-4124-98ff-ddd4d8d6d206": {
+            "paths": [
+                "metadata/view/servicios.otros.clientes",
+                "app/view/override/servicios/otros/clientes.js",
+                "app/view/servicios/otros/clientes.js"
+            ],
+            "className": "servicios.otros.clientes"
+        },
+        "9fe6a972-8750-4bac-80c7-4027a17bfffb": {
+            "paths": [
+                "metadata/view/sistema.configuracion.micuenta",
+                "app/view/override/sistema/configuracion/micuenta.js",
+                "app/view/sistema/configuracion/micuenta.js"
+            ],
+            "className": "sistema.configuracion.micuenta"
+        },
+        "014953ed-a6f4-4f77-9c47-4f69af1b621a": {
+            "paths": [
+                "metadata/view/sistema.misistema.impresion.administracionimpresoras",
+                "app/view/override/sistema/misistema/impresion/administracionimpresoras.js",
+                "app/view/sistema/misistema/impresion/administracionimpresoras.js"
+            ],
+            "className": "sistema.misistema.impresion.administracionimpresoras"
+        },
+        "4a85918c-0d07-430a-8316-507a45ab8f8e": {
+            "paths": [
+                "metadata/store/mantenimiento.privado.modulos",
+                "app/store/override/mantenimiento/privado/modulos.js",
+                "app/store/mantenimiento/privado/modulos.js"
+            ],
+            "className": "mantenimiento.privado.modulos"
+        },
+        "000bbb59-7147-4561-83e1-2f0f004ea9bd": {
+            "paths": [
+                "metadata/view/administracion.local.auditoria.informe",
+                "app/view/override/administracion/local/auditoria/informe.js",
+                "app/view/administracion/local/auditoria/informe.js"
+            ],
+            "className": "administracion.local.auditoria.informe"
+        },
+        "3968eb8c-edb4-44a0-8185-7b6d32a82d8d": {
+            "paths": [
+                "metadata/view/administracion.local.notaria",
+                "app/view/override/administracion/local/notaria.js",
+                "app/view/administracion/local/notaria.js"
+            ],
+            "className": "administracion.local.notaria"
+        },
+        "8c7748f3-020d-4de7-b76a-0b0885afec0d": {
+            "paths": [
+                "metadata/store/dumyStore",
+                "app/store/override/dumyStore.js",
+                "app/store/dumyStore.js"
+            ],
+            "className": "dumyStore"
+        },
+        "74b272a5-7df9-442a-aa08-eaced90881ec": {
+            "paths": [
+                "metadata/view/administracion.liquidacion.resoluciones",
+                "app/view/override/administracion/liquidacion/resoluciones.js",
+                "app/view/administracion/liquidacion/resoluciones.js"
+            ],
+            "className": "administracion.liquidacion.resoluciones"
+        },
+        "0a1acb7a-7bc9-4214-ac39-5eaa1422b4d4": {
+            "paths": [
+                "metadata/view/administracion.liquidacion.tiposrubro",
+                "app/view/override/administracion/liquidacion/tiposrubro.js",
+                "app/view/administracion/liquidacion/tiposrubro.js"
+            ],
+            "className": "administracion.liquidacion.tiposrubro"
+        },
+        "5680f35d-fe32-4fff-9664-14ade1a5f9a4": {
+            "paths": [
+                "metadata/view/administracion.liquidacion.formaspago",
+                "app/view/override/administracion/liquidacion/formaspago.js",
+                "app/view/administracion/liquidacion/formaspago.js"
+            ],
+            "className": "administracion.liquidacion.formaspago"
+        },
+        "c0decbbf-08ed-4c3b-8453-bd445a64d6f4": {
+            "paths": [
+                "metadata/view/administracion.personas.tiposidentificacion",
+                "app/view/override/administracion/personas/tiposidentificacion.js",
+                "app/view/administracion/personas/tiposidentificacion.js"
+            ],
+            "className": "administracion.personas.tiposidentificacion"
+        },
+        "5adf5682-7cd5-4c12-8149-8f620bd31b11": {
+            "paths": [
+                "metadata/view/administracion.personas.estadosciviles",
+                "app/view/override/administracion/personas/estadosciviles.js",
+                "app/view/administracion/personas/estadosciviles.js"
+            ],
+            "className": "administracion.personas.estadosciviles"
+        },
+        "397245b8-6e19-4a7c-b690-59e3311e5ada": {
+            "paths": [
+                "metadata/view/administracion.personas.tiposotorgante",
+                "app/view/override/administracion/personas/tiposotorgante.js",
+                "app/view/administracion/personas/tiposotorgante.js"
+            ],
+            "className": "administracion.personas.tiposotorgante"
+        },
+        "4ca15619-8b06-4db8-8f1a-11e02dc6abc0": {
+            "paths": [
+                "metadata/view/administracion.escrituras.tiposminuta",
+                "app/view/override/administracion/escrituras/tiposminuta.js",
+                "app/view/administracion/escrituras/tiposminuta.js"
+            ],
+            "className": "administracion.escrituras.tiposminuta"
+        },
+        "bf9b1c1a-dc64-4566-9bf0-d1d7fbf5e507": {
+            "paths": [
+                "metadata/view/administracion.escrituras.prioridades",
+                "app/view/override/administracion/escrituras/prioridades.js",
+                "app/view/administracion/escrituras/prioridades.js"
+            ],
+            "className": "administracion.escrituras.prioridades"
+        },
+        "5cd32eac-6111-44c2-af86-3831e976f51c": {
+            "paths": [
+                "metadata/view/administracion.escrituras.estadosradicado",
+                "app/view/override/administracion/escrituras/estadosradicado.js",
+                "app/view/administracion/escrituras/estadosradicado.js"
+            ],
+            "className": "administracion.escrituras.estadosradicado"
+        },
+        "8248812b-a4f7-4015-bbb3-a3471ab49c8d": {
+            "paths": [
+                "metadata/view/administracion.escrituras.pasosflujo",
+                "app/view/override/administracion/escrituras/pasosflujo.js",
+                "app/view/administracion/escrituras/pasosflujo.js"
+            ],
+            "className": "administracion.escrituras.pasosflujo"
+        },
+        "13d5a06a-c7c9-4ff9-9a34-33038bd388e1": {
+            "paths": [
+                "metadata/view/administracion.otros.marcasautomotor",
+                "app/view/override/administracion/otros/marcasautomotor.js",
+                "app/view/administracion/otros/marcasautomotor.js"
+            ],
+            "className": "administracion.otros.marcasautomotor"
+        },
+        "37b02981-9a52-4cbb-9484-4a8e1490ff6c": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "888cff26-4ae9-498e-a89e-4a9c2cc2cf22": {
+            "paths": [
+                "metadata/view/administracion.otros.municipios",
+                "app/view/override/administracion/otros/municipios.js",
+                "app/view/administracion/otros/municipios.js"
+            ],
+            "className": "administracion.otros.municipios"
+        },
+        "77730ff3-e0f1-4514-aec5-5c45315020e2": {
+            "paths": [
+                "metadata/view/administracion.otros.tiposautomotores",
+                "app/view/override/administracion/otros/tiposautomotores.js",
+                "app/view/administracion/otros/tiposautomotores.js"
+            ],
+            "className": "administracion.otros.tiposautomotores"
+        },
+        "dfa804a2-1e9b-45c5-9276-285c5cd31d89": {
+            "paths": [
+                "metadata/view/MyWindow22",
+                "app/view/override/MyWindow22.js",
+                "app/view/MyWindow22.js"
+            ],
+            "className": "MyWindow22"
+        },
+        "8fa11eac-837f-49b9-b50a-c889408fac99": {
+            "paths": [
+                "metadata/view/administracion.local.auditoria.integridad",
+                "app/view/override/administracion/local/auditoria/integridad.js",
+                "app/view/administracion/local/auditoria/integridad.js"
+            ],
+            "className": "administracion.local.auditoria.integridad"
+        },
+        "05d67757-6db0-4acc-8091-0aebe4eb755f": {
+            "paths": [
+                "metadata/view/administracion.local.auditoria.aseguramiento",
+                "app/view/override/administracion/local/auditoria/aseguramiento.js",
+                "app/view/administracion/local/auditoria/aseguramiento.js"
+            ],
+            "className": "administracion.local.auditoria.aseguramiento"
+        },
+        "7fa607d2-2274-4b12-ac5d-0a12275ad472": {
+            "paths": [
+                "metadata/view/administracion.local.auditoria.backup",
+                "app/view/override/administracion/local/auditoria/backup.js",
+                "app/view/administracion/local/auditoria/backup.js"
+            ],
+            "className": "administracion.local.auditoria.backup"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "dfa804a2-1e9b-45c5-9276-285c5cd31d89",
+            "5cd32eac-6111-44c2-af86-3831e976f51c",
+            "77730ff3-e0f1-4514-aec5-5c45315020e2",
+            "8248812b-a4f7-4015-bbb3-a3471ab49c8d",
+            "bf9b1c1a-dc64-4566-9bf0-d1d7fbf5e507",
+            "4ca15619-8b06-4db8-8f1a-11e02dc6abc0",
+            "5680f35d-fe32-4fff-9664-14ade1a5f9a4",
+            "74b272a5-7df9-442a-aa08-eaced90881ec",
+            "0a1acb7a-7bc9-4214-ac39-5eaa1422b4d4",
+            "000bbb59-7147-4561-83e1-2f0f004ea9bd",
+            "3968eb8c-edb4-44a0-8185-7b6d32a82d8d",
+            "13d5a06a-c7c9-4ff9-9a34-33038bd388e1",
+            "888cff26-4ae9-498e-a89e-4a9c2cc2cf22",
+            "5adf5682-7cd5-4c12-8149-8f620bd31b11",
+            "c0decbbf-08ed-4c3b-8453-bd445a64d6f4",
+            "397245b8-6e19-4a7c-b690-59e3311e5ada",
+            "101e7fc2-c3d4-4101-bae4-6952ca255b49",
+            "e6ddec9e-3e80-4d3d-bb7b-e5947503a5fa",
+            "42b3862a-d611-43d7-b16d-10a04ba0ed4f",
+            "32c90dec-b5c5-4124-98ff-ddd4d8d6d206",
+            "f99ea4c0-df09-4440-a3e4-23b5d34368c0",
+            "5dc854bd-08f2-4bf6-9ffa-43888a8a388e",
+            "9fe6a972-8750-4bac-80c7-4027a17bfffb",
+            "014953ed-a6f4-4f77-9c47-4f69af1b621a",
+            "8fa11eac-837f-49b9-b50a-c889408fac99",
+            "05d67757-6db0-4acc-8091-0aebe4eb755f",
+            "7fa607d2-2274-4b12-ac5d-0a12275ad472"
+        ],
+        "store": [
+            "a8b5e9cc-a315-4297-9db9-b9af86cc77b4",
+            "dc9f50ec-8381-4003-b5ce-68dfaa8a7927",
+            "9b015beb-12d5-4a2c-9524-841e47694208",
+            "4a85918c-0d07-430a-8316-507a45ab8f8e",
+            "8c7748f3-020d-4de7-b76a-0b0885afec0d"
+        ],
+        "controller": [
+            "b2ebbe0a-4289-4ef6-bb9b-34734b22fcfd"
+        ],
+        "model": [
+            "52d216e5-f350-4a2c-aaec-63f3cb34f27a"
+        ],
+        "resource": [
+            "37b02981-9a52-4cbb-9484-4a8e1490ff6c",
+            "e158d15d-d822-4f95-b81b-3d8d46954403"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

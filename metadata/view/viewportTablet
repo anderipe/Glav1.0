@@ -1,0 +1,97 @@
+{
+    "type": "Ext.container.Viewport",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "viewportTablet",
+        "designer|userAlias": "viewportTablet",
+        "layout": "fit"
+    },
+    "designerId": "be650363-5021-41df-8c16-0703e3e4d1f4",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "height": null,
+                "maxHeight": null,
+                "minHeight": null,
+                "width": null,
+                "activeTab": 0
+            },
+            "designerId": "ae0e3f9d-ec51-4a97-b20a-15cabb293876",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "077b9d95-9f18-4998-bc79-2ce81caa5c65",
+                    "masterInstanceId": "2f070aa2-3a8e-4c0a-8da5-9aec9f7723d1",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "e9995f40-9dae-4cca-87c5-7a9a1c3f909f"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "c3131a16-2bab-4ac5-a710-6f9d18b0c33b",
+                    "masterInstanceId": "c21192a3-309f-46ae-b4f7-0157a9dbce9b",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "9c2e3911-f28c-463b-9343-82f73b271924"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "0286d315-7007-45c2-b260-adec5307d21c",
+                    "masterInstanceId": "904d3a9f-dfe1-493d-9e81-76bc907597d1",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "6357eb9f-6361-4f1c-afeb-fe3de808be5b"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

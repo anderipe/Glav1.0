@@ -1,0 +1,1904 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "servicios.otros.resumenahorros",
+        "designer|userAlias": "ServiciosOtrosResumenAhorros",
+        "layout": "vbox",
+        "iconCls": "icon-layout",
+        "title": "Resumen de Ahorros"
+    },
+    "designerId": "2ba50e33-13d3-48e5-9834-8a3874f9a992",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 65,
+                "id": null,
+                "maxHeight": 65,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "9c9f81fb-0588-4aed-b8d4-ad7025d6cf69",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Año del Informe (Seleccione cualquier día del año)",
+                        "labelAlign": "top",
+                        "name": "fecha",
+                        "format": "Y/m/d",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "e0c4ccbe-8eb6-4e3b-8eca-b71a80fd4bfd",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "a24f428b-dec7-4214-b999-262371deb6a6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": null,
+                "title": null
+            },
+            "designerId": "59c3fd81-b061-41ac-b341-47c358e9de4c",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 190,
+                        "dataIndex": "d0",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "9a0d9d7f-dcdc-4fbf-8c1c-004b43f5c623",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return '<div><b>'+value+'</b></div>';"
+                                ]
+                            },
+                            "designerId": "c0d1782b-847b-484f-a932-638509601c01"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d1",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "af1fb6dd-c19d-43ea-8d00-b465333d491e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "53314993-d86b-42c2-9aae-1cbacfe9349d"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }\r",
+                                    "\r",
+                                    ""
+                                ]
+                            },
+                            "designerId": "ff6220db-2d40-43a3-9b16-c53df1548d54"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d2",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "96712041-9ad4-4c8c-b240-a90d195c5b12",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "98710d9c-48fa-49db-847c-88b22671aa7a"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "9f345dd7-2219-47b5-a9c6-285e8a00355e"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d3",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "225b5318-2ab8-4f2c-bb8e-ec6c979056ae",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "7b07ba6d-b642-4ff6-9109-799a49dc8342"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "b42bbf8c-410b-45be-b2ae-d2aa85e54647"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d4",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "b5f04edd-fe9e-4741-8b9d-ea20ee892088",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "a0489d6c-ad03-46c6-a981-7493355d86b6"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "d689c4a7-ea1d-4de2-83a6-e6fad84e5210"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d5",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "ab905a41-3cea-4a93-b924-9d200410d6a4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "d770a483-f166-4bf9-a416-d07729da1c3a"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "162f9d45-3811-472f-905d-13070dafc5b1"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d6",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "b17b6a75-1556-47fe-b2b6-0049c0adfb0f",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "f4f0cc0a-42a0-49d8-ac3a-41dd275f0e21"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "5534fad0-6a47-4bd0-9c38-a5bf0d552439"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d7",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "d1f2094c-6031-4e98-a30d-0b1384b0725f",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "9eb21ccb-85d9-4eba-b82c-94dbf173b0d8"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "121c9890-2b1d-4ab9-afb8-80cae0486525"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d8",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "e2e44954-cd12-460b-94b3-4865bd8a5c89",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "3f7b619e-992a-4a39-8a4b-aad79548489e"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "e286d516-55ad-4472-bc44-e640aa728c06"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d9",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "76597ca0-a860-4158-8be8-5dcf578cb329",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "084bf90a-8123-424f-a9ea-8f604cafd753"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "26dea3a3-dbe5-47ff-a6d4-ad3760228316"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d10",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "85a2b1a7-23be-4e8a-8c43-60717224e1da",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "a9d4041f-16ff-4558-8a4f-b706ca3c6541"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "7b62e640-61ae-4dcd-9fbb-71d17b08738b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d11",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "802c43ec-dbe4-4877-b9f5-107566dfb164",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "73d06faa-55dd-4078-a724-5a9e8b0acfc5"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "615fdde4-3b1a-4842-bc2f-b74939ccb4fa"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d12",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "9fcb6e7f-6414-4104-8870-3db0654139b4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "17452b26-be34-4e96-ab1e-3b36b29308fb"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "f596e8c9-27ef-422c-beb3-85a992c71282"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d13",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "c324b1a5-78b6-4cb1-b00d-2b43f55e8d8b",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "cfea9a92-eb69-4749-a03e-58827aeb7142"
+                        },
+                        {
+                            "type": "Ext.form.field.Number",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "allowDecimals": false,
+                                "decimalPrecision": 0,
+                                "maxValue": 1000000,
+                                "minValue": -1000000,
+                                "step": 5000
+                            },
+                            "designerId": "ac03f105-a512-4858-b2ba-50ceb9ae641f"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "668bcb6e-84bc-4f0b-a30c-8f2f70d23db9"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d14",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "70c56d83-2906-4985-89fc-99f3a8d85f62",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "debc443b-ddb5-4964-b8ad-915aa470310d"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "108a9dae-8f54-44dd-a877-f1079fa1707d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d15",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "3ddc35c0-bd60-4f39-a02f-178685f2a059",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "bf60abe7-814b-46bf-9565-0661eb5cdab2"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "85beb036-9c86-48c1-b958-f4432b8a8444"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d16",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "282e5e78-4e1f-40f5-9531-e7f8b5720bf4",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "99af6d59-607d-40f6-a821-af406aa8a596"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "e4a9db03-5e5b-4699-867d-4f6be5cbaee2"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d17",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "3c29830b-af85-406e-b6f8-89f42ea3f1ea",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "935d8631-35b4-461f-8fdd-19a93e024047"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "c9ef784d-9609-4f99-8dac-a0d034713076"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d18",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "91f776bb-d29f-4800-874a-2efbdaf3bf9e",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "6c379624-93b1-429c-9b1a-2f552d8e91cb"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "1f391873-51cc-4358-a5b5-4b5f32eff90a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d19",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "30328437-7bdc-4baf-a3c5-0cf68277cc68",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "6adcdda4-baf2-47ba-b9bd-2cfe55b5589d"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\t        \r",
+                                    "if(valorNumerico>0){            \r",
+                                    "\treturn \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "\tif(valorNumerico<0){            \r",
+                                    "    \treturn \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }else{\r",
+                                    "    \treturn \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "    }"
+                                ]
+                            },
+                            "designerId": "542b687f-3dbf-4e87-a80f-392f89e66308"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "summaryType": "sum",
+                        "dataIndex": "d20",
+                        "text": null,
+                        "flex": null
+                    },
+                    "designerId": "1218d2e4-fc51-46e6-802d-16d998ce0bfb",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "return store.miRender(rowIndex, value);"
+                                ]
+                            },
+                            "designerId": "1b7acec0-172f-4317-84a6-f410d155afa7"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "summaryRenderer",
+                                "designer|params": [
+                                    "val",
+                                    "params",
+                                    "data"
+                                ],
+                                "implHandler": [
+                                    "var valorNumerico=val*1.0;\r",
+                                    "var valor=Ext.util.Format.number(val, '0,000.00');\r",
+                                    "\r",
+                                    "if(valorNumerico>0){            \r",
+                                    "    return \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else \r",
+                                    "if(valorNumerico<0){            \r",
+                                    "    return \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}else{\r",
+                                    "    return \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                                    "}"
+                                ]
+                            },
+                            "designerId": "64db3049-bd10-49f6-a341-e51512a742a5"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "1b35fe58-3413-4bb3-8f3f-d470244d8b96"
+                },
+                {
+                    "type": "Ext.grid.feature.Summary",
+                    "reference": {
+                        "name": "features",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "293b21b0-66ce-4295-9ee1-f2ca542fc1b5"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "169d87ff-f357-4bbb-abb8-b6f29e10a6ef",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "3bcf4930-38ea-4697-9fff-8bc4996385ec"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "title": null,
+                        "columns": 1
+                    },
+                    "designerId": "978d24c1-ab77-4004-9ae7-cc560e1eb2ad",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "77ca0abd-9701-466b-b1d3-e792e08445c6",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickSalir1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "bf0cc369-48d0-48f2-9858-e31409ea08b1"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerResumen",
+                "implHandler": [
+                    "this.grid.getStore().getProxy().extraParams.fecha=this.fecha.getSubmitData().fecha;\r",
+                    "this.grid.getStore().load();"
+                ]
+            },
+            "designerId": "8b0d5b9e-9d59-44f0-a5f8-c245e9fb5ccc"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "this.miRender=function(rowIndex, value){\r",
+                    "    var valorNumerico=value*1.0;\r",
+                    "    var valor=Ext.util.Format.number(value, '0,000');\r",
+                    "\r",
+                    "\r",
+                    "    if(valorNumerico>0){            \r",
+                    "        return \"<div style='color:red; text-align:right'>$\"+valor+\"</div>\";\r",
+                    "    }else \r",
+                    "    if(valorNumerico<0){            \r",
+                    "        return \"<div style='color:green; text-align:right'>$\"+valor+\"</div>\";\r",
+                    "    }else{\r",
+                    "        return \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                    "    }\r",
+                    "\r",
+                    "};\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.servicios3.listaempleados2\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios3.listaempleados2', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosResumenAhorros.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idempleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.servicios3.ahorros\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios3.ahorros', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosResumenAhorros.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'd0'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd1'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd2'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd3'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd4'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd5'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd6'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd7'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd8'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd9'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd10'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd11'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd12'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd13'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd14'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd15'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd16'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd17'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd18'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd19'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'd20'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.grid=Ext.ComponentQuery.query('ServiciosOtrosResumenAhorros grid')[0];\r",
+                    "this.fecha=Ext.ComponentQuery.query('ServiciosOtrosResumenAhorros datefield')[0];\r",
+                    "this.fecha.suspendEvents(false);\r",
+                    "\r",
+                    "var dt = new Date();\r",
+                    "this.fecha.setValue(dt);\r",
+                    "\r",
+                    "this.fecha.resumeEvents();\r",
+                    "\r",
+                    "\r",
+                    "//alert(this.grid.columns);\r",
+                    "this.storeEmpleados=Ext.create('siadno.store.servicios3.listaempleados2');\r",
+                    "this.storeEmpleados.load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(records, operation, success) {\r",
+                    "        var numEmpleados=this.storeEmpleados.count();\r",
+                    "        var numColumnas=this.grid.columns.length;        \r",
+                    "\r",
+                    "        for(var i=0; i<numColumnas; i++){            \r",
+                    "            var columna=this.grid.columns[i];            \r",
+                    "\r",
+                    "            if(i==0){                                  \r",
+                    "                columna.setText('Semana del Año');\r",
+                    "                columna.updateLayout();                \r",
+                    "            }else{\r",
+                    "                if(i==numEmpleados+1){                     \r",
+                    "                    columna.setText('Totales');\r",
+                    "                    columna.updateLayout();                \r",
+                    "                }else{\r",
+                    "                    if(i<numEmpleados+1){\r",
+                    "                        var registro=this.storeEmpleados.getAt(i-1);                        \r",
+                    "                        columna.setText(registro.get('abreviatura'));\r",
+                    "                        columna.updateLayout();  \r",
+                    "                    }\r",
+                    "                }\r",
+                    "            }\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "            columna.setVisible(true);\r",
+                    "            if(i>numEmpleados+1){\r",
+                    "                columna.setVisible(false);                                \r",
+                    "            }\r",
+                    "        };\r",
+                    "\r",
+                    "        this.grid.reconfigure(Ext.create('siadno.store.servicios3.ahorros'));\r",
+                    "        this.grid.getStore().miRender=this.miRender;\r",
+                    "        this.grid.storeEmpleados=this.storeEmpleados;            \r",
+                    "        this.grid.traerResumen=this.traerResumen;        \r",
+                    "        this.traerResumen();\r",
+                    "    }\r",
+                    "});\r",
+                    ""
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "d0448e11-b391-4d6b-80cd-9adca326f158"
+        }
+    ]
+}

@@ -1,0 +1,460 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 304,
+        "width": 364,
+        "designer|userClassName": "administracion.liquidacion.tiposgasto",
+        "designer|userAlias": "AdministracionLiquidacionTiposGasto",
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-pictures",
+        "title": "Tipos de Gastos e Ingresos"
+    },
+    "designerId": "479e384c-650d-4252-8f13-bf7b53f29515",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "3283486b-cdd1-4fb8-aab3-a1a5a81da5ca",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 228,
+                        "dataIndex": "descripcion",
+                        "text": "Descripcion"
+                    },
+                    "designerId": "6458d688-b99c-4d62-88a3-5ff5166bf401",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Tipo de Gasto o Ingreso--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "16bd9b36-2947-4101-a402-79dd1b9e8039"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null
+                            },
+                            "designerId": "cf639ec6-0157-4ab5-8468-a9a2118c6516"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gasto",
+                        "text": "Gasto?",
+                        "falseText": "Ingreso",
+                        "trueText": "Gasto",
+                        "undefinedText": "No Definido"
+                    },
+                    "designerId": "e7bd5c00-f696-4134-9185-96a7a4f072f8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "estado",
+                                "boxLabel": "Gasto?"
+                            },
+                            "designerId": "63abb989-4c91-45a3-9980-7581976207ba"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "dea7eacd-8a12-471b-8310-3b220e6fda86"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "9508d2f3-a345-4cc7-a63b-8ffb8e954be6"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "c93fc571-f2fa-45a1-b95e-da71a19cf6a3"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "5199c31b-e68e-411c-8ba4-6006f9ba1990",
+                    "cn": [
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 2,
+                                "title": "Acciones",
+                                "columns": 5
+                            },
+                            "designerId": "9e9ab99a-5ff1-4e41-bd8d-1885dd85e59b",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "nuevo",
+                                        "iconCls": "icon-page_add",
+                                        "text": "Nuevo"
+                                    },
+                                    "designerId": "36851b8f-0f54-4332-976a-503a2601d6eb",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickNuevo",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposGasto grid')[0];\r",
+                                                    "siadno.nuevoRegistroGrid(grid,'idtipogasto');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "337099c3-f5c5-45f0-ac68-45fdd6791280"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "guardar",
+                                        "iconCls": "icon-page_save",
+                                        "text": "Guardar"
+                                    },
+                                    "designerId": "21946cc4-b04f-48ba-bfb5-4bf96774220a",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickGuardar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposGasto grid')[0];         \r",
+                                                    "siadno.enviarCambiosGrid(grid, null, 'idtipogasto');            "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "3fa5a2a4-694b-43ea-b7ce-7e6dcb3d2563"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-page_cancel",
+                                        "text": "Cancelar"
+                                    },
+                                    "designerId": "72b3d8d2-0614-4f5f-9c38-f9929374b638",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickCancelar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposGasto grid')[0];\r",
+                                                    "siadno.rollbackCambiosGrid(grid);         "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "24ade192-878f-4c75-a4a5-53e9a4c8e980"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "aacion": "borrar",
+                                        "iconCls": "icon-page_delete",
+                                        "text": "Borrar"
+                                    },
+                                    "designerId": "6fe78dc2-23ec-430c-8097-60a467c2b47d",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "aacion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickBorrar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposGasto grid')[0];\r",
+                                                    "siadno.borrarRegistroGrid(grid, null, 'idtipogasto');    "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "350b59d9-2b03-4829-893a-d9c3200b0f3a"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "12303a20-99e9-4f0c-8c39-f81791c2c2ae"
+                        },
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 1,
+                                "title": null,
+                                "columns": 1
+                            },
+                            "designerId": "56bafe02-c605-45c3-85cc-5b3b429166d5",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-door_out",
+                                        "text": "Salir"
+                                    },
+                                    "designerId": "18ac4da3-a70b-4990-afc5-f58a324e94c0",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickSalir",
+                                                "implHandler": [
+                                                    "this.close();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "10d908c0-bcb3-4df9-95f2-299588634061"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.liquidacion.tiposgasto\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.liquidacion.tiposgasto', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/liquidacion/InterfazTiposGasto.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipogasto',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipogasto'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'gasto',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposGasto grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.liquidacion.tiposgasto'));\r",
+                    "grid.getStore().load();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "6838ca54-b2f6-4141-b037-d8daa9f50bf0"
+        }
+    ]
+}

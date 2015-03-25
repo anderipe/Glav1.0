@@ -1,0 +1,1857 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "GUARDAR_NOTARIA": "101",
+        "CARGAR_NOTARIA": "102",
+        "CARGAR_PERSONAL": "103",
+        "GUARDAR_PERSONAL": "104",
+        "designer|userClassName": "administracion.local.empresa",
+        "designer|userAlias": "AdministracionLocalNotaria",
+        "height": 480,
+        "width": 640,
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-house_star",
+        "title": "Mi Empresa"
+    },
+    "id": "ExtBox1-ext-gen4030",
+    "designerId": "3968eb8c-edb4-44a0-8185-7b6d32a82d8d",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "GUARDAR_NOTARIA",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "CARGAR_NOTARIA",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "CARGAR_PERSONAL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "GUARDAR_PERSONAL",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "tabpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "MyTabPanel1",
+                "activeTab": 0
+            },
+            "designerId": "0dfdb439-d5fa-4e16-a101-3acb8e8287a3",
+            "cn": [
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm7",
+                        "id": "datosBasicos",
+                        "bodyPadding": 10,
+                        "title": "Datos Basicos",
+                        "url": "clases/interfaces/mantenimiento/local/InterfazEmpresa.php"
+                    },
+                    "designerId": "8c9303e1-415b-4ed7-8012-afbde860d0ec",
+                    "cn": [
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig4"
+                            },
+                            "designerId": "4f7fed1f-e213-419d-a00a-399c6a56ce97"
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet",
+                                "height": null,
+                                "id": null,
+                                "padding": "0 10 0 10",
+                                "title": "Datos Basicos"
+                            },
+                            "designerId": "2e07f72a-2c7d-4afa-b971-0aab9a1ea6c6",
+                            "cn": [
+                                {
+                                    "type": "hiddenfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyHiddenField3",
+                                        "name": "idpersona",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "38863290-4e3a-475f-94ce-3084d9951b84"
+                                },
+                                {
+                                    "type": "fieldcontainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|userClassName": "MyFieldContainer",
+                                        "height": 27,
+                                        "margin": 0,
+                                        "padding": 0,
+                                        "layout": "hbox",
+                                        "fieldLabel": "Identificacion",
+                                        "labelPad": null
+                                    },
+                                    "designerId": "14c6c79d-653e-497a-b71a-99643ec4350d",
+                                    "cn": [
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|margins": "0",
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": 68,
+                                                "name": "idtipoidentificacion",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "blankText": null,
+                                                "editable": false,
+                                                "displayField": "abreviatura",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idtipoidentificacion"
+                                            },
+                                            "designerId": "d004b076-0086-4009-9bed-c7c1e3dfb686",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxSelect2",
+                                                        "fn": "onComboboxSelect2",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=identificacion]')[0];\r",
+                                                            "this.traerPersona(records[0].get('idtipoidentificacion'), combo.getValue());"
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "023e8273-a2b5-4905-b436-e243aba47892"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|margins": "0",
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": 234,
+                                                "name": "identificacion",
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "enableKeyEvents": true,
+                                                "hideTrigger": true,
+                                                "autoSelect": false,
+                                                "displayField": "identificacion",
+                                                "minChars": 5,
+                                                "queryParam": "identificacion",
+                                                "store": "dumyStore",
+                                                "valueField": "identificacion"
+                                            },
+                                            "designerId": "544be052-6923-4b4c-91dd-a5b41791d533",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxKeyup1",
+                                                        "fn": "onComboboxKeyup1",
+                                                        "implHandler": [
+                                                            "siadno.limpiarFormulario('AdministracionLocalNotaria form[id=datosBasicos]', null, ['idtipoidentificacion', 'identificacion']);\r",
+                                                            "var key=e.getKey();\r",
+                                                            "if(key==13){        \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=identificacion]')[0];        \r",
+                                                            "    this.traerPersona('datosBasicos', comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "keyup",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "5a35f201-0e48-466a-90b6-86ec4375b4ab"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxBlur1",
+                                                        "fn": "onComboboxBlur1",
+                                                        "implHandler": [
+                                                            "var hidden=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] hidden[name=idpersona]')[0];\r",
+                                                            "var idPersona=hidden.getValue();\r",
+                                                            "if(Ext.isEmpty(idPersona)){    \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idtipoidentificacion]')[0];    \r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=identificacion]')[0];            \r",
+                                                            "    this.traerPersona('datosBasicos', comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());    \r",
+                                                            "}"
+                                                        ],
+                                                        "name": "blur",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "26573501-c353-43d9-8c46-beeb15a2dfdd"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxSelect3",
+                                                        "fn": "onComboboxSelect3",
+                                                        "implHandler": [
+                                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "combo.setValue(records[0].get('idtipoidentificacion')); "
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "a704c845-4d1d-4ab4-b39e-08ac5292e1eb"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "displayfield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|flex": 1,
+                                                "designer|userClassName": "MyDisplayField",
+                                                "name": "digitoverificacion",
+                                                "value": [
+                                                    "D.V -0"
+                                                ],
+                                                "fieldLabel": null
+                                            },
+                                            "designerId": "d81b71a0-7bfb-422a-bb6c-2465b5fb023e"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField6",
+                                        "name": "nombres",
+                                        "fieldLabel": "Nombre"
+                                    },
+                                    "designerId": "d4f49df8-07d4-4976-b42d-62df4c2c43b7"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField7",
+                                        "name": "direccion",
+                                        "fieldLabel": "Direccion"
+                                    },
+                                    "designerId": "85b498af-61c0-4f2a-a6eb-8a8902abcbc0"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField7",
+                                        "name": "telefonos",
+                                        "fieldLabel": "Telefonos"
+                                    },
+                                    "designerId": "2ad2dff5-694d-4f4b-b031-e06df8dc7566"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField9",
+                                        "name": "email",
+                                        "fieldLabel": "E-Mail"
+                                    },
+                                    "designerId": "06557d7d-a106-40ff-9937-65634063a2b6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet11",
+                                "title": "Datos Complementarios"
+                            },
+                            "designerId": "da130f46-daa2-44e3-8ea7-19b52c7acfc4",
+                            "cn": [
+                                {
+                                    "type": "fieldcontainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|userClassName": "MyFieldContainer",
+                                        "height": 27,
+                                        "layout": "hbox",
+                                        "fieldLabel": "Ubicacion"
+                                    },
+                                    "designerId": "91baf8a9-5ddb-4ff5-8368-d387b89e8aa9",
+                                    "cn": [
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 102,
+                                                "name": "idpais",
+                                                "value": null,
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idpais"
+                                            },
+                                            "designerId": "c8492f74-d76e-4174-87da-90075c2315be",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxChange3",
+                                                        "fn": "onComboboxChange3",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=iddepartamento]')[0];\r",
+                                                            "combo.getStore().getProxy().extraParams={idpais:newValue};    \r",
+                                                            "combo.getStore().load();"
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "c61a2e0a-fa7a-4f97-8a0e-fc7806eefb4f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 100,
+                                                "name": "iddepartamento",
+                                                "value": null,
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "iddepartamento",
+                                                "valueNotFoundText": null
+                                            },
+                                            "designerId": "5af428f3-2844-4592-a30c-d54453c1c72e",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxChange4",
+                                                        "fn": "onComboboxChange4",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idmunicipio]')[0];\r",
+                                                            "combo.getStore().getProxy().extraParams={iddepartamento:newValue};    \r",
+                                                            "combo.getStore().load();    "
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "dd5eb6f1-8568-4d66-8df6-4c6210be68ee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 138,
+                                                "name": "idmunicipio",
+                                                "value": null,
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idmunicipio"
+                                            },
+                                            "designerId": "56cf04bf-4e7b-4e6f-b2a1-9d34381a8868"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField6",
+                                        "name": "nombreabreviado",
+                                        "fieldLabel": "Nombre Abrev"
+                                    },
+                                    "designerId": "59811bbb-45c3-42cf-a3aa-0f1398e0f80c"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "designer|userClassName": "MyToolbar3"
+                            },
+                            "designerId": "fc3cfe57-fb61-4a1c-bdce-4b19df7c7c9d",
+                            "cn": [
+                                {
+                                    "type": "buttongroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|columns": 4,
+                                        "designer|userClassName": "MyButtonGroup6",
+                                        "title": "Acciones",
+                                        "columns": 4
+                                    },
+                                    "designerId": "8318f2da-9d3a-4e2c-869c-3c7c50fda215",
+                                    "cn": [
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton9",
+                                                "iconCls": "icon-page_save",
+                                                "text": "Guardar",
+                                                "tooltip": null
+                                            },
+                                            "designerId": "7c19e48f-8845-4eb8-a78e-cdbcff278268",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onButtonClick1",
+                                                        "fn": "onButtonClick1",
+                                                        "implHandler": [
+                                                            "siadno.enviarFormulario.call(this, false, 'AdministracionLocalNotaria form[id=datosBasicos]', {accion:this.GUARDAR_NOTARIA}, null, null);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "12a7cac0-7b40-42c0-9e4e-22eaa0c7febb"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "tbfill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyFill3"
+                                    },
+                                    "designerId": "d91b5654-8ecd-4a5a-a9b9-1dbaca97bf55"
+                                },
+                                {
+                                    "type": "buttongroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|columns": 2,
+                                        "designer|userClassName": "MyButtonGroup5",
+                                        "title": null,
+                                        "columns": 2
+                                    },
+                                    "designerId": "4773e991-31f3-4227-b4d0-90fa3ec83c10",
+                                    "cn": [
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton8",
+                                                "iconCls": "icon-door_out",
+                                                "text": "Salir"
+                                            },
+                                            "designerId": "9c6263b7-eeaa-4b5a-974a-bfad40599dc1",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onButtonClick",
+                                                        "fn": "onButtonClick",
+                                                        "implHandler": [
+                                                            "this.close();"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "e7d47c02-8320-496e-abf6-4b2604606f08"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "form",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyForm8",
+                        "id": "datosPersonal",
+                        "bodyPadding": 10,
+                        "title": "Personal V.I.P",
+                        "url": "clases/interfaces/mantenimiento/local/InterfazEmpresa.php"
+                    },
+                    "designerId": "86f12b36-c3eb-4991-9981-b413eea2d7c2",
+                    "cn": [
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet12",
+                                "title": "Datos Empresariales"
+                            },
+                            "designerId": "1d881701-7ef5-42a4-83fd-66baf1db3116",
+                            "cn": [
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox31",
+                                        "name": "idcargo",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "fieldLabel": "Cargo",
+                                        "editable": false,
+                                        "displayField": "nombre",
+                                        "queryMode": "local",
+                                        "store": "dumyStore",
+                                        "valueField": "idcargo"
+                                    },
+                                    "designerId": "4dc6d75c-e052-491b-86b5-bfbba1a8b31e",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "onComboboxChange2",
+                                                "fn": "onComboboxChange2",
+                                                "implHandler": [
+                                                    "this.traerPersonal();"
+                                                ],
+                                                "name": "change",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "9b5ed80f-7540-4fae-81b1-c5b406824f4b"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "fieldset",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyFieldSet",
+                                "height": null,
+                                "padding": "0 10 0 10",
+                                "title": "Datos Personales"
+                            },
+                            "designerId": "6ccc7c06-9e07-4a03-946c-5a6ce043a817",
+                            "cn": [
+                                {
+                                    "type": "hiddenfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyHiddenField3",
+                                        "name": "idpersona",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "407a711c-3534-4d5a-82de-25d16c95761a"
+                                },
+                                {
+                                    "type": "hiddenfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyHiddenField3",
+                                        "name": "idpersonal",
+                                        "fieldLabel": "Label"
+                                    },
+                                    "designerId": "ed72752c-4fac-4b02-aac7-10b26b167145"
+                                },
+                                {
+                                    "type": "fieldcontainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|userClassName": "MyFieldContainer",
+                                        "height": 27,
+                                        "margin": 0,
+                                        "padding": 0,
+                                        "layout": "hbox",
+                                        "fieldLabel": "Identificacion",
+                                        "labelPad": null
+                                    },
+                                    "designerId": "cacc6691-16b9-4854-bde0-93c7ae74709a",
+                                    "cn": [
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|margins": "0",
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": 68,
+                                                "name": "idtipoidentificacion",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "editable": false,
+                                                "displayField": "abreviatura",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idtipoidentificacion"
+                                            },
+                                            "designerId": "532e1941-8a2b-4ad0-a744-85445120a454",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxSelect1",
+                                                        "fn": "onComboboxSelect1",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=identificacion]')[0];\r",
+                                                            "this.traerPersona(records[0].get('idtipoidentificacion'), combo.getValue());"
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "14bf3eba-dbc2-48d4-a9ae-f7d1b5f70408"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "layout|margins": "0",
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "padding": 0,
+                                                "width": 234,
+                                                "name": "identificacion",
+                                                "fieldLabel": null,
+                                                "labelPad": 0,
+                                                "enableKeyEvents": true,
+                                                "hideTrigger": true,
+                                                "autoSelect": false,
+                                                "displayField": "identificacion",
+                                                "minChars": 5,
+                                                "queryParam": "identificacion",
+                                                "store": "dumyStore",
+                                                "valueField": "identificacion"
+                                            },
+                                            "designerId": "903fd366-b1d0-407b-bf44-b76f5477284b",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxKeyup",
+                                                        "fn": "onComboboxKeyup",
+                                                        "implHandler": [
+                                                            "siadno.limpiarFormulario('AdministracionLocalNotaria form[id=datosPersonal]', null, ['idtipoidentificacion', 'identificacion', 'idcargo']);\r",
+                                                            "var key=e.getKey();\r",
+                                                            "if(key==13){        \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=identificacion]')[0];        \r",
+                                                            "    this.traerPersona('datosPersonal', comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());\r",
+                                                            "}"
+                                                        ],
+                                                        "name": "keyup",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "26ff3893-4c5c-4a67-a168-a5d76d17446d"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxBlur",
+                                                        "fn": "onComboboxBlur",
+                                                        "implHandler": [
+                                                            "var hidden=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] hidden[name=idpersona]')[0];\r",
+                                                            "var idPersona=hidden.getValue();\r",
+                                                            "if(Ext.isEmpty(idPersona)){    \r",
+                                                            "    var comboIdTipoIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idtipoidentificacion]')[0];    \r",
+                                                            "    var comboIdentificacion=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=identificacion]')[0];            \r",
+                                                            "    this.traerPersona('datosPersonal', comboIdTipoIdentificacion.getValue(), comboIdentificacion.getValue());    \r",
+                                                            "}"
+                                                        ],
+                                                        "name": "blur",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "cf60aa00-35b8-46e3-bcaf-e67f646f7583"
+                                                },
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxSelect",
+                                                        "fn": "onComboboxSelect",
+                                                        "implHandler": [
+                                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idtipoidentificacion]')[0];\r",
+                                                            "combo.setValue(records[0].get('idtipoidentificacion')); "
+                                                        ],
+                                                        "name": "select",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "f714f4dd-430a-4992-944e-82863d492212"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "fieldcontainer",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "stretch",
+                                        "designer|userClassName": "MyFieldContainer",
+                                        "height": 27,
+                                        "layout": "hbox",
+                                        "fieldLabel": "Expedicion"
+                                    },
+                                    "designerId": "61c4e61b-98e9-43e8-bcb0-dab4ad79c2b7",
+                                    "cn": [
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 102,
+                                                "name": "idpaisexpedicion",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idpais"
+                                            },
+                                            "designerId": "1ca51cbe-e2d2-4ba0-8374-1e33952a3c53",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxChange",
+                                                        "fn": "onComboboxChange",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=iddepartamentoexpedicion]')[0];\r",
+                                                            "combo.getStore().getProxy().extraParams={idpais:newValue};    \r",
+                                                            "combo.getStore().load();\r",
+                                                            ""
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "9d6274f3-e3a7-45e4-a3c7-2f30b7b123ee"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 100,
+                                                "name": "iddepartamentoexpedicion",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "iddepartamento",
+                                                "valueNotFoundText": null
+                                            },
+                                            "designerId": "907aaadf-a816-416a-af07-9db8c08ec879",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onComboboxChange1",
+                                                        "fn": "onComboboxChange1",
+                                                        "implHandler": [
+                                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idmunicipio]')[0];\r",
+                                                            "combo.getStore().getProxy().extraParams={iddepartamento:newValue};    \r",
+                                                            "combo.getStore().load();    "
+                                                        ],
+                                                        "name": "change",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "8e6641d1-ecfe-401a-9241-21f559b9730f"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "combobox",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyComboBox2",
+                                                "margin": "0 1 0 0",
+                                                "width": 138,
+                                                "name": "idmunicipio",
+                                                "value": [
+                                                    "0"
+                                                ],
+                                                "fieldLabel": null,
+                                                "editable": false,
+                                                "displayField": "nombre",
+                                                "forceSelection": false,
+                                                "queryMode": "local",
+                                                "store": "dumyStore",
+                                                "valueField": "idmunicipio"
+                                            },
+                                            "designerId": "c7a95c63-74a1-4268-8c24-b8af6d1e019d"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField6",
+                                        "name": "nombres",
+                                        "fieldLabel": "Nombres"
+                                    },
+                                    "designerId": "73597b62-6291-4a74-a921-42a97033ce29"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField6",
+                                        "name": "apellidos",
+                                        "fieldLabel": "Apellidos"
+                                    },
+                                    "designerId": "bc0b215c-ffbb-4c80-8bf5-b98521e487b9"
+                                },
+                                {
+                                    "type": "combobox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyComboBox6",
+                                        "name": "idpais",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "fieldLabel": "Nacionalidad",
+                                        "editable": false,
+                                        "displayField": "nacionalidad",
+                                        "forceSelection": true,
+                                        "queryMode": "local",
+                                        "store": "dumyStore",
+                                        "valueField": "idpais"
+                                    },
+                                    "designerId": "b5c11ed8-1df9-4024-8f96-0a72ef23415c"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField7",
+                                        "name": "direccion",
+                                        "fieldLabel": "Direccion"
+                                    },
+                                    "designerId": "ffc104c2-b468-4d3e-9d50-3f8bb811d702"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField7",
+                                        "name": "telefonos",
+                                        "fieldLabel": "Telefonos"
+                                    },
+                                    "designerId": "82909372-5560-48b9-ad66-0e2394ef222b"
+                                },
+                                {
+                                    "type": "textfield",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|anchor": "100%",
+                                        "designer|userClassName": "MyTextField9",
+                                        "name": "email",
+                                        "fieldLabel": "E-Mail"
+                                    },
+                                    "designerId": "771ff5a7-50a7-42ed-8114-aa0452f2dece"
+                                },
+                                {
+                                    "type": "radiogroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "MyRadioGroup",
+                                        "fieldLabel": "Sexo"
+                                    },
+                                    "designerId": "4b1a0b9a-7916-499c-85b9-06f451b04cd7",
+                                    "cn": [
+                                        {
+                                            "type": "radiofield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyRadio",
+                                                "name": "sexo",
+                                                "fieldLabel": null,
+                                                "boxLabel": "Masculino",
+                                                "checked": true,
+                                                "inputValue": "1"
+                                            },
+                                            "designerId": "22232065-2c9f-4baf-b5bd-e31b26c43ca2"
+                                        },
+                                        {
+                                            "type": "radiofield",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyRadio1",
+                                                "name": "sexo",
+                                                "fieldLabel": null,
+                                                "boxLabel": "Femenido",
+                                                "inputValue": "2"
+                                            },
+                                            "designerId": "41dcc13c-1ed5-4044-b87b-eef18ec5c9fe"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "TabConfig1"
+                            },
+                            "designerId": "5310bcf3-05e8-4be4-ac5f-f1cf24a625d5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onTabActivate",
+                                        "fn": "onTabActivate",
+                                        "implHandler": [
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idcargo]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.cargos'));\r",
+                                            "combo.getStore().load(); \r",
+                                            "\r",
+                                            "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=identificacion]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.personasNaturales'));\r",
+                                            "var listConfig={\r",
+                                            "    loadingText: 'Buscando...',\r",
+                                            "    emptyText: 'No se encontraron personas.',               \r",
+                                            "    getInnerTpl: function() {\r",
+                                            "        return '<div>{abreviatura} {identificacion}</div><div>{nombres}</div>';                    \r",
+                                            "    }\r",
+                                            "};\r",
+                                            "combo.listConfig=listConfig;\r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idtipoidentificacion]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.tiposIdentificacionPersonaNatural'));\r",
+                                            "combo.getStore().load(); \r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idpaisexpedicion]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.paises'));\r",
+                                            "combo.getStore().load(); \r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=iddepartamentoexpedicion]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.departamentos'));\r",
+                                            "combo.getStore().getProxy().extraParams={idpais:0};\r",
+                                            "combo.getStore().load(); \r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idmunicipio]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.municipios'));\r",
+                                            "combo.getStore().getProxy().extraParams={iddepartamento:0};\r",
+                                            "combo.getStore().load(); \r",
+                                            "\r",
+                                            "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosPersonal] combobox[name=idpais]')[0];\r",
+                                            "combo.bindStore(Ext.create('siadno.store.sistema.paises'));\r",
+                                            "combo.getStore().load(); "
+                                        ],
+                                        "name": "activate",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "278b710c-4ccd-4d34-9fc4-89f6f59c958b"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "toolbar",
+                            "reference": {
+                                "name": "dockedItems",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dock": "bottom",
+                                "designer|userClassName": "MyToolbar3"
+                            },
+                            "designerId": "2cc05a46-e9fc-4c83-983d-dfef068b8482",
+                            "cn": [
+                                {
+                                    "type": "buttongroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|columns": 4,
+                                        "designer|userClassName": "MyButtonGroup6",
+                                        "title": "Acciones",
+                                        "columns": 4
+                                    },
+                                    "designerId": "e62b6b3a-040e-4e0b-b663-d5c7a1548ab1",
+                                    "cn": [
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton9",
+                                                "iconCls": "icon-page_save",
+                                                "text": "Guardar",
+                                                "tooltip": null
+                                            },
+                                            "designerId": "7c40292b-68c7-4dc9-b738-73aaa619dd9c",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onButtonClick2",
+                                                        "fn": "onButtonClick2",
+                                                        "implHandler": [
+                                                            "siadno.enviarFormulario.call(this, false, 'AdministracionLocalNotaria form[id=datosPersonal]', {accion:this.GUARDAR_PERSONAL}, null, null);"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "998fb9b9-ec1d-4325-a85b-e57d13952af0"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "tbfill",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "designer|userClassName": "MyFill3"
+                                    },
+                                    "designerId": "f6d11c64-8198-4992-808a-290c2aa27bac"
+                                },
+                                {
+                                    "type": "buttongroup",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": null,
+                                        "container|columns": 2,
+                                        "designer|userClassName": "MyButtonGroup5",
+                                        "title": null,
+                                        "columns": 2
+                                    },
+                                    "designerId": "40837379-e22f-4eb5-9e8f-d449bd76396b",
+                                    "cn": [
+                                        {
+                                            "type": "button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|userClassName": "MyButton8",
+                                                "iconCls": "icon-door_out",
+                                                "text": "Salir"
+                                            },
+                                            "designerId": "b8bb7968-30c4-4e35-8903-e42389619a3a",
+                                            "cn": [
+                                                {
+                                                    "type": "basiceventbinding",
+                                                    "reference": {
+                                                        "name": "listeners",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|userClassName": "onButtonClick",
+                                                        "fn": "onButtonClick",
+                                                        "implHandler": [
+                                                            "this.close();"
+                                                        ],
+                                                        "name": "click",
+                                                        "scope": "me"
+                                                    },
+                                                    "designerId": "6ce02af9-564b-4a79-a820-eb4375daf9d4"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "traerPersona",
+                "fn": "traerPersona",
+                "designer|params": [
+                    "idFormulario",
+                    "idtipoidentificacion",
+                    "identificacion"
+                ],
+                "implHandler": [
+                    "var callback=function(){        \r",
+                    "};\r",
+                    "siadno.enviarFormulario.call(this, true, 'AdministracionLocalNotaria form[id='+idFormulario+']',{idtipoidentificacion:idtipoidentificacion, identificacion:identificacion}, callback, null);"
+                ]
+            },
+            "designerId": "52c491fa-076c-418c-9e57-0dbeca23df0d"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowShow",
+                "fn": "onWindowShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.sistema.tiposIdentificacionPersonaJuridica\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.tiposIdentificacionPersonaJuridica', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/tiposIdentificacion.php',\r",
+                    "                    extraParams:{esPersonaNatural:0},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoidentificacion',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.sistema.tiposIdentificacionPersonaNatural\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.tiposIdentificacionPersonaNatural', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/tiposIdentificacion.php',\r",
+                    "                    extraParams:{esPersonaNatural:1},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoidentificacion',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.paises\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.paises', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/paises.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpais',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpais'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nacionalidad'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.personasJuridicas\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.personasJuridicas', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/personas.php',                    \r",
+                    "                    extraParams:{esPersonaNatural:0},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpersona',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpersona'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.personasNaturales\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.personasNaturales', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/personas.php',                    \r",
+                    "                    extraParams:{esPersonaNatural:1},\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpersona',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpersona'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.municipios\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.municipios', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/municipios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idmunicipio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idmunicipio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'gentilicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'iddepartamento'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.departamentos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.departamentos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/departamentos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'iddepartamento',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'iddepartamento'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'gentilicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idpais'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.sistema.cargos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.sistema.cargos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/data/sistema/cargos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idcargo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idcargo'\r",
+                    "                },                \r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=identificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.personasJuridicas'));\r",
+                    "var listConfig={\r",
+                    "    loadingText: 'Buscando...',\r",
+                    "    emptyText: 'No se encontraron empresas.',               \r",
+                    "    getInnerTpl: function() {\r",
+                    "        return '<div>{abreviatura} {identificacion}</div><div>{nombres}</div>';                    \r",
+                    "    }\r",
+                    "};\r",
+                    "combo.listConfig=listConfig;\r",
+                    "\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idtipoidentificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.tiposIdentificacionPersonaJuridica'));\r",
+                    "combo.getStore().load(); \r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idpais]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.paises'));\r",
+                    "combo.getStore().load(); \r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=iddepartamento]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.departamentos'));\r",
+                    "combo.getStore().getProxy().extraParams={idpais:0};\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('AdministracionLocalNotaria form[id=datosBasicos] combobox[name=idmunicipio]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.sistema.municipios'));\r",
+                    "combo.getStore().getProxy().extraParams={iddepartamento:0};\r",
+                    "\r",
+                    "var callback=function(){\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "    //var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria combobox[name=idmunicipio]')[0];\r",
+                    "    //alert(combo.getValue());\r",
+                    "};\r",
+                    "\r",
+                    "siadno.enviarFormulario.call(this, true, 'AdministracionLocalNotaria form[id=datosBasicos]',{accion:this.CARGAR_NOTARIA}, callback, {});"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "7d54b122-ad60-4bb2-a415-ab7ba3f8776b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "traerPersonal",
+                "fn": "traerPersonal",
+                "implHandler": [
+                    "var combo=Ext.ComponentQuery.query('AdministracionLocalNotaria combobox[name=idcargo]')[0];\r",
+                    "var callback=function(){        \r",
+                    "    //alert('retorna personal');\r",
+                    "};\r",
+                    "siadno.enviarFormulario.call(this, true, 'AdministracionLocalNotaria form[id=datosPersonal]',{accion:this.CARGAR_PERSONAL, idcargo:combo.getValue()}, callback, null);"
+                ]
+            },
+            "designerId": "024c05f9-b655-4381-a882-ab23802d574e"
+        }
+    ]
+}

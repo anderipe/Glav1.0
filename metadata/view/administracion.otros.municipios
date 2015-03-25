@@ -1,0 +1,1101 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "LISTAR_DEPARTAMENTOS": 201,
+        "LISTAR_MUNICIPIOS": 301,
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "administracion.otros.municipios",
+        "designer|userAlias": "AdministracionOtrosMunicipios",
+        "resizable": [
+            "false"
+        ],
+        "layout": "hbox",
+        "closable": false,
+        "iconCls": "icon-flag_france",
+        "title": "Paises, Departamentos y Municipios"
+    },
+    "configAlternates": {
+        "LISTAR_DEPARTAMENTOS": "number",
+        "LISTAR_MUNICIPIOS": "number"
+    },
+    "designerId": "888cff26-4ae9-498e-a89e-4a9c2cc2cf22",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "LISTAR_DEPARTAMENTOS",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "LISTAR_MUNICIPIOS",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "//this.LISTAR_DEPARTAMENTOS=201;\r",
+                    "//this.LISTAR_MUNICIPIOS=301;\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.otros.paises\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.otros.paises', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {                    \r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/otros/InterfazMunicipiosDepartamentosPaises.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idpais',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idpais'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nacionalidad'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.otros.departamentos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.otros.departamentos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {                    \r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/otros/InterfazMunicipiosDepartamentosPaises.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'iddepartamento',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'iddepartamento'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idpais'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'gentilicio'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.otros.municipios\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.otros.municipios', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {                    \r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/otros/InterfazMunicipiosDepartamentosPaises.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idmunicipio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idmunicipio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'iddepartamento'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'gentilicio'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                    "\r",
+                    "var grid=grids[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.otros.paises'));\r",
+                    "grid.getStore().load({callback:this.nuevoPais});\r",
+                    "\r",
+                    "grid=grids[1];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.otros.departamentos'));\r",
+                    "\r",
+                    "grid=grids[2];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.otros.municipios'));"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "6009ac12-6cd5-4aad-9531-4da78313734b"
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "accionEditar": 102,
+                "accionBorrar": 103,
+                "layout|flex": 1,
+                "draggable": true,
+                "title": "Paises",
+                "store": "dumyStore"
+            },
+            "configAlternates": {
+                "accionGuardar": "number",
+                "accionEditar": "number",
+                "accionBorrar": "number"
+            },
+            "designerId": "2448fee9-ed46-42ba-a5da-10372d23e827",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionEditar",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionBorrar",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 130,
+                        "defaultWidth": null,
+                        "dataIndex": "nombre",
+                        "text": "Pais"
+                    },
+                    "designerId": "4c8c2e4c-97eb-4c85-8a60-8f969e775b53",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "b25da90f-4b08-4fd6-9839-322333ed420d"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Pais--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "1841b677-5760-4603-8e1c-e260b16e1039"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "nacionalidad",
+                        "text": "Nacionalidad"
+                    },
+                    "designerId": "48cbc0f0-e750-4103-af56-7d8f3a8c7091",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "350e1cf5-253b-4cef-b1b1-2f2799a4affe"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nueva Nacionalidad--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "7bc0c204-827c-4f96-8b39-1cf092c800dc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "7112a123-d6ed-4ac6-9206-39053501c368",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "ddGroup": null,
+                                "enableDrop": false
+                            },
+                            "designerId": "2d6443ff-b535-4c04-bd99-a9c99a864a66"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "4b8d86cc-9c72-46fd-bd69-2d4de7b7cb67",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridroweditingpluginEdit",
+                                "implHandler": [
+                                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                                    "var grid=grids[0];\r",
+                                    "\r",
+                                    "var callback=function(params, result){            \r",
+                                    "    if(!result.success){                                   \r",
+                                    "        return;\r",
+                                    "    }\r",
+                                    "\r",
+                                    "    var selectionModel=grid.getSelectionModel();    \r",
+                                    "    if(selectionModel.hasSelection( )){    \r",
+                                    "        var idPais=selectionModel.getSelection()[0].get('idpais');\r",
+                                    "        this.listarDepartamentos.call(this, idPais);\r",
+                                    "    }    \r",
+                                    "    this.nuevoPais();\r",
+                                    "}\r",
+                                    "\r",
+                                    "siadno.enviarCambiosGrid.call(this, grid, null, 'idpais', callback);"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "e494c4d5-e37b-4e9d-b1ca-923e298c85b7"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "41321af0-0a6a-4140-b44c-9bb571069488",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowselectionmodelSelect",
+                                "implHandler": [
+                                    "this.listarDepartamentos(record.get('idpais'));\r",
+                                    ""
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "d65ab949-0313-4091-8d0b-90e0f00000e6"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "accionEditar": 202,
+                "accionBorrar": 203,
+                "layout|flex": 1,
+                "title": "Departamentos",
+                "store": "dumyStore"
+            },
+            "configAlternates": {
+                "accionGuardar": "number",
+                "accionEditar": "number",
+                "accionBorrar": "number"
+            },
+            "designerId": "16422e29-2a2e-4d00-a881-196902fc0ef0",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionEditar",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionBorrar",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 130,
+                        "defaultWidth": null,
+                        "dataIndex": "nombre",
+                        "text": "Departamento"
+                    },
+                    "designerId": "3c6df3b3-2e6a-4ea0-8889-de60fa19b8ca",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "01b5f704-1c40-4c27-8171-a8705ed14269"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Departamento--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "25646119-58ef-453e-b0f2-f8ccb7e979ab"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gentilicio",
+                        "text": "Gentilicio"
+                    },
+                    "designerId": "35183628-de30-489e-8ca6-051ad7fa9d43",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "de24bb24-f9f7-49c5-82c7-97c330a719dc"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "a2fc7d85-9019-471c-bec4-5c6e30070bda",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "enableDrop": false
+                            },
+                            "designerId": "b136b2de-a54b-410b-a83a-190a8ab947a6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "bdce223f-fb79-47ea-a36e-4bd85cf6654b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridroweditingpluginEdit1",
+                                "implHandler": [
+                                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                                    "var grid=grids[1];\r",
+                                    "\r",
+                                    "var callback=function(params, result){\r",
+                                    "    if(!result.success){                                   \r",
+                                    "        return;\r",
+                                    "    }\r",
+                                    "\r",
+                                    "    var selectionModel=grid.getSelectionModel();    \r",
+                                    "    if(selectionModel.hasSelection( )){    \r",
+                                    "        var idDepartamento=selectionModel.getSelection()[0].get('iddepartamento');\r",
+                                    "        this.listarMunicipios.call(this, idDepartamento);\r",
+                                    "    }        \r",
+                                    "    this.nuevoDepartamento();\r",
+                                    "}\r",
+                                    "siadno.enviarCambiosGrid.call(this, grid, null, 'iddepartamento', callback);"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "ef260729-ee01-450d-bc2b-9bc793f60182"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "08eee74d-7556-44a3-8676-318c6790c30f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowselectionmodelSelect1",
+                                "implHandler": [
+                                    "this.listarMunicipios(record.get('iddepartamento'));"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "694ef211-c9fc-4b20-b17e-e165b3839068"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "accionEditar": 302,
+                "accionBorrar": 303,
+                "layout|flex": 1,
+                "title": "Municipios",
+                "store": "dumyStore"
+            },
+            "configAlternates": {
+                "accionGuardar": "number",
+                "accionEditar": "number",
+                "accionBorrar": "number"
+            },
+            "designerId": "aceb7cf3-1837-4266-b198-730018d89977",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionEditar",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionBorrar",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 130,
+                        "defaultWidth": null,
+                        "dataIndex": "nombre",
+                        "text": "Municipio"
+                    },
+                    "designerId": "c592e605-48ad-467a-a24e-a8aa1c40c548",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "712e5989-e799-49df-8378-24e2928b7bb6"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Municipio--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "6cc5bfd8-50ce-4a42-a267-d287d3c43917"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "gentilicio",
+                        "text": "Gentilicio"
+                    },
+                    "designerId": "7f62f876-2f2d-401f-93f8-4c1088b1a9e8",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "ec45dc2c-0480-4171-8f0b-7b10de0bd054"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "c8bf6ca9-26cf-4d6d-9fb7-7198d96a1270",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.plugin.DragDrop",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.DragDrop",
+                            "userConfig": {
+                                "enableDrop": false
+                            },
+                            "designerId": "e8405198-6dc5-4ad8-af9d-31b0cb34b4d4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "7e9cf579-39f5-48b8-a57f-217200164deb",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onGridroweditingpluginEdit2",
+                                "implHandler": [
+                                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid')[2];         \r",
+                                    "\r",
+                                    "var callback=function(params, result){\r",
+                                    "    if(!result.success){                                   \r",
+                                    "        return;\r",
+                                    "    }             \r",
+                                    "    this.nuevoMunicipio();\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "siadno.enviarCambiosGrid.call(this, grid, null, 'idmunicipio', callback);"
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "154b75e5-7784-4f83-a12b-91451d911aab"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "36bdc644-54cd-4ea1-af2f-d1160b061c12",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 2,
+                        "title": "Acciones",
+                        "columns": 4
+                    },
+                    "designerId": "15587fcb-1966-4380-99c9-6c76fa369642",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "aacion": "borrar",
+                                "icon": null,
+                                "iconCls": "icon-bin",
+                                "text": "Borrar"
+                            },
+                            "designerId": "4b7e1592-4c9b-49f2-83d3-2a7c876ee945",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "aacion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickBorrar14",
+                                        "implHandler": [
+                                            "Ext.MessageBox.alert('Informacion', 'Para borrar, arrastre sobre mi un municipio, departamento o pais');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "54ba66ce-be92-4b1a-907a-f05e7ad25dc2"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonRender",
+                                        "implHandler": [
+                                            "component.dropTarget = Ext.create('Ext.dd.DropTarget', component.el, {ddGroup:'GridDD'});\r",
+                                            "component.dropTarget.notifyDrop = function(source, evt, data) {  \r",
+                                            "    var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                                            "    \r",
+                                            "    var registro=data.records[0];\r",
+                                            "    var idPais=registro.get('idpais');\r",
+                                            "    var idDepartamento=registro.get('iddepartamento');\r",
+                                            "    var idMunicipio=registro.get('idmunicipio');\r",
+                                            "    \r",
+                                            "    if(!Ext.isEmpty(idMunicipio) && !Ext.isEmpty(idDepartamento)){        \r",
+                                            "        siadno.borrarRegistroGrid(grids[2], null, 'idmunicipio');  \r",
+                                            "    }else{\r",
+                                            "        if(!Ext.isEmpty(idDepartamento) && !Ext.isEmpty(idPais)){        \r",
+                                            "            siadno.borrarRegistroGrid(grids[1], null, 'iddepartamento');  \r",
+                                            "        }else{            \r",
+                                            "            if(!Ext.isEmpty(idPais)){                \r",
+                                            "                siadno.borrarRegistroGrid(grids[0], null, 'idpais');  \r",
+                                            "            }else{\r",
+                                            "                Ext.MessageBox.alert('Error', 'La operacion de borrado no es valida');\r",
+                                            "            }\r",
+                                            "        }\r",
+                                            "    }    \r",
+                                            "    return true;\r",
+                                            "};\r",
+                                            "return true;"
+                                        ],
+                                        "name": "render",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "4630fa16-0461-488a-b71c-fb5210f99963"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "ebd94679-8d02-448e-b767-9b6a97162a58"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|columns": 3,
+                        "title": null,
+                        "columns": 3
+                    },
+                    "designerId": "e1deba63-042d-44b7-9f00-e714dbe11090",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "67280a9e-a538-4461-8582-3b872f02b898",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickSalir1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "0450892d-380c-4575-a17f-204707003440"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "listarDepartamentos",
+                "designer|params": [
+                    "idPais"
+                ],
+                "implHandler": [
+                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                    "var grid=grids[2];\r",
+                    "\r",
+                    "grid.getStore().removeAll();\r",
+                    "\r",
+                    "grid=grids[1];\r",
+                    "grid.getStore().removeAll();\r",
+                    "grid.getStore().getProxy().extraParams={accion:this.LISTAR_DEPARTAMENTOS, idpais:idPais};\r",
+                    "grid.getStore().load({callback:this.nuevoDepartamento});"
+                ]
+            },
+            "designerId": "c96dc603-914b-460e-879c-febff667b1cd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "listarMunicipios",
+                "designer|params": [
+                    "idDepartamento"
+                ],
+                "implHandler": [
+                    "var grid=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid')[2];\r",
+                    "grid.getStore().removeAll();\r",
+                    "grid.getStore().getProxy().extraParams={accion:this.LISTAR_MUNICIPIOS, iddepartamento:idDepartamento};\r",
+                    "grid.getStore().load({callback:this.nuevoMunicipio});"
+                ]
+            },
+            "designerId": "1a6df3bf-2a0c-4c44-8839-44591fdf7336"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "nuevoPais",
+                "implHandler": [
+                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                    "var grid=grids[0];\r",
+                    "siadno.nuevoRegistroGrid(grid, 'idpais');"
+                ]
+            },
+            "designerId": "ea9e7874-3aaa-4619-89eb-f74985ef1f8f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "nuevoDepartamento",
+                "implHandler": [
+                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                    "\r",
+                    "var grid=grids[0];\r",
+                    "var selectionModel=grid.getSelectionModel();\r",
+                    "\r",
+                    "if(!selectionModel.hasSelection( )){    \r",
+                    "    Ext.MessageBox.alert('Error', 'Debe seleccionar un pais al cual agregar departamentos');\r",
+                    "    return;\r",
+                    "}\r",
+                    "\r",
+                    "var idPais=selectionModel.getSelection()[0].get('idpais'); \r",
+                    "grid=grids[1];\r",
+                    "siadno.nuevoRegistroGrid(grid, 'iddepartamento', {idpais:idPais});"
+                ]
+            },
+            "designerId": "eee62778-fa25-4ab6-b1b0-4d26c82ec977"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "nuevoMunicipio",
+                "implHandler": [
+                    "var grids=Ext.ComponentQuery.query('AdministracionOtrosMunicipios grid');\r",
+                    "\r",
+                    "var grid=grids[1];\r",
+                    "var selectionModel=grid.getSelectionModel();\r",
+                    "\r",
+                    "if(!selectionModel.hasSelection()){    \r",
+                    "    Ext.MessageBox.alert('Error', 'Debe seleccionar un departamento al cual agregar municipios');\r",
+                    "    return;\r",
+                    "}\r",
+                    "\r",
+                    "var idDepartamento=selectionModel.getSelection()[0].get('iddepartamento'); \r",
+                    "grid=grids[2];\r",
+                    "siadno.nuevoRegistroGrid(grid, 'idmunicipio', {iddepartamento:idDepartamento});"
+                ]
+            },
+            "designerId": "6195e729-f426-48f9-807d-c9b504f23e93"
+        }
+    ]
+}

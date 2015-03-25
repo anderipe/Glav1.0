@@ -1,0 +1,597 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "servicios.otros.ingresosygastos",
+        "designer|userAlias": "ServiciosOtrosIngresosyGastos",
+        "layout": "vbox",
+        "iconCls": "icon-layout",
+        "title": "Ingresos y Gastos Diarios"
+    },
+    "designerId": "b5fc41fe-b311-454c-9d51-8e2f39d1e67f",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 65,
+                "id": null,
+                "maxHeight": 65,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "e55ee8e1-9e7f-46b0-a956-8bf2b330a6ca",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Día del Registro",
+                        "labelAlign": "top",
+                        "name": "fecha",
+                        "format": "Y/m/d",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "97414b21-bd56-4979-92bd-f064ded21444",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange",
+                                "implHandler": [
+                                    "this.traerResumen();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "2088acbc-0299-46d7-88e6-e2d952349252"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "layout": "hbox"
+            },
+            "designerId": "dd445d04-a9fe-42a6-a473-24a7a4b3b177",
+            "cn": [
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "title": "Ingresos"
+                    },
+                    "designerId": "5f2e8e7f-55ef-4ca4-9f06-264d09a972c5",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "descripcion",
+                                "text": "Descripción",
+                                "flex": 5
+                            },
+                            "designerId": "6bd9b0bf-774a-46a2-a1de-7cb67e24537b"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "summaryType": "sum",
+                                "align": "right",
+                                "dataIndex": "valor",
+                                "text": "Valor",
+                                "flex": 2,
+                                "format": "0,000"
+                            },
+                            "designerId": "45bc9075-8044-4f7a-9355-4bb7819500d8",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "maxValue": 100000000,
+                                        "minValue": 0,
+                                        "step": 5000
+                                    },
+                                    "designerId": "3fa6e3fc-bda5-45fe-a77f-f5fe0fc0f5f0"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "35bf1749-c0d8-43ac-90e2-cc9af621fd50"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "11f7d245-0b43-4ca0-9d64-19053776830e"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.CellEditing",
+                            "designerId": "a8133a7a-502a-4502-8b16-488647a1a8ab",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridcelleditingpluginBeforeEdit",
+                                        "implHandler": [
+                                            "var idTipoGasto=eOpts.record.get('idtipogasto');\r",
+                                            "if(idTipoGasto<=5){\r",
+                                            "    return false;\r",
+                                            "}\r",
+                                            "return true;"
+                                        ],
+                                        "name": "beforeedit",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "d45b1dfe-30b3-4c2b-9c4b-6ddaf0df46c5"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridcelleditingpluginEdit",
+                                        "implHandler": [
+                                            "\r",
+                                            "var fecha=this.fecha.getSubmitData().fecha;\r",
+                                            "var idtipogasto=e.record.get('idtipogasto');\r",
+                                            "var valor=e.value;\r",
+                                            "\r",
+                                            "var callback=function(){    \r",
+                                            "    this.traerResumen();\r",
+                                            "};\r",
+                                            "\r",
+                                            "siadno.ajax.call(this, 'clases/interfaces/InterfazServiciosIngresosGastos.php', {accion:103, idtipogasto:idtipogasto, fecha:fecha, valor:valor}, callback);"
+                                        ],
+                                        "name": "edit",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "ec9a24dd-70e3-49f9-befc-e24a77741399"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "title": "Egresos"
+                    },
+                    "designerId": "4129277b-b3ba-4925-9b5d-49334c18834e",
+                    "cn": [
+                        {
+                            "type": "Ext.grid.column.Column",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "dataIndex": "descripcion",
+                                "text": "Descripción",
+                                "flex": 5
+                            },
+                            "designerId": "ce57bc64-ed80-4b9c-b011-1f7f979c127e"
+                        },
+                        {
+                            "type": "Ext.grid.column.Number",
+                            "reference": {
+                                "name": "columns",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "summaryType": "sum",
+                                "align": "right",
+                                "dataIndex": "valor",
+                                "text": "Valor",
+                                "flex": 2,
+                                "format": "0,000"
+                            },
+                            "designerId": "e69338ac-2798-466d-86d8-832623f3a374",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Number",
+                                    "reference": {
+                                        "name": "editor",
+                                        "type": "object"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "maxValue": 100000000,
+                                        "minValue": 0,
+                                        "step": 5000
+                                    },
+                                    "designerId": "eff97077-cd8b-45d8-ab85-0921e6f021c7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.grid.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "0f3e0b51-cfc9-40a0-a28e-b1f36099fcc7"
+                        },
+                        {
+                            "type": "Ext.grid.feature.Summary",
+                            "reference": {
+                                "name": "features",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "designerId": "c862f435-11bd-4f2c-ae2f-e37410aacbd4"
+                        },
+                        {
+                            "type": "Ext.grid.plugin.CellEditing",
+                            "reference": {
+                                "name": "plugins",
+                                "type": "array"
+                            },
+                            "codeClass": "Ext.grid.plugin.CellEditing",
+                            "designerId": "ef0fbea3-d658-442f-95d1-c60533996026",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridcelleditingpluginBeforeEdit1",
+                                        "implHandler": [
+                                            "var idTipoGasto=eOpts.record.get('idtipogasto');\r",
+                                            "if(idTipoGasto<=5){\r",
+                                            "    return false;\r",
+                                            "}\r",
+                                            "return true;"
+                                        ],
+                                        "name": "beforeedit",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "d8d46aa3-f74e-4eba-883c-d2e13f0c37d4"
+                                },
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onGridcelleditingpluginEdit1",
+                                        "implHandler": [
+                                            "var fecha=this.fecha.getSubmitData().fecha;\r",
+                                            "var idtipogasto=e.record.get('idtipogasto');\r",
+                                            "var valor=e.value;\r",
+                                            "\r",
+                                            "var callback=function(){    \r",
+                                            "    this.traerResumen();\r",
+                                            "};\r",
+                                            "\r",
+                                            "siadno.ajax.call(this, 'clases/interfaces/InterfazServiciosIngresosGastos.php', {accion:103, idtipogasto:idtipogasto, fecha:fecha, valor:valor}, callback);"
+                                        ],
+                                        "name": "edit",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "50171cd6-946f-48be-b463-54f810b28404"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "894a151d-66ce-4eb3-a997-95358fdc3cbc",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "77412635-fe39-4e46-977c-45967efa563a"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "title": null,
+                        "columns": 1
+                    },
+                    "designerId": "d712285c-455b-44c3-8278-0b1b2f35f5f4",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "7e175a93-2528-42f6-841b-2bed5da12d7e",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickSalir1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6bbf870c-950b-4c32-9388-378e3979e9fc"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerResumen",
+                "implHandler": [
+                    "this.gridGasto.getStore().getProxy().extraParams.fecha=this.fecha.getSubmitData().fecha;\r",
+                    "this.gridGasto.getStore().load();\r",
+                    "\r",
+                    "this.gridIngreso.getStore().getProxy().extraParams.fecha=this.fecha.getSubmitData().fecha;\r",
+                    "this.gridIngreso.getStore().load();"
+                ]
+            },
+            "designerId": "6310d5de-3b22-4d46-aaba-ab595c4a60ce"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelShow",
+                "implHandler": [
+                    "this.miRender=function(rowIndex, value){\r",
+                    "    var  valor=Ext.util.Format.number(value, '0,000');\r",
+                    "\r",
+                    "    if(rowIndex==3 || rowIndex==4){\r",
+                    "        return \"<div style='color:red; text-align:right'>-$\"+valor+\"</div>\";\r",
+                    "    }\r",
+                    "\r",
+                    "    if(rowIndex==6){\r",
+                    "        return \"<div style='color:red; text-align:right'>-$\"+valor+\"</div>\";\r",
+                    "    }\r",
+                    "\r",
+                    "    return \"<div style='text-align:right'>$\"+valor+\"</div>\";\r",
+                    "};\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.servicios.gastos2\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios.gastos2', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102, gasto:true},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosIngresosGastos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idgastodiario',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idgastodiario'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipogasto'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'valor',\r",
+                    "                    type: 'float'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.servicios.ingresos2\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.servicios.ingresos2', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: false,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102, gasto:false},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazServiciosIngresosGastos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idgastodiario',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idgastodiario'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipogasto'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'valor',\r",
+                    "                    type: 'float'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "this.gridIngreso=Ext.ComponentQuery.query('ServiciosOtrosIngresosyGastos grid')[0];\r",
+                    "this.gridGasto=Ext.ComponentQuery.query('ServiciosOtrosIngresosyGastos grid')[1];\r",
+                    "this.fecha=Ext.ComponentQuery.query('ServiciosOtrosIngresosyGastos datefield')[0];\r",
+                    "this.fecha.suspendEvents(false);\r",
+                    "\r",
+                    "var dt = new Date();\r",
+                    "this.fecha.setValue(dt);\r",
+                    "\r",
+                    "this.fecha.resumeEvents();\r",
+                    "\r",
+                    "this.gridGasto.reconfigure(Ext.create('siadno.store.servicios.gastos2'));\r",
+                    "this.gridIngreso.reconfigure(Ext.create('siadno.store.servicios.ingresos2'));\r",
+                    "\r",
+                    "this.traerResumen();"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "087df0c0-a12e-4ac6-a99f-f64e16ccf60b"
+        }
+    ]
+}

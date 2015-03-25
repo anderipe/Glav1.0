@@ -1,0 +1,120 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 800,
+        "designer|userClassName": "servicios.otros.registrogeneral",
+        "designer|userAlias": "ServiciosOtrosRegistroGeneral",
+        "layout": "vbox",
+        "iconCls": "icon-car_start",
+        "title": "Registro de Servicios"
+    },
+    "designerId": "e6bd5beb-f8ea-4e7a-bdbf-1df1cdb02b0b",
+    "cn": [
+        {
+            "type": "Ext.tab.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "activeTab": 0
+            },
+            "designerId": "d8f7d9be-3476-4ec0-acbe-222b635bc8b8",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": null,
+                        "preventHeader": true,
+                        "title": null
+                    },
+                    "designerId": "7bedb559-91eb-46ee-bd40-46ed5572e73e",
+                    "masterInstanceId": "2f070aa2-3a8e-4c0a-8da5-9aec9f7723d1",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "c1329597-d053-47af-98cf-c2144773ce7d"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "d4112624-f377-43a5-9434-6a3476c5a6d0",
+                    "masterInstanceId": "c21192a3-309f-46ae-b4f7-0157a9dbce9b",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "5140617d-22da-4de9-acea-fcdaab5be735"
+                        }
+                    ]
+                },
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "146214d7-177b-4a18-a519-724329eac2dc",
+                    "masterInstanceId": "904d3a9f-dfe1-493d-9e81-76bc907597d1",
+                    "cn": [
+                        {
+                            "type": "Ext.tab.Tab",
+                            "reference": {
+                                "name": "tabConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "31d7569e-495f-4169-b5a6-f95fa8c17d75"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerResumen",
+                "implHandler": [
+                    "this.grid.getStore().getProxy().extraParams.fecha=this.fecha.getSubmitData().fecha;\r",
+                    "this.grid.getStore().load();"
+                ]
+            },
+            "designerId": "c865e55e-c05a-46f8-bc27-04354fa6f3fa"
+        }
+    ]
+}

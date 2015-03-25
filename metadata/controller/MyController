@@ -1,0 +1,88 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MyController",
+        "designer|userAlias": "mycontroller"
+    },
+    "designerId": "b2ebbe0a-4289-4ef6-bb9b-34734b22fcfd",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onButtonClick",
+                "implHandler": [
+                    "this.onClick(button);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.button.Button",
+                "designer|controlQuery": "myviewport button"
+            },
+            "designerId": "f11e32f0-1788-4ceb-8d1f-25366589a2e7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onMenuitemClick",
+                "implHandler": [
+                    "this.onClick(item);"
+                ],
+                "name": "click",
+                "scope": "me",
+                "designer|targetType": "Ext.menu.Item",
+                "designer|controlQuery": "menuitem"
+            },
+            "designerId": "7dd6fc3e-8ba4-4751-a2a1-c84274b50e8b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onClick",
+                "designer|params": [
+                    "item"
+                ],
+                "implHandler": [
+                    "if(!Ext.isEmpty(item.clase)){\r",
+                    "    try{                     \r",
+                    "        if(Ext.ClassManager.isCreated(item.clase)){                            \r",
+                    "            var alias=new String(Ext.ClassManager.getAliasesByName(item.clase));                                                \r",
+                    "            alias=alias.substr(7);                        \r",
+                    "            var ventana=Ext.ComponentQuery.query(alias);                        \r",
+                    "            if(ventana.length>0){\r",
+                    "                ventana[0].focus();\r",
+                    "                return;\r",
+                    "            }      \r",
+                    "        }\r",
+                    "\r",
+                    "        var modulo=Ext.create(item.clase);        \r",
+                    "        modulo.show(item);    \r",
+                    "    }catch(e){\r",
+                    "        Ext.MessageBox.alert('Error','Error al cargar el modulo, '+result.msg);        \r",
+                    "    }   \r",
+                    "}"
+                ]
+            },
+            "designerId": "13230654-3afb-4cad-9341-aec3409e026e"
+        }
+    ]
+}

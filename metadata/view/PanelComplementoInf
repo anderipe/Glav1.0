@@ -1,0 +1,1234 @@
+{
+    "type": "Ext.panel.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "height": 600,
+        "width": 360,
+        "designer|userClassName": "PanelComplementoInf",
+        "designer|userAlias": "PanelComplementoInf",
+        "layout": "vbox",
+        "collapsed": false,
+        "iconCls": "icon-application_view_list",
+        "title": "Despacho"
+    },
+    "designerId": "c21192a3-309f-46ae-b4f7-0157a9dbce9b",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": null,
+                "layout|margins": "3 3 3 3",
+                "container|align": "stretch",
+                "height": 65,
+                "id": "formParametros",
+                "maxHeight": 65,
+                "layout": "hbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "9cab2d15-8b84-4d0a-bbca-c57d399ee421",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Fecha Inicial",
+                        "labelAlign": "top",
+                        "name": "fechainicial",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "5fcb17f0-4852-4dca-b1bf-4bb5167e7997",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange",
+                                "implHandler": [
+                                    "this.traerServicios();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "3df24800-36da-4913-9f3f-78098ed2d145"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Date",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "layout|margins": "0 3 0 0",
+                        "fieldLabel": "Fecha Final",
+                        "labelAlign": "top",
+                        "name": "fechafinal",
+                        "submitFormat": "Y-m-d"
+                    },
+                    "designerId": "6b5c2453-4187-461d-8bf2-f4dbb474db4a",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDatefieldChange1",
+                                "implHandler": [
+                                    "this.traerServicios();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "33e7ffe2-e793-44b1-b63c-8ebb87719b63"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 10,
+                        "fieldLabel": "Estado Servicio",
+                        "labelAlign": "top",
+                        "name": "idestadoservicio",
+                        "value": [
+                            "0"
+                        ],
+                        "editable": false,
+                        "autoSelect": false,
+                        "displayField": "nombre",
+                        "queryMode": "local",
+                        "queryParam": "idestadoservicio",
+                        "valueField": "idestadoservicio"
+                    },
+                    "designerId": "31932e70-0e04-4561-adaf-e2928906d93d",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onComboboxChange",
+                                "implHandler": [
+                                    "this.traerServicios();"
+                                ],
+                                "name": "change",
+                                "scope": "me"
+                            },
+                            "designerId": "102e144e-5889-4104-ac84-3dd7f84002b6"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.button.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 7,
+                        "height": null,
+                        "margin": "0 0 0 3",
+                        "maxHeight": null,
+                        "minHeight": null,
+                        "arrowAlign": null,
+                        "autoWidth": null,
+                        "iconAlign": "top",
+                        "iconCls": "icon-page_go",
+                        "text": "Recargar"
+                    },
+                    "designerId": "29fd6c0f-7ce2-4cb1-97d6-1e7429ed875b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onButtonClick",
+                                "implHandler": [
+                                    "this.traerServicios();"
+                                ],
+                                "name": "click",
+                                "scope": "me"
+                            },
+                            "designerId": "c7d5e5c9-3bfd-444a-90b4-000552d9f8eb"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": "gridServicios",
+                "autoScroll": true,
+                "title": null
+            },
+            "designerId": "8895317b-809c-4dde-b5ca-bb2a9be06542",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 50,
+                        "defaultWidth": 50,
+                        "dataIndex": "idservicio",
+                        "text": "Código",
+                        "flex": null
+                    },
+                    "designerId": "428f44df-e596-4161-8229-d623634dac86"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 60,
+                        "defaultWidth": 60,
+                        "dataIndex": "matricula",
+                        "text": "Matricula",
+                        "flex": null
+                    },
+                    "designerId": "6314ed14-26bb-4d4d-8010-4ececdfad47f"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 60,
+                        "defaultWidth": 60,
+                        "dataIndex": "estado",
+                        "text": "Estado",
+                        "flex": null
+                    },
+                    "designerId": "90af54c7-7329-4013-b15d-523b1f777979"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 100,
+                        "dataIndex": "empleado",
+                        "text": "Encargado",
+                        "flex": null
+                    },
+                    "designerId": "d56c2b46-938e-4091-b938-78d8efc0b37b"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 100,
+                        "dataIndex": "fecharegistro",
+                        "text": "Entrada",
+                        "flex": null
+                    },
+                    "designerId": "8e50e4c7-4d59-45bb-8f75-0f7653a9c80e"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 100,
+                        "dataIndex": "fechaentrega",
+                        "text": "Salida",
+                        "flex": null
+                    },
+                    "designerId": "61dd13cf-4c17-471f-9e80-e53208f7c53a"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "873947f8-8f4b-4ad2-9f94-3a1369ca815c"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "bac6945a-8e11-4f2a-b60b-6c8c49875a12",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRowselectionmodelSelect",
+                                "implHandler": [
+                                    "this.registroSeleccionado=record;\r",
+                                    "siadno.limpiarFormulario('PanelComplementoInf', null, null);\r",
+                                    "\r",
+                                    "this.idservicio=record.get('idservicio');\r",
+                                    "this.idempleado=record.get('idempleado');\r",
+                                    "this.idestadoservicio=record.get('idestadoservicio');\r",
+                                    "this.fechaentrega=record.get('fechaentrega');\r",
+                                    "this.horaentrega=record.get('horaentrega');\r",
+                                    "this.idpersona=record.get('idpersona');\r",
+                                    "\r",
+                                    "//alert(record.get('horaentrega'));\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "\r",
+                                    "//alert(record.get('idempleado'));\r",
+                                    "//alert(record.get('idservicio'));\r",
+                                    "\r",
+                                    "//this.formularioservicio.getForm().loadRecord(record);\r",
+                                    "\r",
+                                    "this.idPersona.setValue(record.get('idpersona'));\r",
+                                    "this.fidempleado.setValue(record.get('idempleado'));\r",
+                                    "this.idServicio.setValue(record.get('idservicio'));\r",
+                                    "this.fidestadoservicio.setValue(record.get('idestadoservicio'));\r",
+                                    "\r",
+                                    "if(!Ext.isEmpty(record.get('fechaentrega'))){\r",
+                                    "    this.ffechaentrega.setValue(record.get('fechaentrega'));\r",
+                                    "    this.fhoraentrega.setValue(record.get('horaentrega'));\r",
+                                    "}else{\r",
+                                    "    this.ffechaentrega.setValue(null);\r",
+                                    "    this.fhoraentrega.setValue(null);\r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "if(Ext.isEmpty(record.get('identificacion'))){\r",
+                                    "    return;\r",
+                                    "}\r",
+                                    "\r",
+                                    "this.idTipoIdentificacion.setValue(record.get('idtipoidentificacion'));\r",
+                                    "this.identificacion.setValue(record.get('identificacion'));"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "f7834ffc-7831-4263-9281-d50711304af4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "layout|margins": "3 3 3 3",
+                "id": "formServicio",
+                "maxHeight": 250,
+                "minHeight": 250,
+                "bodyPadding": 10,
+                "title": "Información del Servicio Seleccionado",
+                "url": "clases/interfaces/InterfazRegistroServicios.php"
+            },
+            "designerId": "ee78dd2d-41ea-4f27-9813-90fccfb27e8d",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Label",
+                        "name": "idpersona"
+                    },
+                    "designerId": "0a37f9ce-f2c7-432b-a772-d5082602fb86"
+                },
+                {
+                    "type": "Ext.form.field.Hidden",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Label",
+                        "name": "idservicio"
+                    },
+                    "designerId": "38766f38-2668-4684-b5cd-986daa643ec4"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 27,
+                        "margin": 0,
+                        "padding": 0,
+                        "width": null,
+                        "designer|displayName": "Identificacion",
+                        "layout": "hbox",
+                        "fieldLabel": "Identificación",
+                        "labelPad": null
+                    },
+                    "designerId": "e2c48cce-499f-4091-9084-d9d165c71d0a",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0",
+                                "margin": "0 0 0 0",
+                                "padding": 0,
+                                "width": null,
+                                "fieldLabel": null,
+                                "hideEmptyLabel": null,
+                                "labelPad": 0,
+                                "name": "idtipoidentificacion",
+                                "value": [
+                                    "0"
+                                ],
+                                "editable": false,
+                                "displayField": "abreviatura",
+                                "queryMode": "local",
+                                "store": "dumyStore",
+                                "valueField": "idtipoidentificacion"
+                            },
+                            "designerId": "884cb77f-0c8d-442b-940c-27fee9d85b9f",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxSelect111",
+                                        "implHandler": [
+                                            "var combo=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=identificacion]')[0];\r",
+                                            "this.traerPersona(records[0].get('idtipoidentificacion'), combo.getValue());"
+                                        ],
+                                        "name": "select",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "3b87f243-bca3-4fb2-94e7-7cc363235a4d"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "margin": null,
+                                "padding": 0,
+                                "width": null,
+                                "fieldLabel": null,
+                                "labelPad": 0,
+                                "name": "identificacion",
+                                "enableKeyEvents": true,
+                                "hideTrigger": true,
+                                "autoSelect": false,
+                                "displayField": "identificacion",
+                                "minChars": 5,
+                                "queryMode": "local",
+                                "queryParam": "identificacion",
+                                "store": null,
+                                "valueField": "identificacion"
+                            },
+                            "designerId": "1f3cb1e9-1e11-45e6-b385-858474b64be7",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onComboboxChange1",
+                                        "implHandler": [
+                                            "siadno.limpiarFormulario('PanelComplementoInf', null, ['idtipoidentificacion', 'identificacion']);\r",
+                                            "var comboIdentificacion=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=identificacion]')[0];        \r",
+                                            "this.traerPersona(this.comboTiposIdentificacion.getValue(), comboIdentificacion.getValue());"
+                                        ],
+                                        "name": "change",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "6611c078-6063-4e20-af8e-316cfd34b9b0"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 28,
+                        "designer|displayName": "Nombres",
+                        "layout": "hbox",
+                        "fieldLabel": "Nombres"
+                    },
+                    "designerId": "380c3004-5732-475d-aa62-c8c21c619470",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "fieldLabel": null,
+                                "name": "nombres"
+                            },
+                            "designerId": "258a5b25-dbcc-44b4-be1a-cdb69738223b"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "fieldLabel": null,
+                                "name": "apellidos"
+                            },
+                            "designerId": "0a5d47a9-b20f-4f2b-9c07-b2a1b7342c4d"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 28,
+                        "designer|displayName": "fecha de Nacimiento",
+                        "layout": "hbox",
+                        "fieldLabel": "Fecha Nacimiento"
+                    },
+                    "designerId": "182a317e-2313-4369-b6f6-c8ec45dbdd35",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "autoShow": true,
+                                "fieldLabel": null,
+                                "name": "fechanacimiento",
+                                "format": "Y-m-d",
+                                "submitFormat": "Y-m-d"
+                            },
+                            "designerId": "ee361b03-426d-426e-9ed7-92cfb90f4ecc"
+                        },
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "designer|displayName": "Sexo",
+                                "fieldLabel": null
+                            },
+                            "designerId": "69ee1688-d288-4f76-bc8a-5f185568924f",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": null,
+                                        "name": "sexo",
+                                        "boxLabel": "M",
+                                        "checked": true,
+                                        "inputValue": "1"
+                                    },
+                                    "designerId": "52f836c2-a07a-4d8d-af91-5ee52ba657b5"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fieldLabel": null,
+                                        "name": "sexo",
+                                        "boxLabel": "F",
+                                        "inputValue": "2"
+                                    },
+                                    "designerId": "a6aa7e82-9e17-449d-8ac6-4163a69ff3af"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 28,
+                        "designer|displayName": "Direccion y Tel",
+                        "layout": "hbox",
+                        "fieldLabel": "Teléfono y EMail"
+                    },
+                    "designerId": "b9230de3-88f7-4983-a832-8db3bbe222b5",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "fieldLabel": null,
+                                "name": "telefonos"
+                            },
+                            "designerId": "c40fedf6-f83d-4b72-b518-a3e37ab02c35"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "fieldLabel": null,
+                                "name": "email"
+                            },
+                            "designerId": "44c467ed-f1a3-4c52-a611-567046314d95"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "Dirección",
+                        "name": "direccion"
+                    },
+                    "designerId": "22221a2c-6750-477c-989e-8c484da11971"
+                },
+                {
+                    "type": "Ext.form.FieldContainer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|align": "stretch",
+                        "height": 28,
+                        "designer|displayName": "Estado",
+                        "layout": "hbox",
+                        "fieldLabel": "Estado y Fecha"
+                    },
+                    "designerId": "8d7e2c46-6ab7-4d45-8787-bf43a7b4d8c3",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "fieldLabel": null,
+                                "name": "idestadoservicio",
+                                "value": [
+                                    "0"
+                                ],
+                                "editable": false,
+                                "autoSelect": false,
+                                "displayField": "nombre",
+                                "queryMode": "local",
+                                "store": null,
+                                "valueField": "idestadoservicio"
+                            },
+                            "designerId": "b602803b-b51a-42dc-bded-f6e5b81c8ffa"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "fieldLabel": null,
+                                "name": "fechaentrega",
+                                "format": "Y-m-d",
+                                "startDay": 1,
+                                "submitFormat": "Y-m-d"
+                            },
+                            "designerId": "55fd27d4-e9f7-49af-8549-277f79989143"
+                        },
+                        {
+                            "type": "Ext.form.field.Display",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": 1,
+                                "layout|margins": "0 0 0 2",
+                                "margin": "",
+                                "fieldLabel": null,
+                                "name": "horaentrega",
+                                "value": null
+                            },
+                            "designerId": "f1246755-bc9f-44a7-9d18-85a015b8719b"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.ComboBox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 330,
+                        "fieldLabel": "Encargado",
+                        "name": "idempleado",
+                        "value": [
+                            "0"
+                        ],
+                        "editable": false,
+                        "autoSelect": false,
+                        "displayField": "nombres",
+                        "queryMode": "local",
+                        "store": "dumyStore",
+                        "valueField": "idempleado"
+                    },
+                    "designerId": "9a27fad1-9e73-431c-baca-ac9342eb30ee"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "b909a422-1df7-45fc-acde-9984f6d624ad",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "d47a5b25-dd30-474e-b1d8-e8554d1b5cb8"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "7c7b4b41-4f49-4e49-9bfc-09ba5889e5f9",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar Servicio"
+                            },
+                            "designerId": "05fa1ed3-8a73-4824-b10b-3ce945686aa6",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "var callback=function(){\r",
+                                            "    this.gridServicios.getStore().load();\r",
+                                            "};\r",
+                                            "\r",
+                                            "\r",
+                                            "siadno.enviarFormulario.call(this, false, 'PanelComplementoInf form[id=formServicio]',{accion:115}, callback, null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c35acd09-82ac-473b-babb-3f73c7ad5ea0"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelAdded",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.registroservicios.tiposidentificacion\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.tiposidentificacion', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtipoidentificacion',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'abreviatura'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.estadosservicio\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.estadosservicio', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:112},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idestadoservicio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idestadoservicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.servicios2\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.servicios2', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                pageSize: 7,\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:113},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idservicio',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idservicio'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'fecharegistro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'fechaentrega'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'horaentrega'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'matricula'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'empleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idpersona'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idempleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoidentificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'identificacion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idestadoservicio'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.registroservicios.encargados\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.registroservicios.encargados', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                autoLoad: true,\r",
+                    "                storeId: Ext.id(),\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:104},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/InterfazRegistroServicios.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idempleado',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idempleado'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombres'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "this.fidservicio=Ext.ComponentQuery.query('PanelComplementoInf field[name=idservicio]')[0];;\r",
+                    "this.fidempleado=Ext.ComponentQuery.query('PanelComplementoInf field[name=idempleado]')[0];;\r",
+                    "this.fidpersona=Ext.ComponentQuery.query('PanelComplementoInf field[name=idpersona]')[0];;\r",
+                    "this.fidestadoservicio=Ext.ComponentQuery.query('PanelComplementoInf field[name=idestadoservicio]')[1];\r",
+                    "this.ffechaentrega=Ext.ComponentQuery.query('PanelComplementoInf field[name=fechaentrega]')[0];;\r",
+                    "this.fhoraentrega=Ext.ComponentQuery.query('PanelComplementoInf field[name=horaentrega]')[0];;\r",
+                    "\r",
+                    "this.formularioservicio=Ext.ComponentQuery.query('PanelComplementoInf form[id=formServicio]')[0];\r",
+                    "this.idPersona=Ext.ComponentQuery.query('PanelComplementoInf hidden[name=idpersona]')[0];\r",
+                    "this.idServicio=Ext.ComponentQuery.query('PanelComplementoInf hidden[name=idservicio]')[0];\r",
+                    "this.idTipoIdentificacion=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=idtipoidentificacion]')[0];\r",
+                    "this.identificacion=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=identificacion]')[0];\r",
+                    "this.fechaEntrega=Ext.ComponentQuery.query('PanelComplementoInf datefield[name=fechaentrega]')[0];\r",
+                    "\r",
+                    "this.gridServicios=Ext.ComponentQuery.query('PanelComplementoInf grid[id=gridServicios]')[0];\r",
+                    "this.gridServicios.reconfigure(Ext.create('siadno.store.registroservicios.servicios2'));\r",
+                    "\r",
+                    "this.comboEstadosServicio=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=idestadoservicio]')[0];\r",
+                    "this.comboEstadosServicio.bindStore(Ext.create('siadno.store.registroservicios.estadosservicio'));\r",
+                    "this.comboEstadosServicio.getStore().load();\r",
+                    "\r",
+                    "this.comboEstadosServicio2=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=idestadoservicio]')[1];\r",
+                    "this.comboEstadosServicio2.bindStore(Ext.create('siadno.store.registroservicios.estadosservicio'));\r",
+                    "this.comboEstadosServicio2.getStore().load();\r",
+                    "\r",
+                    "this.comboTiposIdentificacion=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=idtipoidentificacion]')[0];\r",
+                    "this.comboTiposIdentificacion.bindStore(Ext.create('siadno.store.registroservicios.tiposidentificacion'));\r",
+                    "this.comboTiposIdentificacion.getStore().load();\r",
+                    "\r",
+                    "this.comboEmpleados=Ext.ComponentQuery.query('PanelComplementoInf combobox[name=idempleado]')[0];\r",
+                    "this.comboEmpleados.bindStore(Ext.create('siadno.store.registroservicios.encargados'));\r",
+                    "this.comboEmpleados.getStore().load();\r",
+                    "\r",
+                    "this.fechaInicial=Ext.ComponentQuery.query('PanelComplementoInf datefield[name=fechainicial]')[0];\r",
+                    "this.fechaFinal=Ext.ComponentQuery.query('PanelComplementoInf datefield[name=fechafinal]')[0];\r",
+                    "\r",
+                    "this.fechaInicial.suspendEvents(false);\r",
+                    "this.fechaFinal.suspendEvents(false);\r",
+                    "\r",
+                    "var dt = new Date();\r",
+                    "this.fechaInicial.setValue(dt);\r",
+                    "this.fechaFinal.setValue(dt);\r",
+                    "\r",
+                    "\r",
+                    "this.fechaInicial.resumeEvents();\r",
+                    "this.fechaFinal.resumeEvents();\r",
+                    "\r",
+                    "this.traerServicios();\r",
+                    "\r",
+                    "/*\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idtipoidentificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.tiposidentificacion'));\r",
+                    "combo.getStore().load();\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=identificacion]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.personas'));\r",
+                    "var listConfig={\r",
+                    "loadingText: 'Buscando...',\r",
+                    "emptyText: 'No se encontraron personas.',               \r",
+                    "getInnerTpl: function() {\r",
+                    "return '<div>{abreviatura} {identificacion}</div><div>{nombres}</div>';                    \r",
+                    "}\r",
+                    "};\r",
+                    "combo.listConfig=listConfig;\r",
+                    "*/\r",
+                    "/*\r",
+                    "this.textServicio=Ext.ComponentQuery.query('PanelRegistroServicios textfield[name=idservicio]')[0];\r",
+                    "this.matricula=Ext.ComponentQuery.query('PanelRegistroServicios textfield[name=matricula]')[0];\r",
+                    "\r",
+                    "combo=Ext.ComponentQuery.query('PanelRegistroServicios combobox[name=idtipoautomotor]')[0];\r",
+                    "combo.bindStore(Ext.create('siadno.store.registroservicios.tiposautomotor'));\r",
+                    "combo.getStore().load();\r",
+                    "*/"
+                ],
+                "name": "added",
+                "scope": "me"
+            },
+            "designerId": "d8ec34ca-0dab-4461-ac13-6c81a0910afe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerServicios",
+                "implHandler": [
+                    "this.gridServicios.getStore().getProxy().extraParams.fechafinal=this.fechaFinal.getSubmitData().fechafinal;\r",
+                    "this.gridServicios.getStore().getProxy().extraParams.fechainicial=this.fechaInicial.getSubmitData().fechainicial;\r",
+                    "this.gridServicios.getStore().getProxy().extraParams.idestadoservicio=this.comboEstadosServicio.getValue();\r",
+                    "this.gridServicios.getStore().load();"
+                ]
+            },
+            "designerId": "3716bdb2-8375-42b2-af28-8227a2cc1bef"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "traerPersona",
+                "designer|params": [
+                    "idtipoidentificacion",
+                    "identificacion"
+                ],
+                "implHandler": [
+                    "var callback=function(){    \r",
+                    "    this.fidservicio.setValue(this.idservicio);\r",
+                    "    this.fidempleado.setValue(this.idempleado);\r",
+                    "    this.fidpersona.setValue(this.idpersona);    \r",
+                    "    this.fidestadoservicio.setValue(this.idestadoservicio);    \r",
+                    "    this.ffechaentrega.setValue(this.fechaentrega);\r",
+                    "    //this.ffechaentrega.setValue(new Date(this.fechaentrega));\r",
+                    "    this.fhoraentrega.setValue(this.horaentrega);\r",
+                    "\r",
+                    "};\r",
+                    "siadno.enviarFormulario.call(this, true, 'PanelComplementoInf form[id=formServicio]',{accion:114, idtipoidentificacion:idtipoidentificacion, identificacion:identificacion}, callback, null);"
+                ]
+            },
+            "designerId": "b0299461-2d19-4931-8000-000e714dd67f"
+        }
+    ]
+}

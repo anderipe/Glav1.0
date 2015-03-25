@@ -1,0 +1,803 @@
+{
+    "type": "window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|align": "stretch",
+        "designer|userClassName": "administracion.liquidacion.combos",
+        "designer|userAlias": "AdministracionLiquidacionCombos",
+        "height": 480,
+        "width": 640,
+        "resizable": [
+            "false"
+        ],
+        "layout": "hbox",
+        "closable": false,
+        "iconCls": "icon-basket_add",
+        "title": "Combos de Servicios"
+    },
+    "id": "ExtBox1-ext-gen5588",
+    "designerId": "d03af7c8-a0ea-4adf-971a-2c815dcef6a8",
+    "cn": [
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 5,
+                "designer|userClassName": "MyGridPanel6",
+                "title": "Combos",
+                "store": "dumyStore"
+            },
+            "designerId": "9531a175-593a-42e1-848b-84a3f312cb5a",
+            "cn": [
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn19",
+                        "width": 228,
+                        "dataIndex": "descripcion",
+                        "flex": 5,
+                        "text": "Combo"
+                    },
+                    "designerId": "029945d5-630f-4ad8-98f1-db05a474c8bf",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Combo--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "22ce14aa-0315-4950-a55c-c601442443ac"
+                        },
+                        {
+                            "type": "textareafield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyTextArea",
+                                "fieldLabel": null
+                            },
+                            "designerId": "6df8f2ac-c92f-407d-b8f0-4a9ed0466dd5"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn19",
+                        "width": 228,
+                        "dataIndex": "idtipoautomotor",
+                        "flex": 4,
+                        "text": "Tipo de Automotor"
+                    },
+                    "designerId": "64f94cf6-8df9-4319-aef7-4b395f0ef1cc",
+                    "cn": [
+                        {
+                            "type": "combobox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyComboBox39",
+                                "allowBlank": false,
+                                "displayField": "descripcion",
+                                "forceSelection": true,
+                                "queryMode": "local",
+                                "valueField": "idtipoautomotor"
+                            },
+                            "designerId": "df25dea9-798e-454c-8bc0-b1b47b876a0d"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "renderer",
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "var columna=this.columns[colIndex];\r",
+                                    "var ind=columna.getEditor().getStore().findExact('idtipoautomotor', value);\r",
+                                    "\r",
+                                    "if(value==0 || ind==-1){\r",
+                                    "    return \"<font style='color:gray'>--N.D--</font>\";    \r",
+                                    "}\r",
+                                    "var registro=columna.field.store.getAt(ind);\r",
+                                    "return registro.get('descripcion');"
+                                ]
+                            },
+                            "designerId": "263f84e8-8f0b-465b-a1b7-5a79d8c74c0c"
+                        }
+                    ]
+                },
+                {
+                    "type": "booleancolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn",
+                        "dataIndex": "estado",
+                        "flex": 2,
+                        "text": "Estado",
+                        "falseText": "In Activo",
+                        "trueText": "Activo",
+                        "undefinedText": "No Definido"
+                    },
+                    "designerId": "71193f46-ed43-410a-8301-79de3088c570",
+                    "cn": [
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyCheckbox",
+                                "name": "estado",
+                                "fieldLabel": null,
+                                "boxLabel": null
+                            },
+                            "designerId": "a07737a5-bd33-44c3-95a7-5e7d8bd0d3fb"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView6"
+                    },
+                    "designerId": "c6f853b1-2f12-49c0-aa51-df7763279c7e"
+                },
+                {
+                    "type": "rowselectionmodel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "userConfig": {
+                        "designer|userClassName": "MyRowSelectionModel5"
+                    },
+                    "designerId": "7fc2d2ab-4b7c-49eb-a354-50dcd8f4f9e1",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onRowselectionmodelSelect",
+                                "fn": "onRowselectionmodelSelect",
+                                "implHandler": [
+                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[1];\r",
+                                    "grid.getStore().getProxy().extraParams.idcombo=record.get('idcombo');\r",
+                                    "grid.getStore().getProxy().extraParams.accion=102;\r",
+                                    "grid.getStore().load();"
+                                ],
+                                "name": "select",
+                                "scope": "me"
+                            },
+                            "designerId": "7cad57a4-d9e7-4c78-8684-5e7d9c19139f"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridroweditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyRowEditingPlugin2"
+                    },
+                    "designerId": "8999cc4c-7efd-4211-8b75-39abd9f132d8"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|userClassName": "onWindowBeforeShow",
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.liquidacion.combos\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.liquidacion.combos', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/liquidacion/InterfazCombos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idcombo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idcombo'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtipoautomotor'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.liquidacion.tiposautomotor\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.liquidacion.tiposautomotor', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/liquidacion/InterfazCombos.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idcombo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtipoautomotor'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "clase=Ext.ClassManager.get(\"siadno.store.administracion.liquidacion.rubros3\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.liquidacion.rubros3', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),                \r",
+                    "                autoLoad: false,\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:102},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/liquidacion/InterfazCombos.php',                    \r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idrubro',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idrubro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idcombo'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idtiporubro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'idresoluciontarifa'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'seleccionado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.liquidacion.combos'));\r",
+                    "grid.getStore().load();\r",
+                    "\r",
+                    "\r",
+                    "var columna=grid.columns[1];\r",
+                    "columna.getEditor().bindStore(Ext.create('siadno.store.administracion.liquidacion.tiposautomotor'));\r",
+                    "columna.getEditor().getStore().load();\r",
+                    "\r",
+                    "grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[1];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.liquidacion.rubros3'));"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "9c431d1c-34e3-4e63-a1b9-1588d176bccb"
+        },
+        {
+            "type": "gridpanel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "accionEditar": 103,
+                "layout|flex": 4,
+                "designer|userClassName": "MyGridPanel28",
+                "title": "Rubros del Combo"
+            },
+            "configAlternates": {
+                "accionEditar": "number"
+            },
+            "designerId": "9bc52df3-88f5-4f60-ab01-47d915b72f1c",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "accionEditar",
+                    "type": "string"
+                }
+            ],
+            "cn": [
+                {
+                    "type": "gridcolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyColumn56",
+                        "dataIndex": "descripcion",
+                        "flex": 5,
+                        "text": "Rubro"
+                    },
+                    "designerId": "e13acb57-2168-4d26-b351-f32ec671d91f"
+                },
+                {
+                    "type": "booleancolumn",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyBooleanColumn15",
+                        "dataIndex": "seleccionado",
+                        "text": "Enlazado?",
+                        "falseText": "NO",
+                        "trueText": "SI",
+                        "undefinedText": "??"
+                    },
+                    "designerId": "269780f4-c428-4dde-a1a6-774123719887",
+                    "cn": [
+                        {
+                            "type": "checkboxfield",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyCheckbox20",
+                                "boxLabel": null
+                            },
+                            "designerId": "0f777703-7728-40c1-8553-d6f06d25880e"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridroweditingplugin",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "userConfig": {
+                        "designer|userClassName": "MyRowEditingPlugin19"
+                    },
+                    "designerId": "ef3d9785-8603-4524-b13c-33e5751dcd8b",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "onGridroweditingpluginEdit",
+                                "fn": "onGridroweditingpluginEdit",
+                                "implHandler": [
+                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[1];         \r",
+                                    "siadno.enviarCambiosGrid(grid, null, 'idrubro');   "
+                                ],
+                                "name": "edit",
+                                "scope": "me"
+                            },
+                            "designerId": "94e6f2c1-9b94-478b-b143-67a766352847"
+                        }
+                    ]
+                },
+                {
+                    "type": "gridview",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|userClassName": "MyGridView28"
+                    },
+                    "designerId": "2d7fe91c-9538-431e-89fd-c680bf4c037f"
+                }
+            ]
+        },
+        {
+            "type": "toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom",
+                "designer|userClassName": "MyToolbar"
+            },
+            "designerId": "aed3379c-a7eb-4cb1-bd6d-9c0a6747a334",
+            "cn": [
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "designer|userClassName": "MyButtonGroup",
+                        "title": "Acciones",
+                        "columns": 5
+                    },
+                    "designerId": "59c93169-1d54-46d0-9e1a-b8a39f6c8eeb",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "accion": "nuevo",
+                                "designer|userClassName": "MyButton",
+                                "iconCls": "icon-page_add",
+                                "text": "Nuevo"
+                            },
+                            "designerId": "4cffc1ee-5f05-4ab2-8d38-26697cdc7942",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "accion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onButtonClickNuevo",
+                                        "fn": "onButtonClickNuevo",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[0];\r",
+                                            "siadno.nuevoRegistroGrid(grid,'idcombo');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "7c73448d-527a-431e-aec9-8bf2f1285aa7"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "accion": "guardar",
+                                "designer|userClassName": "MyButton7",
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar"
+                            },
+                            "designerId": "222eef95-7dd3-41d8-8f0b-535beffd9e00",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "accion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onButtonClickGuardar",
+                                        "fn": "onButtonClickGuardar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[0];         \r",
+                                            "siadno.enviarCambiosGrid(grid, null, 'idcombo');            "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "fb9bdc91-edfa-4fe4-b35b-9c5695052d5e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton11",
+                                "iconCls": "icon-page_cancel",
+                                "text": "Cancelar"
+                            },
+                            "designerId": "d2157b1a-4a95-49ea-a560-5f1b24257b07",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onButtonClickCancelar",
+                                        "fn": "onButtonClickCancelar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[0];\r",
+                                            "siadno.rollbackCambiosGrid(grid);         "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "08ad4c40-193d-4dfd-88db-a618907fee89"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "aacion": "borrar",
+                                "designer|userClassName": "MyButton1",
+                                "iconCls": "icon-page_delete",
+                                "text": "Borrar"
+                            },
+                            "designerId": "c4ff21f5-597c-4f2a-b6a2-b6f6988c0288",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "aacion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onButtonClickBorrar",
+                                        "fn": "onButtonClickBorrar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionCombos grid')[0];\r",
+                                            "siadno.borrarRegistroGrid(grid, null, 'idcombo');    "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c2b61b96-733c-49cf-8514-33b0b9e4e90d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "tbfill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "designer|userClassName": "MyFill"
+                    },
+                    "designerId": "0a1c9938-d0a7-49bd-8daf-cc7e5a2cd420"
+                },
+                {
+                    "type": "buttongroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 1,
+                        "designer|userClassName": "MyButtonGroup1",
+                        "title": null,
+                        "columns": 1
+                    },
+                    "designerId": "bf2f27ac-67c9-4841-a36c-c1ea5ca2960f",
+                    "cn": [
+                        {
+                            "type": "button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|userClassName": "MyButton2",
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "e4b31696-fd41-4c4b-acc4-f3fb950aace9",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|userClassName": "onButtonClickSalir",
+                                        "fn": "onButtonClickSalir",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "fe2d16a2-09ae-4889-8aa2-cff807d50c2a"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,343 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "VERIFICAR_HASH": 101,
+        "container|align": "stretch",
+        "height": 280,
+        "width": 320,
+        "designer|userClassName": "administracion.local.auditoria.backup",
+        "designer|userAlias": "AdministracionLocalAuditoriaBackup",
+        "layout": "vbox",
+        "closable": false,
+        "iconCls": "icon-database_save",
+        "title": "Copias de Respaldo"
+    },
+    "configAlternates": {
+        "VERIFICAR_HASH": "number"
+    },
+    "designerId": "7fa607d2-2274-4b12-ac5d-0a12275ad472",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "VERIFICAR_HASH",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 3,
+                "height": null,
+                "width": null,
+                "title": null,
+                "forceFit": true,
+                "store": "dumyStore"
+            },
+            "designerId": "4b63749b-2796-400c-b956-e3befd5b417b",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "defaultWidth": null,
+                        "dataIndex": "nombrearchivo",
+                        "text": "BackUp"
+                    },
+                    "designerId": "6bba840b-d8f6-4ad7-b9d3-6f1d879bc4e0"
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "84958085-3b39-45ea-b75d-33e573a68c80"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "7aad7a3d-b8ba-4045-9ef6-d38289098c72"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "2f2b8c20-8778-42bb-9001-d09bdf7f7017",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 4,
+                        "title": "Acciones",
+                        "columns": 4
+                    },
+                    "designerId": "1bbf5b86-f5f7-44ee-b848-0aa13d2d7e99",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_save",
+                                "text": "Crear"
+                            },
+                            "designerId": "671c1719-21e8-4799-8b55-160ef60d520c",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickCheckHash",
+                                        "implHandler": [
+                                            "this.grid.getStore().getProxy().extraParams.accion=102;\r",
+                                            "this.grid.getStore().load();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "aee015fc-8522-40d1-aaac-ead6ce2b883e"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_delete",
+                                "text": "Borrar"
+                            },
+                            "designerId": "a89e2061-98a0-4bf6-846e-c5191360a6fd",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "if(this.grid.getSelectionModel().hasSelection()){\r",
+                                            "    \r",
+                                            "    var registros=this.grid.getSelectionModel().getSelection();\r",
+                                            "    this.grid.getStore().getProxy().extraParams.accion=103;\r",
+                                            "    this.grid.getStore().getProxy().extraParams.rutacompleta=registros[0].get(\"rutacompleta\");    \r",
+                                            "\tthis.grid.getStore().load();\r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "5001c5b4-9045-4aae-948c-fa29f4bea179"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-package_down",
+                                "text": "Descargar"
+                            },
+                            "designerId": "6100d0e0-611a-43fd-a41a-e782f4ac5c94",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick2",
+                                        "implHandler": [
+                                            "if(this.grid.getSelectionModel().hasSelection()){\r",
+                                            "\r",
+                                            "    var registros=this.grid.getSelectionModel().getSelection();\r",
+                                            "    var nombreArchivo=registros[0].get(\"nombrearchivo\");    \r",
+                                            "    location.href=\"backups/\"+nombrearchivo;    \r",
+                                            "}"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "91431af1-e6ae-4aa0-a2f6-45cc20a8cbdf"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "2688d260-6ec9-4a50-a803-0ca86af982ea"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "19d1c880-48bd-44c4-8ee2-f9f6866a1fcb",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "ab5ac250-6ff2-45e3-a4c1-2177521b94e5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "8679a586-285e-4d7c-8a4f-b05098a1f9f5"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "\r",
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.local.auditoria.backup\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.local.auditoria.backup', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    extraParams:{accion:101},\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/auditoria/InterfazBackUp.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'nombrearchivo',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'rutacompleta'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombrearchivo'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "this.grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaBackup grid')[0];\r",
+                    "this.grid.reconfigure(Ext.create('siadno.store.administracion.local.auditoria.backup'));\r",
+                    "this.grid.getStore().load();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "379ca83b-d6bb-4cf9-ad10-f5a88a640016"
+        }
+    ]
+}

@@ -1,0 +1,849 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "idPerfil": "0",
+        "cargado": "0",
+        "BORRAR_PERFIL": "2002",
+        "NUEVO_PERFIL": "2001",
+        "container|align": "stretch",
+        "height": 600,
+        "width": 640,
+        "designer|userClassName": "mantenimiento.local.permisos.perfiles",
+        "designer|userAlias": "MantenimientoLocalPermisosPerfiles",
+        "layout": "vbox",
+        "closable": false,
+        "iconCls": "icon-application_osx_cascade",
+        "title": "Perfiles",
+        "maximizable": true
+    },
+    "designerId": "101e7fc2-c3d4-4101-bae4-6952ca255b49",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "idPerfil",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cargado",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "BORRAR_PERFIL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "NUEVO_PERFIL",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "height": null,
+                "maxHeight": 200,
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "a5871476-acb9-44e3-96cb-e773694affc1",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 83,
+                        "dataIndex": "idperfil",
+                        "text": "Identificador"
+                    },
+                    "designerId": "16f73f44-51f3-41db-9a15-2026379e345f",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value) || value<0){\r",
+                                    "    return \"<font style='color:gray'>N.D</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "d261ad70-d507-4fa0-b5a6-91939aeb6468"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 397,
+                        "dataIndex": "nombre",
+                        "text": "Nombre del Perfil"
+                    },
+                    "designerId": "8e7dcaf2-3285-4d71-b7f2-7ee263513217",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "nombre"
+                            },
+                            "designerId": "a06aef3b-71b7-405f-af2c-327de42ce3b5"
+                        },
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Perfil--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "3272f89e-df2e-4ff3-a242-444f94a833dd"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "estado",
+                        "text": "Activo?",
+                        "falseText": "In Activo",
+                        "trueText": "Activo",
+                        "undefinedText": "No Definido"
+                    },
+                    "designerId": "a6955818-0e79-4572-8406-0196b89e64af",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "estado",
+                                "boxLabel": "Activo?"
+                            },
+                            "designerId": "a93d1efc-9e3c-46b2-b80b-367d58e1eff3"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "f0eb1828-ca6a-4e73-bf9c-b8f7c4befd4c"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "9272918d-4962-49ac-bda9-e524ffa15dc1"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "954d73ed-c140-4ccf-b29f-992972570463"
+                },
+                {
+                    "type": "basiceventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onGridpanelSelect",
+                        "implHandler": [
+                            "this.idPerfil=record.get('idperfil');\r",
+                            "this.verModulosDelPerfil(this.idPerfil);"
+                        ],
+                        "name": "select",
+                        "scope": "me"
+                    },
+                    "designerId": "e7404c60-7c10-4d07-9d4b-6cca45fe2784"
+                }
+            ]
+        },
+        {
+            "type": "Ext.container.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "container|align": "stretch",
+                "height": null,
+                "layout": "hbox"
+            },
+            "designerId": "ca4cd19f-e947-4e10-9eff-ac1ba0d85123",
+            "cn": [
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cargado": "false",
+                        "layout|flex": 1,
+                        "animCollapse": false,
+                        "iconCls": "icon-bricks",
+                        "title": "Módulos Fuera del Perfil",
+                        "store": "mantenimiento.privado.modulosnoenperfil",
+                        "animate": false,
+                        "displayField": "nombre",
+                        "rootVisible": false
+                    },
+                    "designerId": "5a5eab63-c3a9-4c43-8bbd-d0d5878155c7",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "cargado",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "22e58519-c7a3-4a2f-99a1-82790b19a934",
+                            "cn": [
+                                {
+                                    "type": "Ext.tree.plugin.TreeViewDragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                                    "designerId": "e27d9011-9d75-4d31-833c-219858c42b92",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onTreedragdroppluginBeforeDrop1",
+                                                "implHandler": [
+                                                    "if(overModel.get('idmodulo')<=0){\r",
+                                                    "    return false;\r",
+                                                    "}\r",
+                                                    "node=data.records[0];\r",
+                                                    "var tree=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[0];\r",
+                                                    "siadno.ajax.call(this, 'clases/interfaces/mantenimiento/local/permisos/InterfazPerfiles.php',{accion:this.BORRAR_PERFIL, idperfil:this.idPerfil, idmodulo:node.get('idmodulo')}, null, {});    \r",
+                                                    "return true;"
+                                                ],
+                                                "name": "beforedrop",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "ab112e3c-fe6b-4bfb-92ea-7591544d69c5"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTreepanelItemAppend",
+                                "implHandler": [
+                                    "siadno.cambiarIconoNodo(node);"
+                                ],
+                                "name": "itemappend",
+                                "scope": "me"
+                            },
+                            "designerId": "57ecb44a-d35a-4f59-9d53-483f72501e82"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.tree.Panel",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "cargado": "false",
+                        "layout|flex": 1,
+                        "animCollapse": false,
+                        "iconCls": "icon-bricks",
+                        "title": "Módulos Dentro del Perfil",
+                        "store": "mantenimiento.privado.modulosenperfil",
+                        "animate": false,
+                        "displayField": "nombre",
+                        "rootVisible": false
+                    },
+                    "designerId": "87510aaa-48c6-4918-9393-b3ec98bd8cb1",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "cargado",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.tree.View",
+                            "reference": {
+                                "name": "viewConfig",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "designerId": "3fcc17d8-ee7e-46b5-bb6d-5a482389b309",
+                            "cn": [
+                                {
+                                    "type": "Ext.tree.plugin.TreeViewDragDrop",
+                                    "reference": {
+                                        "name": "plugins",
+                                        "type": "array"
+                                    },
+                                    "codeClass": "Ext.tree.plugin.TreeViewDragDrop",
+                                    "designerId": "75df3719-76df-4e85-a7fd-6b123f129be8",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onTreedragdroppluginBeforeDrop",
+                                                "implHandler": [
+                                                    "if(overModel.get('idmodulo')<=0){\r",
+                                                    "    return false;\r",
+                                                    "}\r",
+                                                    "\r",
+                                                    "node=data.records[0];\r",
+                                                    "var tree=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[1];\r",
+                                                    "siadno.ajax.call(this, 'clases/interfaces/mantenimiento/local/permisos/InterfazPerfiles.php',{accion:this.NUEVO_PERFIL, idperfil:this.idPerfil, idmodulo:node.get('idmodulo')}, null, {});    \r",
+                                                    "return true;"
+                                                ],
+                                                "name": "beforedrop",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "5d1c6f2a-a7a8-4077-8a1c-72b2d9233953"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onTreepanelItemAppend1",
+                                "implHandler": [
+                                    "siadno.cambiarIconoNodo(node);"
+                                ],
+                                "name": "itemappend",
+                                "scope": "me"
+                            },
+                            "designerId": "f2b9e7a0-2b1c-4869-93b0-523c495970e3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "76ea8bef-42d5-49f2-9ab5-f16a1d3bb20f",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 4,
+                        "title": "Perfil",
+                        "columns": 4
+                    },
+                    "designerId": "31eff444-b914-478f-8ab7-148825325e8d",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_add",
+                                "text": "Nuevo"
+                            },
+                            "designerId": "590ac74f-aa22-47c9-83a1-3539407a70f6",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickNuevo",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles grid')[0];\r",
+                                            "siadno.nuevoRegistroGrid(grid,'idperfil');"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "277b9b33-4c1c-4ab6-becb-c67b9b2d02e1"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar"
+                            },
+                            "designerId": "5769a98b-a031-46e6-9857-1e9e2b491aa0",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickGuardar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles grid')[0];         \r",
+                                            "siadno.enviarCambiosGrid(grid, null, 'idperfil');            "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "d989909d-f578-4fef-8630-7934ae57a9b3"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_cancel",
+                                "text": "Cancelar"
+                            },
+                            "designerId": "4af83054-36ba-4e79-857b-8759d5252a6d",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickCancelar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles grid')[0];\r",
+                                            "siadno.rollbackCambiosGrid(grid);         "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "074ac25c-982a-4871-852a-c5d50b16de53"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_delete",
+                                "text": "Borrar"
+                            },
+                            "designerId": "1e1c327c-bbad-4bb7-9383-6fb97b07f186",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickBorrar",
+                                        "implHandler": [
+                                            "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles grid')[0];\r",
+                                            "siadno.borrarRegistroGrid(grid, null, 'idperfil');    "
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "c2f23708-2619-45bd-9d29-3c676188f22e"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "c3e25618-515e-4e52-92e0-a132835c1a1e"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "01637908-403f-4519-ae57-547d92b0383f",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "448b165b-2f62-4a2b-9b55-40e62a2b59f5",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "9f33fbac-bd41-470b-afd5-aeffeb283c66"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.mantenimiento.local.permisos.perfiles\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.mantenimiento.local.permisos.perfiles', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/permisos/InterfazPerfiles.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idperfil',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idperfil'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'nombre'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.mantenimiento.local.permisos.perfiles'));\r",
+                    "grid.getStore().load(); \r",
+                    "\r",
+                    "var tree1=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[0];\r",
+                    "tree1.cargado=false;\r",
+                    "var nodoRaiz1=tree1.getRootNode();\r",
+                    "nodoRaiz1.removeAll();\r",
+                    "\r",
+                    "var tree2=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[1];\r",
+                    "tree2.cargado=false;\r",
+                    "var nodoRaiz2=tree2.getRootNode();                \r",
+                    "nodoRaiz2.removeAll();"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "fa72ef48-3b53-4a3a-aec4-e34d3d684b51"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "MODULOS_EN_PERFIL": "2003",
+                "MODULOS_NOEN_PERFIL": "2004",
+                "fn": "verModulosDelPerfil",
+                "designer|params": [
+                    "idPerfil"
+                ],
+                "implHandler": [
+                    "var grid=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles gridpanel')[0];\r",
+                    "grid.el.mask('Por favor espere', 'x-mask-loading');\r",
+                    "\r",
+                    "var tree1=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[0];\r",
+                    "tree1.cargado=false;\r",
+                    "tree1.el.mask('Por favor espere', 'x-mask-loading');\r",
+                    "var nodoRaiz1=tree1.getRootNode();\r",
+                    "nodoRaiz1.removeAll();\r",
+                    "\r",
+                    "var tree2=Ext.ComponentQuery.query('MantenimientoLocalPermisosPerfiles treepanel')[1];\r",
+                    "tree2.cargado=false;\r",
+                    "tree2.el.mask('Por favor espere', 'x-mask-loading');\r",
+                    "var nodoRaiz2=tree2.getRootNode();                \r",
+                    "nodoRaiz2.removeAll();                \r",
+                    "\r",
+                    "\r",
+                    "tree1.getStore().getProxy().extraParams={idPerfil:idPerfil, accion:2004};\r",
+                    "tree1.getStore().load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(records, operation, success){               \r",
+                    "        if(Ext.isEmpty(records) || records.length<=0){\r",
+                    "            tree1.cargado=true;\r",
+                    "            if(tree2.cargado){\r",
+                    "                grid.el.unmask();\r",
+                    "            }\r",
+                    "            tree1.el.unmask();                                                                \r",
+                    "            return;\r",
+                    "        }\r",
+                    "\r",
+                    "        var callback=function(){\r",
+                    "            tree1.cargado=true;\r",
+                    "            if(tree2.cargado){\r",
+                    "                grid.el.unmask();\r",
+                    "            }\r",
+                    "            tree1.el.unmask();                                                                \r",
+                    "        };\r",
+                    "        records[0].expand(false, callback);        \r",
+                    "\r",
+                    "    }\r",
+                    "}); \r",
+                    "\r",
+                    "tree2.getStore().getProxy().extraParams={idPerfil:idPerfil, accion:2003};                \r",
+                    "tree2.getStore().load({\r",
+                    "    scope: this,\r",
+                    "    callback: function(records, operation, success){                                \r",
+                    "        if(Ext.isEmpty(records) || records.length<=0){\r",
+                    "            tree2.cargado=true;\r",
+                    "            if(tree1.cargado){\r",
+                    "                grid.el.unmask();\r",
+                    "            }\r",
+                    "            tree2.el.unmask(); \r",
+                    "        }\r",
+                    "        var callback=function(){\r",
+                    "            tree2.cargado=true;\r",
+                    "            if(tree1.cargado){\r",
+                    "                grid.el.unmask();\r",
+                    "            }\r",
+                    "            tree2.el.unmask();                \r",
+                    "        };  \r",
+                    "        records[0].expand(false, callback);        \r",
+                    "    }\r",
+                    "});"
+                ]
+            },
+            "designerId": "cf5bb104-6dbc-4bd4-8583-9f578e8c5c25",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "MODULOS_EN_PERFIL",
+                    "type": "string"
+                },
+                {
+                    "group": "(Custom Properties)",
+                    "name": "MODULOS_NOEN_PERFIL",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowDestroy",
+                "implHandler": [
+                    "siadno.crearMenu();"
+                ],
+                "name": "destroy",
+                "scope": "me"
+            },
+            "designerId": "516c273f-5adb-4293-b3cc-9a4b3d7c2351"
+        }
+    ]
+}

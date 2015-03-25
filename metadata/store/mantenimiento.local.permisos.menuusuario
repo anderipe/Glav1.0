@@ -1,0 +1,52 @@
+{
+    "type": "Ext.data.TreeStore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": null,
+        "model": "mantenimiento.privado.modulo",
+        "storeId": "MyJsonTreeStore3",
+        "designer|userClassName": "mantenimiento.local.permisos.menuusuario",
+        "defaultRootId": "-1",
+        "defaultRootProperty": null,
+        "nodeParam": "idmodulo",
+        "root": [
+            "{nombre:'modulos', idmodulo:-1, expanded:true}"
+        ]
+    },
+    "designerId": "dc9f50ec-8381-4003-b5ce-68dfaa8a7927",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "timeout": null,
+                "url": "clases/data/sistema/menu.php"
+            },
+            "designerId": "f92b05e5-f5c8-4d9b-9d1d-324172616bea",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "idProperty": "idmodulo",
+                        "messageProperty": "msg",
+                        "root": "data"
+                    },
+                    "designerId": "e92a0636-3a40-4308-a3cb-b713608a5458"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,658 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "idPerfil": "0",
+        "cargado": "0",
+        "AGREGAR_PERFIL": "101",
+        "QUITAR_PERFIL": "102",
+        "CAMBIAR_PASSWORD": "103",
+        "cambiandoIdentificacion": "0",
+        "height": 541,
+        "width": 507,
+        "designer|userClassName": "sistema.configuracion.micuenta",
+        "designer|userAlias": "SistemaConfiguracionMiCuenta",
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-user",
+        "title": "Mi Cuenta"
+    },
+    "designerId": "9fe6a972-8750-4bac-80c7-4027a17bfffb",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "idPerfil",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cargado",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "AGREGAR_PERFIL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "QUITAR_PERFIL",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "CAMBIAR_PASSWORD",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "cambiandoIdentificacion",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|align": "stretch",
+                "height": null,
+                "maxHeight": null,
+                "minHeight": null,
+                "layout": "vbox",
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/sistema/configuracion/InterfazMiCuenta.php"
+            },
+            "designerId": "fcac70a7-6dc7-4274-a05a-614b1a4abfb1",
+            "cn": [
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "height": 245,
+                        "padding": "0 10 0 10",
+                        "title": "Datos Personales"
+                    },
+                    "designerId": "efb4d243-7c82-4f09-83fb-2aefeaf1f518",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "idpersona"
+                            },
+                            "designerId": "370ee1e9-36ce-4c26-b02f-cfa3bffba8cf"
+                        },
+                        {
+                            "type": "Ext.form.field.Hidden",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Label",
+                                "name": "idusuario"
+                            },
+                            "designerId": "03843455-0a2d-4baf-b563-3a122c72de26"
+                        },
+                        {
+                            "type": "Ext.form.FieldContainer",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|align": "stretch",
+                                "disabled": true,
+                                "height": 27,
+                                "margin": 0,
+                                "padding": 0,
+                                "layout": "hbox",
+                                "fieldLabel": "Identificacion",
+                                "labelPad": null
+                            },
+                            "designerId": "45e8d72e-463e-4866-a2df-1232ae848e20",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|margins": "0",
+                                        "disabled": true,
+                                        "margin": "0 1 0 0",
+                                        "padding": 0,
+                                        "width": 68,
+                                        "fieldLabel": null,
+                                        "labelPad": 0,
+                                        "name": "idtipoidentificacion",
+                                        "value": [
+                                            "0"
+                                        ],
+                                        "editable": false,
+                                        "displayField": "abreviatura",
+                                        "store": "dumyStore",
+                                        "valueField": "idtipoidentificacion"
+                                    },
+                                    "designerId": "63a3d7be-4976-421a-a774-4ea76dc739b0"
+                                },
+                                {
+                                    "type": "Ext.form.field.ComboBox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|margins": "0",
+                                        "disabled": true,
+                                        "margin": "0 1 0 0",
+                                        "padding": 0,
+                                        "width": 174,
+                                        "fieldLabel": null,
+                                        "labelPad": 0,
+                                        "name": "identificacion",
+                                        "enableKeyEvents": true,
+                                        "hideTrigger": true,
+                                        "autoSelect": false,
+                                        "displayField": "identificacion",
+                                        "minChars": 5,
+                                        "queryParam": "identificacion",
+                                        "store": "dumyStore",
+                                        "valueField": "identificacion"
+                                    },
+                                    "designerId": "04991717-949c-44c7-86f8-403b76e55c5b"
+                                },
+                                {
+                                    "type": "Ext.form.field.Checkbox",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "layout|flex": 1,
+                                        "disabled": true,
+                                        "fieldLabel": null,
+                                        "name": "estado",
+                                        "boxLabel": "Usuario Activo:",
+                                        "boxLabelAlign": "before",
+                                        "inputValue": "1",
+                                        "uncheckedValue": "0"
+                                    },
+                                    "designerId": "92d8bcba-af75-4a7c-b3a7-3418a03fd127"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "Nombres",
+                                "name": "nombres"
+                            },
+                            "designerId": "4b14a4be-722f-4824-8822-a6625a9eb925"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "Apellidos",
+                                "name": "apellidos"
+                            },
+                            "designerId": "5af72cd2-b5d2-4022-9699-1c69c4031065"
+                        },
+                        {
+                            "type": "Ext.form.field.ComboBox",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "Nacionalidad",
+                                "name": "idpais",
+                                "value": [
+                                    "0"
+                                ],
+                                "autoSelect": false,
+                                "displayField": null,
+                                "store": "dumyStore",
+                                "valueField": null
+                            },
+                            "designerId": "32c7482d-0c9e-44fb-b175-2d897cf301d6"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "Direccion",
+                                "name": "direccion"
+                            },
+                            "designerId": "c5015644-d852-4761-8b2f-614074eee21f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "Teléfonos",
+                                "name": "telefonos"
+                            },
+                            "designerId": "42d5e2fd-3895-49c5-952c-0cda72a0384f"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "disabled": true,
+                                "fieldLabel": "E-Mail",
+                                "name": "email"
+                            },
+                            "designerId": "42015293-20a7-4ef0-9210-8f301ba77f1f"
+                        },
+                        {
+                            "type": "Ext.form.field.Date",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "autoShow": true,
+                                "disabled": true,
+                                "fieldLabel": "Nacimiento",
+                                "name": "fechanacimiento",
+                                "format": "d/m/Y",
+                                "submitFormat": "Y-m-d"
+                            },
+                            "designerId": "3c993a6a-41a6-4b79-bc9a-241ec80f7528"
+                        },
+                        {
+                            "type": "Ext.form.RadioGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "disabled": true,
+                                "fieldLabel": "Sexo"
+                            },
+                            "designerId": "9af6ccf3-45f6-470b-9b67-647755d44b65",
+                            "cn": [
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "fieldLabel": null,
+                                        "name": "sexo",
+                                        "boxLabel": "Masculino",
+                                        "checked": true,
+                                        "inputValue": "1"
+                                    },
+                                    "designerId": "d3295417-8b5a-4d5d-b988-95191cbf2f50"
+                                },
+                                {
+                                    "type": "Ext.form.field.Radio",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "disabled": true,
+                                        "fieldLabel": null,
+                                        "name": "sexo",
+                                        "boxLabel": "Femenino",
+                                        "inputValue": "2"
+                                    },
+                                    "designerId": "472c0efd-ca60-4532-8703-4d299171795b"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.FieldSet",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": 1,
+                        "layout|margins": null,
+                        "height": 120,
+                        "margin": null,
+                        "maxHeight": 120,
+                        "minHeight": 120,
+                        "padding": null,
+                        "title": "Datos de Autenticacion"
+                    },
+                    "designerId": "25b47f63-1d33-492b-82a0-3bed764d43a4",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Usuario",
+                                "name": "login"
+                            },
+                            "designerId": "f045880c-aa22-48e0-a5eb-f4bebfb647ed"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": "Contraseña",
+                                "name": "password",
+                                "inputType": "password"
+                            },
+                            "designerId": "2b9c190d-3e79-4310-95f1-ad2e255debd2"
+                        },
+                        {
+                            "type": "Ext.form.field.Text",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|anchor": "100%",
+                                "fieldLabel": null,
+                                "hideEmptyLabel": false,
+                                "name": "password2",
+                                "inputType": "password"
+                            },
+                            "designerId": "8c372959-46f8-4ba7-bf8d-c643d86cad56"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "676c6df6-4eda-4866-9ff2-0b67254396a9",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 4,
+                        "title": "Acciones",
+                        "columns": 4
+                    },
+                    "designerId": "0507141b-2716-470d-828f-c1ace0541b80",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "iconCls": "icon-page_add",
+                                "text": "Nuevo"
+                            },
+                            "designerId": "0f155329-c4c5-4388-8ce2-784b7ae9d332",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickNuevo",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "22f19415-06e8-4b09-8ee7-df53b92964e6"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-page_save",
+                                "text": "Guardar",
+                                "tooltip": null
+                            },
+                            "designerId": "af2ace45-8698-4215-bbef-179c557ecf08",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickGuardar",
+                                        "implHandler": [
+                                            "siadno.enviarFormulario.call(this, false, 'SistemaConfiguracionMiCuenta form', {accion:siadno.GUARDAR_DATOS}, null, null);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "f2d58908-67af-4492-a650-78f76a668964"
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "hidden": true,
+                                "iconCls": "icon-page_cancel",
+                                "text": "Cancelar"
+                            },
+                            "designerId": "3c4cc06e-3296-4a8d-b367-d577c02bf8ff",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickCancelar",
+                                        "implHandler": [
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "d1fce5fd-e4c4-4279-b744-3ffb3d3aae8d"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "ac180008-f7e9-4e7c-9f0c-a36687c1a5d3"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "67170ecb-ee17-4c66-baa1-98d97d9a7a7b",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "9c986734-c72d-4cc5-9952-b8ff8e189714",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "62c3939b-266d-4941-9ff5-e9d3184833af"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowShow",
+                "implHandler": [
+                    "siadno.enviarFormulario.call(this, true, 'SistemaConfiguracionMiCuenta form',null, null, null);"
+                ],
+                "name": "show",
+                "scope": "me"
+            },
+            "designerId": "bcb3ccf5-8101-4a3d-a22c-f3aca44c71a3"
+        }
+    ]
+}

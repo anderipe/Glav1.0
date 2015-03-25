@@ -1,0 +1,516 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "VERIFICAR_HASH": 101,
+        "SUBIR_P12": "102",
+        "FIRMAR_TABLA": "101",
+        "container|align": "stretch",
+        "height": 509,
+        "width": 800,
+        "designer|userClassName": "administracion.local.auditoria.aseguramiento",
+        "designer|userAlias": "AdministracionLocalAuditoriaAseguramiento",
+        "layout": "hbox",
+        "closable": false,
+        "iconCls": "icon-database_key",
+        "title": "Firma y Aseguramiento de la Base de Datos"
+    },
+    "configAlternates": {
+        "VERIFICAR_HASH": "number"
+    },
+    "designerId": "05d67757-6db0-4acc-8091-0aebe4eb755f",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "VERIFICAR_HASH",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "SUBIR_P12",
+            "type": "string"
+        },
+        {
+            "group": "(Custom Properties)",
+            "name": "FIRMAR_TABLA",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 2,
+                "bodyPadding": 10,
+                "title": null,
+                "url": "clases/interfaces/mantenimiento/local/auditoria/InterfazAseguramiento.php"
+            },
+            "designerId": "ffde4c15-f5dd-417d-9e96-76076928f842",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Display",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "style": null,
+                        "fieldLabel": null,
+                        "value": [
+                            "Mediante el aseguramiento de datos se consigue verificar que únicamente el sistema de información inserta y modifica registros en la base de datos (BD). Dicha verificación se consigue gracias al estampado de una firma digital basada en <a href=’http://es.wikipedia.org/wiki/Firma_digital’>criptografía de clave pública o asimétrica</a> por parte del sistema en cada uno de los registros insertados o modificados. Esto permite detectar cambios en la información ocasionados por virus informáticos, fallas de hardware o modificaciones no autorizadas fuera del sistema, además posibilitará la expedición de un certificado de autenticidad e integridad de la base de datos."
+                        ]
+                    },
+                    "designerId": "9edaf1dd-a98b-4c90-9f93-b162e49cce5b"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "",
+                        "name": "verificacion1",
+                        "boxLabel": "<b>Término de funcionamiento 1: </b>Entiendo que el firmado de registros por parte del sistema puede disminuir el rendimiento del sistema en cerca de un 10% a 30% para operaciones de escritura (inserción, modificación y borrado de datos). Y que esta disminución solo será perceptible en momentos de alta congestión y utilización concurrente del sistema.",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "e90e792d-3a5d-4492-8af1-f309c6286161"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "",
+                        "name": "verificacion2",
+                        "boxLabel": "<b>Término de funcionamiento 2: </b>Manifiesto que el certificado de firma digital que proporciono mas adelante se ha expedido con el único propósito de utilizar la llave privada a él vinculado para ejecutar el firmado de registros y que esta llave privada no será utilizada externamente al sistema con ningún otro fin.",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "77e7b10e-2e68-449f-ae9b-1fbbd92dcd79"
+                },
+                {
+                    "type": "Ext.form.field.Checkbox",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "fieldLabel": "",
+                        "name": "verificacion3",
+                        "boxLabel": "<b>Término de funcionamiento 3: </b>Entiendo que el sistema tendrá libre acceso a la llave privada vinculada al certificado de firma digital que proporciono mas adelante y que tendrá conocimiento permanente de la clave de seguridad que da acceso a sus funcionalidades de firma y cifrado. Por esta razón manifiesto que dicha llave privada no es utilizada para firmar o cifrar datos o documentos sensible o no sensible fuera de este sistema de información",
+                        "inputValue": "1",
+                        "uncheckedValue": "0"
+                    },
+                    "designerId": "1767c6d0-64c7-45aa-95c3-04840695c649"
+                },
+                {
+                    "type": "Ext.form.field.File",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|displayName": null,
+                        "fieldLabel": "Archvo p12 o pfx",
+                        "name": "archivoP12"
+                    },
+                    "designerId": "9a099185-fd67-41da-9ef2-6f25392a46a6"
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|anchor": "100%",
+                        "designer|displayName": null,
+                        "fieldLabel": "Contraseña",
+                        "name": "password",
+                        "inputType": "password",
+                        "allowBlank": false,
+                        "blankText": "La contraseña del p12 de obligatoria"
+                    },
+                    "designerId": "39ac3c7e-00a9-43e7-a908-fd4350dd13c2"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "height": null,
+                "width": null,
+                "title": null,
+                "forceFit": true,
+                "store": "dumyStore"
+            },
+            "designerId": "5f05ce97-0618-4223-bf91-5073af02208b",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "defaultWidth": null,
+                        "dataIndex": "tabla",
+                        "text": "Tabla"
+                    },
+                    "designerId": "42f57130-a204-45b4-bd4e-647f5b831667"
+                },
+                {
+                    "type": "Ext.grid.column.Number",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 55,
+                        "defaultWidth": null,
+                        "align": "right",
+                        "dataIndex": "registros",
+                        "text": "Registros",
+                        "format": "0,000"
+                    },
+                    "designerId": "184b122d-b1ae-43d9-b960-0b01dc57266a"
+                },
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": null,
+                        "defaultWidth": null,
+                        "dataIndex": "firmado",
+                        "text": "Firmado"
+                    },
+                    "designerId": "cb7d6d08-c4b2-4c43-b525-fe4b44f52d36",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(value==0){\r",
+                                    "    return \"<font style='color:red'>InCorrecta</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "if(value==1){\r",
+                                    "    return \"<font style='color:blue'>Firmado</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "if(value==2){\r",
+                                    "    return \"<font style='color:green'>Firmando, espere</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "if(value==3){\r",
+                                    "    return \"<font style='color:gray'>Tiempo Agotado</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "\r",
+                                    "return \"<font style='color:gray'>No Ejecutada</font>\";    "
+                                ]
+                            },
+                            "designerId": "e3a1cd69-6e97-472f-8581-fde5d797fd2a"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "31627cbb-ab5b-4d37-97d3-815574636933"
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout|flex": 1,
+                "dock": "bottom"
+            },
+            "designerId": "8fc59f2b-21bf-4a4f-8282-a30434fd1187",
+            "cn": [
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 4,
+                        "title": "Acciones",
+                        "columns": 4
+                    },
+                    "designerId": "492dfa02-4394-4594-b2cf-50fe2d2a9f0a",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-text_signature",
+                                "text": "Firmar y Asegurar Base de Datos"
+                            },
+                            "designerId": "2878fb63-066a-4a2c-bd1c-f25ba0dadbd2",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClickCheckHash",
+                                        "implHandler": [
+                                            "var cargarP12=function(btn){    \r",
+                                            "    if(btn != 'yes'){\r",
+                                            "        return;\r",
+                                            "    }\r",
+                                            "\r",
+                                            "    var firmarDB=function(callbackParams, result){\r",
+                                            "        \r",
+                                            "        var grid=Ext.ComponentQuery.query('AdministracionLocalAuditoriaAseguramiento grid')[0];\r",
+                                            "        var store=grid.getStore();\r",
+                                            "        var totalTablas=store.getCount();\r",
+                                            "        var registro=null;\r",
+                                            "    \r",
+                                            "        var callback=function(params, result, exito){            \r",
+                                            "            var registro=grid.getStore().getAt(params.indice);            \r",
+                                            "    \r",
+                                            "            if(exito){            \r",
+                                            "                registro.set('firmado', result.firmado);    \r",
+                                            "            }else{\r",
+                                            "                registro.set('firmado', 3);    \r",
+                                            "            }\r",
+                                            "            registro.commit();\r",
+                                            "        };\r",
+                                            "    \r",
+                                            "        for(var i=totalTablas-1; i>=0; i--){\r",
+                                            "            registro=store.getAt(i);\r",
+                                            "            registro.set('firmado', 2);    \r",
+                                            "            siadno.ajax('clases/interfaces/mantenimiento/local/auditoria/InterfazAseguramiento.php', {timeout: 600000, accion:this.FIRMAR_TABLA, indice:i, tabla:registro.get('tabla')}, callback, {indice:i});    \r",
+                                            "    \r",
+                                            "        }        \r",
+                                            "    };\r",
+                                            "\r",
+                                            "    siadno.enviarFormulario.call(this, false, 'AdministracionLocalAuditoriaAseguramiento form', {accion:this.SUBIR_P12}, firmarDB);        \r",
+                                            "}\r",
+                                            "\r",
+                                            "Ext.MessageBox.confirm(\r",
+                                            "'Confirmacion de Actividad',\r",
+                                            "'Luego de subir el archivo p12 el sistema procederá a firmar cada registro de cada tabla en la base de datos, este procedimiento puede ser demorado dependiendo de la cantidad de registros en cada tabla y puede impactar negativamente el rendimiento en las demás áreas del sistema mientras se este ejecutando. ¿Desea continuar?',    \r",
+                                            "cargarP12,\r",
+                                            "this\r",
+                                            ");\r",
+                                            "\r",
+                                            ""
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "136e12dc-30b3-4d50-ab1f-e20cb88d54f5"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "77fcc545-cc5b-4151-9796-ad0cf3acb41f"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "aec0ae67-7c2c-46e1-b320-bce07ddc7cde",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "iconCls": "icon-door_out",
+                                "text": "Salir"
+                            },
+                            "designerId": "082dd001-25cc-4361-860e-778c263386ce",
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonClick1",
+                                        "implHandler": [
+                                            "this.close();"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "45a8a24c-9c2b-4607-ab12-bd0413203dc2"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.local.auditoria.aseguramiento\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.local.auditoria.aseguramiento', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/auditoria/InterfazAseguramiento.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'tabla',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'tabla'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'registros'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'firmado'\r",
+                    "                }                \r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "\r",
+                    "var grids=Ext.ComponentQuery.query('AdministracionLocalAuditoriaAseguramiento grid');\r",
+                    "\r",
+                    "var grid=grids[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.local.auditoria.aseguramiento'));\r",
+                    "grid.getStore().load();\r",
+                    "\r",
+                    "//grid.getStore().load();\r",
+                    "\r",
+                    "//var grid=grids[1];\r",
+                    "//grid.collapse();\r",
+                    "//grid.expand();\r",
+                    "//grid.reconfigure(Ext.create('siadno.store.administracion.local.auditoria.integridad'));\r",
+                    "//grid.getStore().load();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "d12f0039-c1fa-42d9-a6c4-0f33287380ab"
+        }
+    ]
+}

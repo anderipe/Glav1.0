@@ -1,0 +1,5 @@
+crear el empaquetador
+D:\Mabicho\Dropbox\Proyectos\htdocs\extjs\sencha-touch-2.0.1.1>sencha package build ..\..\lavadoTablet\packager.json
+
+para ver las apis de android disponibles
+D:\Mabicho\Documents\Android\android-sdk\tools>android.bat list targets

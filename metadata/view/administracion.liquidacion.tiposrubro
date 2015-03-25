@@ -1,0 +1,460 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": 304,
+        "width": 364,
+        "designer|userClassName": "administracion.liquidacion.tiposrubro",
+        "designer|userAlias": "AdministracionLiquidacionTiposRubro",
+        "resizable": [
+            "false"
+        ],
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-pictures",
+        "title": "Tipos de Servicios"
+    },
+    "designerId": "0a1acb7a-7bc9-4214-ac39-5eaa1422b4d4",
+    "cn": [
+        {
+            "type": "Ext.grid.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "title": null,
+                "store": "dumyStore"
+            },
+            "designerId": "a19e1a38-4c50-4bc5-bfaa-9f7597d18b0c",
+            "cn": [
+                {
+                    "type": "Ext.grid.column.Column",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "width": 228,
+                        "dataIndex": "descripcion",
+                        "text": "Tipo de Servicio"
+                    },
+                    "designerId": "1c48de43-fbd5-46a9-b1dc-82447a1cea6a",
+                    "cn": [
+                        {
+                            "type": "fixedfunction",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "renderer",
+                                "designer|params": [
+                                    "value",
+                                    "metaData",
+                                    "record",
+                                    "rowIndex",
+                                    "colIndex",
+                                    "store",
+                                    "view"
+                                ],
+                                "implHandler": [
+                                    "if(Ext.isEmpty(value)){\r",
+                                    "    return \"<font style='color:gray'>--Nuevo Tipo de Rubro--</font>\";    \r",
+                                    "}\r",
+                                    "\r",
+                                    "return value;"
+                                ]
+                            },
+                            "designerId": "07862ec7-fe69-4339-be99-7ebc83970cd5"
+                        },
+                        {
+                            "type": "Ext.form.field.TextArea",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null
+                            },
+                            "designerId": "2630e99e-a4d0-4c9d-9784-b9285ffe0557"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.column.Boolean",
+                    "reference": {
+                        "name": "columns",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dataIndex": "estado",
+                        "text": "Activo?",
+                        "falseText": "In Activo",
+                        "trueText": "Activo",
+                        "undefinedText": "No Definido"
+                    },
+                    "designerId": "05d94225-f77e-44f9-a403-f792129c372b",
+                    "cn": [
+                        {
+                            "type": "Ext.form.field.Checkbox",
+                            "reference": {
+                                "name": "editor",
+                                "type": "object"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fieldLabel": null,
+                                "name": "estado",
+                                "boxLabel": "Activo?"
+                            },
+                            "designerId": "aa4b5501-2748-46fc-8443-580ece8b5f17"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.grid.View",
+                    "reference": {
+                        "name": "viewConfig",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "0699f5b7-356b-42e3-b6e4-4dd972ea33a5"
+                },
+                {
+                    "type": "Ext.selection.RowModel",
+                    "reference": {
+                        "name": "selModel",
+                        "type": "object"
+                    },
+                    "codeClass": "Ext.selection.RowModel",
+                    "designerId": "4eaa23e5-4997-4285-8391-2677c2dbda96"
+                },
+                {
+                    "type": "Ext.grid.plugin.RowEditing",
+                    "reference": {
+                        "name": "plugins",
+                        "type": "array"
+                    },
+                    "codeClass": "Ext.grid.plugin.RowEditing",
+                    "designerId": "6f509900-76fd-4293-8765-cb23d19a5359"
+                },
+                {
+                    "type": "Ext.toolbar.Toolbar",
+                    "reference": {
+                        "name": "dockedItems",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "dock": "bottom"
+                    },
+                    "designerId": "4f047ff4-9a43-4481-bc0d-2e8e7f3c19a7",
+                    "cn": [
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 2,
+                                "title": "Acciones",
+                                "columns": 5
+                            },
+                            "designerId": "be1dda95-3593-48b6-8099-eced223ee791",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "nuevo",
+                                        "iconCls": "icon-page_add",
+                                        "text": "Nuevo"
+                                    },
+                                    "designerId": "965f7d74-8198-4b1b-8aa5-abfd98ac96ee",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickNuevo",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposRubro grid')[0];\r",
+                                                    "siadno.nuevoRegistroGrid(grid,'idtiporubro');"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "c0ffc505-6ec0-447b-beb2-7d7aeae92c67"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "accion": "guardar",
+                                        "iconCls": "icon-page_save",
+                                        "text": "Guardar"
+                                    },
+                                    "designerId": "48ef29e7-1a6e-43fb-8410-fc3cc1aa12e7",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "accion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickGuardar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposRubro grid')[0];         \r",
+                                                    "siadno.enviarCambiosGrid(grid, null, 'idtiporubro');            "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "eae51418-64c2-4197-b542-6e4cd5a9b05a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-page_cancel",
+                                        "text": "Cancelar"
+                                    },
+                                    "designerId": "21d607ce-8480-4828-b7df-161fe06b96b4",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickCancelar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposRubro grid')[0];\r",
+                                                    "siadno.rollbackCambiosGrid(grid);         "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "b0259d24-7ad9-42c4-9277-659153662d8a"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "aacion": "borrar",
+                                        "iconCls": "icon-page_delete",
+                                        "text": "Borrar"
+                                    },
+                                    "designerId": "52e1d464-1e45-4e0e-8565-9e8bf6f82af0",
+                                    "customConfigs": [
+                                        {
+                                            "group": "(Custom Properties)",
+                                            "name": "aacion",
+                                            "type": "string"
+                                        }
+                                    ],
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickBorrar",
+                                                "implHandler": [
+                                                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposRubro grid')[0];\r",
+                                                    "siadno.borrarRegistroGrid(grid, null, 'idtiporubro');    "
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "372e6029-553f-4d4d-94f3-4d17309747db"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.toolbar.Fill",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null
+                            },
+                            "designerId": "bab44732-76ff-4904-a5f7-2a41530f9a0b"
+                        },
+                        {
+                            "type": "Ext.container.ButtonGroup",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "layout|flex": null,
+                                "container|columns": 1,
+                                "title": null,
+                                "columns": 1
+                            },
+                            "designerId": "1dbed2f7-b920-43e1-8282-f878a9e1f531",
+                            "cn": [
+                                {
+                                    "type": "Ext.button.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "iconCls": "icon-door_out",
+                                        "text": "Salir"
+                                    },
+                                    "designerId": "e34b5e74-2c9d-4568-bb5f-438eddb5874e",
+                                    "cn": [
+                                        {
+                                            "type": "basiceventbinding",
+                                            "reference": {
+                                                "name": "listeners",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "fn": "onButtonClickSalir",
+                                                "implHandler": [
+                                                    "this.close();"
+                                                ],
+                                                "name": "click",
+                                                "scope": "me"
+                                            },
+                                            "designerId": "729db632-e033-400f-9891-55dc20ef445f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onWindowBeforeShow",
+                "implHandler": [
+                    "var clase=Ext.ClassManager.get(\"siadno.store.administracion.liquidacion.tiposrubro\");\r",
+                    "if(Ext.isEmpty(clase)){\r",
+                    "    Ext.define('siadno.store.administracion.liquidacion.tiposrubro', {\r",
+                    "        extend: 'Ext.data.Store',\r",
+                    "\r",
+                    "        constructor: function(cfg) {\r",
+                    "            var me = this;\r",
+                    "            cfg = cfg || {};\r",
+                    "            me.callParent([Ext.apply({\r",
+                    "                storeId: Ext.id(),\r",
+                    "                idLocal: -1,\r",
+                    "                proxy: {\r",
+                    "                    type: 'ajax',\r",
+                    "                    url: 'clases/interfaces/mantenimiento/local/liquidacion/InterfazTiposRubro.php',\r",
+                    "                    reader: {\r",
+                    "                        type: 'json',\r",
+                    "                        idProperty: 'idtiporubro',\r",
+                    "                        messageProperty: 'msg',\r",
+                    "                        root: 'data'\r",
+                    "                    }\r",
+                    "                },\r",
+                    "                fields: [\r",
+                    "                {\r",
+                    "                    name: 'idtiporubro'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'descripcion'\r",
+                    "                },\r",
+                    "                {\r",
+                    "                    name: 'estado',\r",
+                    "                    type: 'boolean'\r",
+                    "                }\r",
+                    "                ]\r",
+                    "            }, cfg)]);\r",
+                    "        }\r",
+                    "    });\r",
+                    "}\r",
+                    "\r",
+                    "\r",
+                    "var grid=Ext.ComponentQuery.query('AdministracionLiquidacionTiposRubro grid')[0];\r",
+                    "grid.reconfigure(Ext.create('siadno.store.administracion.liquidacion.tiposrubro'));\r",
+                    "grid.getStore().load();"
+                ],
+                "name": "beforeshow",
+                "scope": "me"
+            },
+            "designerId": "90a51f87-75b6-40e7-954b-e19fbf51ff3f"
+        }
+    ]
+}

@@ -1,0 +1,197 @@
+{
+    "type": "Ext.window.Window",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "draggable": false,
+        "height": 140,
+        "width": 248,
+        "designer|userClassName": "sistema.autenticacion",
+        "designer|userAlias": "SistemaAutenticacion",
+        "layout": "fit",
+        "closable": false,
+        "iconCls": "icon-key_go",
+        "title": "Autenticacion",
+        "modal": true
+    },
+    "designerId": "f99ea4c0-df09-4440-a3e4-23b5d34368c0",
+    "cn": [
+        {
+            "type": "Ext.form.Panel",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": null,
+                "bodyPadding": 10,
+                "title": null,
+                "method": null,
+                "url": "clases/interfaces/InterfazAutenticacion.php"
+            },
+            "designerId": "d99bd9dd-6fc4-45db-9e9a-ce887186285e",
+            "cn": [
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "afterLabelTextTpl": "<span style=\"color:red;font-weight:bold\" data-qtip=\"Required\">*</span>",
+                        "layout|anchor": "100%",
+                        "id": "miid2",
+                        "fieldLabel": "Usuario",
+                        "msgTarget": "side",
+                        "name": "login"
+                    },
+                    "designerId": "99d79da5-4abc-4fb3-90bd-c3645e65c2e2",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "afterLabelTextTpl",
+                            "type": "string"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.form.field.Text",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "afterLabelTextTpl": "<span style=\"color:red;font-weight:bold\" data-qtip=\"Required\">*</span>",
+                        "layout|anchor": "100%",
+                        "id": "miid3",
+                        "fieldLabel": "Contraseña",
+                        "msgTarget": "side",
+                        "name": "password",
+                        "inputType": "password"
+                    },
+                    "designerId": "51f2e3bb-1f09-45a6-93e4-8b96d9d43df4",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "afterLabelTextTpl",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Ext.toolbar.Toolbar",
+            "reference": {
+                "name": "dockedItems",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dock": "bottom"
+            },
+            "designerId": "bddc5348-02fc-4d52-8e16-34d99fdec8e5",
+            "cn": [
+                {
+                    "type": "Ext.toolbar.Fill",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null
+                    },
+                    "designerId": "644d2ece-9efe-471f-9da0-1b38f9a9f783"
+                },
+                {
+                    "type": "Ext.container.ButtonGroup",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "layout|flex": null,
+                        "container|columns": 2,
+                        "title": null,
+                        "columns": 2
+                    },
+                    "designerId": "4f0efedc-cfb3-4a61-8861-1d34efe2f9e3",
+                    "cn": [
+                        {
+                            "type": "Ext.button.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "accion": "salir",
+                                "iconCls": "icon-accept",
+                                "text": "Aceptar"
+                            },
+                            "designerId": "ea61b69d-7a4d-4cb0-8532-b5fab5f032ec",
+                            "customConfigs": [
+                                {
+                                    "group": "(Custom Properties)",
+                                    "name": "accion",
+                                    "type": "string"
+                                }
+                            ],
+                            "cn": [
+                                {
+                                    "type": "basiceventbinding",
+                                    "reference": {
+                                        "name": "listeners",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "fn": "onButtonAceptar",
+                                        "implHandler": [
+                                            "\r",
+                                            "var crearMenu=function(callbackParams, result){     \r",
+                                            "    if(result.success===true){\r",
+                                            "    \tthis.close();                \r",
+                                            "    }else{\r",
+                                            "        return;\r",
+                                            "    }\r",
+                                            "    \r",
+                                            "    if(!Ext.isEmpty(esTableta) && esTableta==1){                \r",
+                                            "        siadno.crearTablet();\r",
+                                            "    }else\r",
+                                            "    {        \r",
+                                            "        var task = {\r",
+                                            "            run: siadno.crearMenu,\r",
+                                            "            interval: 3600000 //60 minutos\r",
+                                            "        };\r",
+                                            "\r",
+                                            "        siadno.menuTimer = new Ext.util.TaskRunner();\r",
+                                            "        siadno.menuTimer.start(task);        \r",
+                                            "        var body=Ext.getBody();            \r",
+                                            "        body.createChild(\"<APPLET id='appletImpresion' CODE='co.com.siadno.Impresora.class' ARCHIVE='clases/IO/Impresion/appletImpresion/dist/appletImpresion.jar' WIDTH=0 HEIGHT=0></APPLET>\");        \r",
+                                            "        siadno.impresoras=Ext.get('appletImpresion').dom;        \r",
+                                            "    }       \r",
+                                            "};\r",
+                                            "siadno.enviarFormulario.call(this, false, 'SistemaAutenticacion form', null, crearMenu);"
+                                        ],
+                                        "name": "click",
+                                        "scope": "me"
+                                    },
+                                    "designerId": "56d2b1c7-2ae0-4260-aec3-7671bd971b2c"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
