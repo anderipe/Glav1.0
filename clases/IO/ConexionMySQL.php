@@ -65,8 +65,7 @@ class ConexionMySQL
     public function __construct($baseDeDatos, $usuario, $contrasena, $host,
             $puerto=3306){
         parent::__construct();
-        $this->conexion=mysql_connect($host.":".$puerto, $usuario, $contrasena,
-                TRUE);
+        $this->conexion=mysql_connect($host.":".$puerto, $usuario, $contrasena,TRUE);
         mysql_set_charset('utf8', $this->conexion);
         //echo mysql_client_encoding ($this->conexion);
         if($this->conexion===FALSE)
