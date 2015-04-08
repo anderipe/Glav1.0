@@ -65,9 +65,12 @@ class InterfazAutenticacion{
         $resultados=$conexion->consultar($sql);
         $conexion->cerrar();
 
+
         if($resultados->getCantidad()==0)
             throw new AppException('El nombre de usuario o su contraseña son incorrectos',
                 (object)array('login'=>'Nombre de usuario o contraseña incorrectos', 'password'=>'Nombre de usuario o contraseña incorrectos'));
+
+        
 
         FrameWork::iniciarSesion();
         $_SESSION['db_host']='localhost';
@@ -76,6 +79,8 @@ class InterfazAutenticacion{
         $_SESSION['db_user']='root';
         $_SESSION['db_password']='';
         $_SESSION['idUsuario']=(int)$resultados->get(0)->idusuario;
+
+
 
         /**
          * Creamos framework para poder usar la clase usuario
@@ -89,6 +94,9 @@ class InterfazAutenticacion{
         $auditoria->setModulo($modulo);
         $auditoria->setAccionAuditable($accionAuditable);
         $auditoria->guardarObjeto(null);
+
+        //echo 'llegue';exit();
+
 
         $retorno=new stdClass();
         $retorno->msg='';

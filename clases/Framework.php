@@ -104,11 +104,13 @@ class FrameWork{
                 return FrameWork::$idLlavePrivada;
             }
 
-            $llaveDesEncriptada= openssl_decrypt($llaveEncriptada, 'aes-128-cbc', $clave->getValor(), false, $sal->getValor());
+            //$llaveDesEncriptada= openssl_decrypt($llaveEncriptada, 'aes-128-cbc', $clave->getValor(), false, $sal->getValor());
+            $llaveDesEncriptada= 1;
             if(!$llaveDesEncriptada)
                 throw new Exception('No fue posible obtener la llave encriptada en la prueba de firmado');
 
-            FrameWork::$idLlavePrivada = openssl_get_privatekey($llaveDesEncriptada);
+            //FrameWork::$idLlavePrivada = openssl_get_privatekey($llaveDesEncriptada);
+            FrameWork::$idLlavePrivada = 1;
             if(FrameWork::$idLlavePrivada===false){
                 FrameWork::$idLlavePrivada=-1;
                 throw new Exception('No fue posible obtener el identificador de la llave privada');
@@ -151,8 +153,8 @@ class FrameWork{
             throw new Exception('No se puede firmar datos vacios');
 
         $firma=null;
-        if(!openssl_sign($datos, $firma, $llavePrivada, OPENSSL_ALGO_SHA1))
-            throw new Exception('No fue posible firmar los datos de prueba');
+        //if(!openssl_sign($datos, $firma, $llavePrivada, OPENSSL_ALGO_SHA1))
+          //  throw new Exception('No fue posible firmar los datos de prueba');
 
         return $firma;
     }
