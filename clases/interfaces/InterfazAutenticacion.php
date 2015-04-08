@@ -4,8 +4,13 @@
  * @subpackage interfaces
  */
 
-require_once '/media/www/lavado/clases/Framework.php';
-FrameWork::agregarIncludePath('/media/www/lavado/clases');
+require_once '../Framework.php';
+//FrameWork::agregarIncludePath("/../../clases/");
+FrameWork::agregarIncludePath('../../clases');
+require_once 'AppException.php';
+
+//require_once '../Framework.php';
+//FrameWork::agregarIncludePath('/media/www/lavado/clases');
 require_once 'AppException.php';
 require_once 'ConexionMySQL.php';
 require_once 'Auditoria.php';
@@ -53,7 +58,7 @@ class InterfazAutenticacion{
                 (object)array('password'=>'La contraseña de usuario tiene maximo 32 caracteres'));
 
         $passwordUsuario=sha1(md5($passwordUsuario));
-        $conexion=new ConexionMySQL('lavado', 'root', 'root', 'localhost', '3306');
+        $conexion=new ConexionMySQL('lavado', 'root', '', 'localhost', '3306');
 /*Yo modifique la siguiente linea**/
         $sql='select idusuario from usuario where login=\''.mysql_real_escape_string($loginUsuario).'\' and password=\''.mysql_real_escape_string($passwordUsuario).'\' and estado=1';
         $conexion->consultar($sql);
@@ -69,7 +74,7 @@ class InterfazAutenticacion{
         $_SESSION['db_port']='3306';
         $_SESSION['db_name']='lavado';
         $_SESSION['db_user']='root';
-        $_SESSION['db_password']='root';
+        $_SESSION['db_password']='';
         $_SESSION['idUsuario']=(int)$resultados->get(0)->idusuario;
 
         /**

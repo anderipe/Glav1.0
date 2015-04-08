@@ -2,6 +2,8 @@
 /**
  * @package co.org.lavado
  */
+//error_reporting = E_ALL ^ E_DEPRECATED;
+//error_reporting(E_ALL ^ E_DEPRECATED);
 
 //function __autoload($class_name) {
 //    require_once $class_name.'.php';
@@ -267,7 +269,7 @@ class FrameWork{
      * @throws Exception
      */
     public static function crearRootPath(){
-        FrameWork::$rootPath='/media/www/lavado/';
+        FrameWork::$rootPath='../../lavado/';
     }
 
     /**
@@ -284,7 +286,7 @@ class FrameWork{
 
         if($mostrarErrores==true){
             ini_set("display_errors" , 1);
-            error_reporting(E_ALL & ~E_DEPRECATED);
+            //error_reporting(E_ALL & ~E_DEPRECATED);
         }
 
         if($cambiarmanejadorDeErrores==true){
@@ -431,7 +433,7 @@ class FrameWork{
         FrameWork::mostrarErrores(true, true);
         FrameWork::iniciarSesion(true);
         FrameWork::crearRootPath();
-        FrameWork::agregarIncludePath("/media/www/lavado/clases/");
+        FrameWork::agregarIncludePath('../../clases');
         //spl_autoload_register();
 
         FrameWork::procesarArchivoConfiguracion();

@@ -4,7 +4,7 @@
  * @subpackage interfaces
  */
 
-//    require_once '/media/www/lavado/clases/Framework.php';
+//    require_once '../Framework.php';
 //    FrameWork::agregarIncludePath('/media/www/lavado/clases');
 //    require_once 'AppException.php';
 //    require_once 'ConexionMySQL.php';

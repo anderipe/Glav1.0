@@ -4,7 +4,7 @@
  * @subpackage interfaces
  */
 
-require_once '/media/www/lavado/clases/Framework.php';
+require_once '../Framework.php';
 $miFramework=new FrameWork();
 require_once 'Auditoria.php';
 
